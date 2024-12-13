@@ -30,7 +30,7 @@ namespace EcommerceSystem.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index", "Home"); // if successful sign up, go to the home page
             }
-            ViewBag.ErrorMessage = "Please provide accurate information.";
+            ViewBag.RegisterErrorMessage = "Please provide accurate information.";
             return View("Authentication");
         }
 
@@ -46,7 +46,7 @@ namespace EcommerceSystem.Controllers
                 return RedirectToAction("Index", "Home"); // Redirect to home
             }
 
-            ViewBag.ErrorMessage = "Invalid email or password.";
+            ViewBag.LoginErrorMessage = "Invalid email or password.";
             return View("Authentication");
         }
 

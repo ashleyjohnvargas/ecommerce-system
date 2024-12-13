@@ -20,6 +20,12 @@
             <div class="form-container sign-up">
                 <form asp-action="Register" asp-controller="Account" method="post">
                     <h1>Create an Account</h1>
+                    @if (ViewBag.RegisterErrorMessage != null) // you can change the position of this error message for sign up
+                    {
+                        <div class="alert alert-danger">
+                            @ViewBag.RegisterErrorMessage
+                        </div>
+                    }
                     <div class="social-icons">
                         <a href="https://accounts.google.com/" target="_blank" class="icon"><i class="fa-brands fa-google"></i></a>
                         <a href="https://www.facebook.com/" target="_blank" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
@@ -48,6 +54,12 @@
                     <span>or use your email and password</span>
                     <input asp-for="Email" type="email" placeholder="Email" required />
                     <input asp-for="Password" type="password" placeholder="Password" required />
+                    @if (ViewBag.LoginErrorMessage != null)
+                    {
+                        <div class="alert alert-danger" style="font-size: 12px; color:red;">
+                            @ViewBag.LoginErrorMessage
+                        </div>
+                    }
                     <a href="#">Forgot Your Password?</a>
                     <button type="submit">Sign In</button>
                 </form>
