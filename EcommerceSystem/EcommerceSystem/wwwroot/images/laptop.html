@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .header a:hover {
+            color: #0056b3;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            margin-bottom: 20px;
+        }
+        .search-container {
+            display: inline-block;
+            margin-left: auto;
+        }
+        .search-container input[type="text"] {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        .search-container input[type="submit"] {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        .search-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .laptop-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .laptop {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.2s;
+        }
+        .laptop img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .laptop:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Welcome to Gizmode</h1>
+        <p>Your one-stop destination for the latest gadgets.</p>
+        <nav>
+            <div>
+                <a href="homepage.html">Shop</a>
+                <a href="laptops.html">Laptops</a>
+                <a href="smartphones.html">Smartphones</a>
+                <a href="tablets">Tablet</a>
+                <a href="/accessories">Accessories</a>
+                <a href="/wearables">Wearables</a>
+            </div>
+            <div class="search-container">
+                <form action="/search" method="GET">
+                    <input type="text" placeholder="Search..." name="query" required>
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+        </nav>
+        </div>
+        
+    <h1 style="text-align: center;">Laptops</h1>
+    <div class="laptop-container">
+        <div class="laptop">
+            <img src="https://via.placeholder.com/150?text=Smartphone+1" alt="Smartphone 1">
+            <h3>Laptop 1</h3>
+            <p>Label: High performance, 128GB storage</p>
+        </div>
+        <div class="laptop">
+            <img src="https://via.placeholder.com/150?text=Smartphone+2" alt="Smartphone 2">
+            <h3>Laptop 2</h3>
+            <p>Label: Excellent camera, 64GB storage</p>
+        </div>
+        <div class="laptop">
+            <img src="https://via.placeholder.com/150?text=Smartphone+3" alt="Smartphone 3">
+            <h3>Laptop 3</h3>
+            <p>Label: Long battery life, 256GB storage</p>
+        </div>
+        <div class="laptop">
+            <img src="https://via.placeholder.com/150?text=Smartphone+4" alt="Smartphone 4">
+            <h3>Smartphone 4</h3>
+            <p>Label: Compact design, 32GB storage</p>
+        </div>
+    </div>
+</body>
+</html>

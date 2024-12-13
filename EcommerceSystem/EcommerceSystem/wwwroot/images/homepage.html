@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - EcommerceSystem</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General reset */
+        body, ul {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top Bar Header */
+        .top-header {
+            background-image: linear-gradient(to right, violet, #8a2be2);
+            color: white;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Main Header Container */
+        .main-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: black;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0;
+        }
+
+        /* Logo */
+        .main-header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: bold;
+            background-image: linear-gradient(to right, violet, #8a2be2);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Navigation Menu */
+        .main-header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-header nav ul li {
+            margin: 0 15px;
+        }
+
+        .main-header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            padding: 5px 10px;
+        }
+
+        .main-header nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 300px;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            width: 100%;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+            font-size: 0.9rem;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .search-btn i {
+            font-size: 1.5rem;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        .search-btn:hover i {
+            color: #ffd700;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            color: #ffd700;
+        }
+
+        /* Banner Image */
+        .banner {
+            margin-top: 0;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer p {
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <!-- Optional: Add top header content here -->
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="main-header">
+            <!-- Logo -->
+            <h1>Gizmode</h1>
+
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search your product">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Cart Icon -->
+            <i class="fas fa-shopping-cart cart-icon"></i>
+        </div>
+    </header>
+
+    <!--Main Body-->
+    <div class="main-container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Gizmode. All rights reserved.</p>
+            <p>Follow us on:
+                <a href="#">Facebook</a>,
+                <a href="#">Twitter</a>,
+                <a href="#">Instagram</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
