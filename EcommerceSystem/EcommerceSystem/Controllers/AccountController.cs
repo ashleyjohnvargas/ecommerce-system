@@ -28,8 +28,9 @@ namespace EcommerceSystem.Controllers
             {
                 _context.Customers.Add(customer);
                 _context.SaveChanges();
-                return RedirectToAction("Success"); // Redirect to a success page
+                return RedirectToAction("Index", "Home"); // if successful sign up, go to the home page
             }
+            ViewBag.ErrorMessage = "Please provide accurate information.";
             return View("Authentication");
         }
 
