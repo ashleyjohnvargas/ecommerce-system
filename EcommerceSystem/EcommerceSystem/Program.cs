@@ -1,7 +1,15 @@
 using EcommerceSystem.Models;
+using EcommerceSystem.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddHttpClient<ProductService>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5263/"); // Replace with Inventory System URL
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
