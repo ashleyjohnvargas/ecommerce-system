@@ -7,12 +7,12 @@ CREATE TABLE Customers (
     Address NVARCHAR(255) NULL
 );
 
-CREATE TABLE Products (
-	Id int IDENTITY(1,1) PRIMARY KEY,
-	Name nvarchar(255) NOT NULL,
-	Description nvarchar(max) NOT NULL,
-	Price decimal(18, 2) NOT NULL,
-	StockQuantity int NOT NULL,
-	Category nvarchar(255) NOT NULL,
-	IsDeleted bit NOT NULL
+CREATE TABLE ProductImages (
+    Id INT IDENTITY(1,1) PRIMARY KEY,        -- Auto-incrementing primary key
+    ProductId INT NOT NULL,                   -- External product identifier from Inventory system
+    FilePath VARCHAR(255) NOT NULL,           -- Path to the image file
+    
+    -- Optional: Foreign key constraint if you have an Inventory database to reference
+    -- CONSTRAINT FK_ProductImages_InventoryProducts FOREIGN KEY (ProductId)
+    --     REFERENCES InventoryProducts(Id)  -- Replace 'InventoryProducts' and 'Id' with the actual table and column names
 );

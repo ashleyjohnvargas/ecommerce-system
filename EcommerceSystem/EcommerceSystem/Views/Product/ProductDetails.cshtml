@@ -1,0 +1,54 @@
+@model List<EcommerceSystem.Models.Product>
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/productDetails.css" asp-append-version="true">
+</head>
+
+<h1>Product Details</h1>
+
+@if (Model != null && Model.Any())
+{
+    <div class="product-grid">
+        @foreach (var product in Model)
+        {
+            <div class="product-container">
+                <div class="image-slider">
+                    @if (product.Images != null && product.Images.Any())
+                    {
+                        <div class="scrollable-images">
+                            @foreach (var image in product.Images)
+                            {
+                                <img src="@image.FilePath" alt="Product Image" class="product-image" />
+                            }
+                        </div>
+                        <button class="scroll-btn prev" onclick="scrollImages(this, -1)">❮</button>
+                        <button class="scroll-btn next" onclick="scrollImages(this, 1)">❯</button>
+                    }
+                    else
+                    {
+                        <p>No images available for this product.</p>
+                    }
+                </div>
+                <div class="product-info">
+                    <h2>@product.Name</h2>
+                    <p><strong>Price:</strong> @product.Price.ToString("C")</p>
+                    <p><strong>Category:</strong> @product.Category</p>
+                    <p><strong>Description:</strong> @product.Description</p>
+                    <p><strong>Stock Quantity:</strong> @product.StockQuantity</p>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No products available.</p>
+}
+
+<a href="@Url.Action("Product", "Product")" class="btn btn-primary">Back to Product List</a>
+
+<script src="~/js/productDetails.js"></script>

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\productDetails.css",
+      "PackagePath": "staticwebassets\\css\\productDetails.css"
+    },
+    {
       "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -95,6 +99,10 @@
     {
       "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\productDetails.js",
+      "PackagePath": "staticwebassets\\js\\productDetails.js"
     },
     {
       "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\site.js",

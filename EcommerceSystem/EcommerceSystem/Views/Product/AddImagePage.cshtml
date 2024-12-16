@@ -1,0 +1,19 @@
+@model EcommerceSystem.Models.Product
+
+@{
+    ViewData["Title"] = "Add Image for " + Model.Name;
+}
+
+<h2>Add Image for @Model.Name</h2>
+
+<form asp-action="AddImage" method="post" enctype="multipart/form-data">
+    <!-- Hidden field to pass the product id -->
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <div class="form-group">
+        <label for="imageFile">Choose an image to upload:</label>
+        <input type="file" class="form-control" id="imageFile" name="imageFile" required />
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-3">Add Image</button>
+</form>

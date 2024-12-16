@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7NSI1hFWV5IqQaP1EXzf6lKzwVlz7KlCNa01ufCOqEE=",
+  "Hash": "pjU6fmMB5nhsNThuQOBkRPTZUY5GFFLU1nX4ZJ23lXk=",
   "Source": "EcommerceSystem",
   "BasePath": "_content/EcommerceSystem",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
+    },
+    {
+      "Identity": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\productDetails.css",
+      "SourceId": "EcommerceSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\",
+      "BasePath": "_content/EcommerceSystem",
+      "RelativePath": "css/productDetails.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\productDetails.css"
     },
     {
       "Identity": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\site.css",
@@ -471,6 +490,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\login.js"
+    },
+    {
+      "Identity": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\productDetails.js",
+      "SourceId": "EcommerceSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\",
+      "BasePath": "_content/EcommerceSystem",
+      "RelativePath": "js/productDetails.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\productDetails.js"
     },
     {
       "Identity": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\site.js",

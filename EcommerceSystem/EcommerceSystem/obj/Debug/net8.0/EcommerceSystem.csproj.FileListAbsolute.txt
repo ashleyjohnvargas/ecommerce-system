@@ -85,3 +85,4 @@ C:\Users\Angel\OneDrive\Documents\ashley\Integrated Systems\Ecommerce\EcommerceS
 C:\Users\Angel\OneDrive\Documents\ashley\Integrated Systems\Ecommerce\EcommerceSystem\EcommerceSystem\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Angel\OneDrive\Documents\ashley\Integrated Systems\Ecommerce\EcommerceSystem\EcommerceSystem\bin\Debug\net8.0\RestSharp.dll
 C:\Users\Angel\OneDrive\Documents\ashley\Integrated Systems\Ecommerce\EcommerceSystem\EcommerceSystem\bin\Debug\net8.0\System.Net.Http.Json.dll
+C:\Users\Angel\OneDrive\Documents\ashley\Integrated Systems\Ecommerce\EcommerceSystem\EcommerceSystem\obj\Debug\net8.0\EcommerceSystem.sourcelink.json
