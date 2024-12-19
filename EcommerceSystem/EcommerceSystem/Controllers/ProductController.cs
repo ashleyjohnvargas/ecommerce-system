@@ -116,9 +116,6 @@ namespace EcommerceSystem.Controllers
             return RedirectToAction("Product");
         }
 
-
-
-
        public IActionResult ProductDetails()
         {
             // Fetch products and include their associated images
@@ -127,37 +124,16 @@ namespace EcommerceSystem.Controllers
         }
 
 
-
-
-
-        // // For pagination of Product Details
-        // public async Task<IActionResult> ProductDetails(int page = 1)
-        // {
-        //     int pageSize = 9; // 9 products per page (3 rows of 3 products)
-
-        //     // Fetch all products from the database
-        //     var products = _context.Products.Include(p => p.Images);
-
-        //     // Apply pagination
-        //     var paginatedProducts = products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
-
-        //     // Get the total number of products to calculate total pages
-        //     var totalProducts = products.Count();
-        //     var totalPages = (int)Math.Ceiling(totalProducts / (double)pageSize);
-
-        //     // Create a PaginatedProductModel to pass the paginated data
-        //     var model = new PaginatedProductModel
-        //     {
-        //         Products = paginatedProducts,
-        //         CurrentPage = page,
-        //         TotalPages = totalPages,
-        //         PageSize = pageSize
-        //     };
-
-        //     return View(model);
-        // }
-
-
+        // GET: EditProduct
+        public IActionResult EditProductPage(int id)
+        {
+            var product = _context.Products.Find(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
 
     }
 }
