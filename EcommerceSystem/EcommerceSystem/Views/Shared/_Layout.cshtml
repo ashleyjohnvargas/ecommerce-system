@@ -7,7 +7,13 @@
     <title>@ViewData["Title"]</title>
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
     <style>
+        * {
+            font-family: "Poppins", serif;
+        }
         /* General reset */
         body, html {
             height: 100%; /* Ensure the body and html take full height */
@@ -17,18 +23,39 @@
             min-height: 100%; /* Ensure the body takes full height of the viewport */
         }
 
-        body, ul {
+        body{
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             min-height: 100%; /* Ensure body takes full height */
         }
 
+        .parent-container {
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            gap:15px;;
+            background-color: #f9f9f9;
+            height:auto;
+        }
+
+        .headers-container {
+            display: flex; /* Use flex to ensure children align properly */
+            flex-direction: column; /* Ensure content stacks vertically */
+            height: auto; /* Let it adjust based on content */
+            background-color: black;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+        }
+
         /* Top Bar Header */
         .top-header {
             background-image: linear-gradient(to right, violet, #8a2be2);
             color: white;
-            padding: 10px 20px;
+            padding: 8px 20px;
             font-size: 0.9rem;
             text-align: center;
         }
@@ -36,18 +63,71 @@
         /* Main Header Container */
         .main-header {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 15px 30px;
-            background-color: black;
+            gap:15px;
             color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 0;
-            flex-grow: 1; /* Ensures the main content takes up remaining space */
+            margin: 0;
+            background-color: black;
+            min-height: 100vh;
+        }
+
+        nav {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        ul {
+            display: flex;
+            flex-direction:column;
+            gap:13px;
+            list-style: none;
+            margin:0 0 0 93px;
+            padding:0;
+            min-width: 100%;
+        }
+
+        li {
+            margin:0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        li:hover {
+            transform: scale(1.1);
+            transform: translateX(5px);
+        }
+
+        li a {
+            padding:0%;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            transition: all 0.1s ease-in-out; 
+        }
+
+        li a:hover {
+            background-image: linear-gradient(to right, violet, #8a2be2);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        } 
+
+        i {
+            margin-right: 10px;
+        }
+
+        /* Logo Container */
+        .logo-container {
+            background-color: black; /* Black background for the container */
+            text-align: center; /* Center the h1 inside the container */
+            padding: 20px; /* Add some padding for better spacing */
+            padding-bottom: 25px;
         }
 
         /* Logo */
-        .main-header h1 {
+        h1 {
             font-size: 1.8rem;
             margin: 0;
             font-weight: bold;
@@ -56,29 +136,7 @@
             color: transparent;
         }
 
-        /* Navigation Menu */
-        .main-header nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        .main-header nav ul li {
-            margin: 0 15px;
-        }
-
-        .main-header nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-            padding: 5px 10px;
-        }
-
-        .main-header nav ul li a:hover {
-            color: #ffd700;
-        }
-
-        /* Search Bar */
+        @* /* Search Bar */
         .search-bar {
             display: flex;
             align-items: center;
@@ -111,9 +169,9 @@
 
         .search-btn:hover i {
             color: #ffd700;
-        }
+        } *@
 
-        /* Cart Icon */
+        @* /* Cart Icon */
         .cart-icon {
             font-size: 1.5rem;
             color: white;
@@ -124,7 +182,7 @@
 
         .cart-icon:hover {
             color: #ffd700;
-        }
+        } *@
 
         /* Banner Image */
         .banner {
@@ -147,6 +205,8 @@
             padding: 20px 0;
             margin-bottom: 0;
             margin-top: auto; /* Pushes footer to the bottom */
+            z-index: 100;
+            width: 100%; /* Prevent unexpected behavior in smaller containers */
         }
 
         footer p {
@@ -164,49 +224,59 @@
     </style>
 </head>
 <body>
-
-    <!-- Top Header -->
-    <div class="top-header">
-        <!-- Optional: Add top header content here -->
-    </div>
-
-    <!-- Main Header -->
-    <header>
-        <div class="main-header">
-            <!-- Logo -->
-            <h1>Gizmode</h1>
-
-            <!-- Navigation -->
-            <nav>
-                <ul>
-                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Product" asp-action="Product">Manage Products</a></li>
-                    <li><a asp-controller="Product" asp-action="ProductDetails">Products</a></li>
-                    <li><a asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-controller="Account" asp-action="Authentication">Sign In/Sign Up</a></li>
-                </ul>
-            </nav>
-
-            <!-- Search Bar -->
-            <div class="search-bar">
-                <input type="text" placeholder="Search your product">
-                <button class="search-btn">
-                    <i class="fas fa-search"></i>
-                </button>
+    <div class="parent-container">
+        <div class="headers-containter">
+            <!-- Top Header -->
+            <div class="top-header">
+                <!-- Optional: Add top header content here -->
             </div>
 
-            <!-- Cart Icon -->
-            <i class="fas fa-shopping-cart cart-icon"></i>
+            <!-- Logo -->
+            <div class="logo-container">
+                <h1>Gizmode</h1>
+            </div>
+
+
+            <!-- Main Header -->
+            <div class="main-header">
+
+                <!-- Navigation -->
+                <nav>
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>Dashboard</a></li>
+                        <li><a asp-controller="Product" asp-action="Product"><i class="fas fa-box"></i>Manage Products</a></li>
+                        <li><a asp-controller="Product" asp-action="ProductDetails"><i class="fas fa-tags"></i>View Products</a></li>
+                        <li><a><i class="fas fa-list"></i>Categories</a></li>
+                        <li><a><i class="fas fa-shopping-bag"></i>Orders</a></li>
+                        <li><a><i class="fas fa-users"></i>Customers</a></li>
+                        <li><a><i class="fas fa-user-shield"></i>Admin</a></li>
+                        <li><a><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        <li><a asp-controller="Account" asp-action="Authentication"><i class="fas fa-user"></i>Sign In/Sign Up</a></li>
+                    </ul>
+                </nav>
+
+                @* <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search your product">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Icon -->
+                <i class="fas fa-shopping-cart cart-icon"></i> *@
+            </div>
         </div>
-    </header>
 
-    <!--Main Body-->
-    <div class="main-container">
-        <main role="main">
-            @RenderBody()
-        </main>
+    
+        <!--Main Body-->
+        <div class="main-container">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
     </div>
-
+    
     <!-- Footer -->
     <footer>
         <div class="footer-container">
