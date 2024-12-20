@@ -215,7 +215,7 @@
                                 <a asp-action="EditProductPage" asp-route-id="@product.Id" class="btn btn-sm btn-outline-warning">
                                     <i class="fas fa-pencil-alt edit-icon"></i>
                                 </a>
-                                <form asp-action="Delete" asp-route-id="@product.Id" method="post">
+                                <form asp-action="DeleteProduct" asp-route-id="@product.Id" method="post">
                                     <button type="submit" class="btn btn-sm btn-outline-danger del-but">
                                         <i class="fas fa-trash-alt delete-prod-icon"></i> 
                                     </button>

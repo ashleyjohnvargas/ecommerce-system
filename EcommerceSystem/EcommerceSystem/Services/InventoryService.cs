@@ -63,5 +63,37 @@ namespace EcommerceSystem.Services
 
             // return response.IsSuccessStatusCode;
         }
+
+
+        public async Task<bool> DeleteProductInInventorySystem(int productId)
+        {
+            try
+            {
+                // InventorySystem API endpoint for setting a product as not being sold
+                string inventoryApiUrl = $"api/ProductsApi/SetProductAsNotBeingSold/{productId}";
+
+                // Create an empty content for the PUT request
+            // The empty content in the StringContent object is used to fulfill the requirement of the PutAsync method,
+            //  which expects an HttpContent parameter. In this case, the PUT request does not need to send any data in 
+            //  the body, so an empty StringContent is provided.
+                var content = new StringContent(string.Empty);
+
+                // Send a PUT request to the InventorySystem API
+                var response = await _httpClient.PutAsync(inventoryApiUrl, content);
+
+                // Check if the request was successful
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (implement a logging mechanism as needed)
+                Console.WriteLine($"Error deleting product in InventorySystem: {ex.Message}");
+                return false;
+            }
+        }
     }
 }
+
+
+
+

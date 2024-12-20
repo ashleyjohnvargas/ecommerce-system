@@ -48,6 +48,7 @@ namespace EcommerceSystem.Controllers
 
             // Fetch products for the current page
             var products = allProducts
+                            .Where(p => !p.IsDeleted && p.IsBeingSold)  // Exclude soft-deleted products
                             .Skip((page - 1) * pageSize) // Skip products from previous pages
                             .Take(pageSize) // Take products for the current page
                             .ToList();
@@ -121,7 +122,11 @@ namespace EcommerceSystem.Controllers
        public IActionResult ProductDetails()
         {
             // Fetch products and include their associated images
-            var products = _context.Products.Include(p => p.Images).ToList();
+            var products = _context.Products
+                .Include(p => p.Images)
+                            .Include(p => p.Images)
+                            .Where(p => !p.IsDeleted && p.IsBeingSold)  // Exclude soft-deleted products
+                            .ToList();
             return View(products);
         }
 
@@ -180,65 +185,30 @@ namespace EcommerceSystem.Controllers
             // Redirect the user to the product list or details page
             return RedirectToAction("Product");
         }
-            
+
+
+        // Delete Product in the Ecommerce by setting IsBeingSold to false
+        // When a product is deleted in the Ecommerce, the IsDeleted is not set true, instead, the IsBeingSold is set to false in the Inventory System
+        // It is not the job of the admin or manager of the Ecommerce to soft delete product by setting ISDeleted to true
+        // That is the job of the admin or manager of the Inventory System
+        // The Ecommerce admin or manager can only delete a product by setting IsBeingSold to false in the Inventory System
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = _context.Products.Find(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            await _inventoryService.DeleteProductInInventorySystem(id);
+
+            // Save changes to the database
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Product");
+        }    
 
     }
 }
 
 
-
-
-
-/* [HttpPost]
-        public async Task<IActionResult> EditProduct(Product product, IFormFile? Image)
-        {
-            if (!ModelState.IsValid)
-            {
-                // Return the user back to the form if the model state is invalid
-                Console.WriteLine("Error Editing Product!");
-                return View("EditProductPage", product);
-            }
-
-            // Find the existing product in the database
-            var existingProduct = await _context.Products.FindAsync(product.Id);
-            if (existingProduct == null)
-            {
-                return NotFound();
-            }
-
-            // Update the product fields with the new values from the form
-            existingProduct.Name = product.Name;
-            existingProduct.Description = product.Description;
-            existingProduct.Price = product.Price;
-            existingProduct.Color = product.Color;
-            existingProduct.Category = product.Category;
-
-            // Handle the image upload if a new image is provided
-            if (Image != null && Image.Length > 0)
-            {
-                // Define the file path to save the image
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", Image.FileName);
-
-                // Save the image to the server
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await Image.CopyToAsync(stream);
-                }
-
-                // Create a new ProductImage record
-                var productImage = new ProductImage
-                {
-                    ProductId = product.Id,
-                    FilePath = $"/images/products/{Image.FileName}"
-                };
-
-                // Add the new ProductImage to the context
-                _context.ProductImages.Add(productImage);
-            }
-
-            // Save the changes to the database
-            await _context.SaveChangesAsync();
-
-            // Redirect the user to the product list or details page
-            return RedirectToAction("Product");
-        }*/
