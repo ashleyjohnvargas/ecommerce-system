@@ -24,11 +24,9 @@ namespace EcommerceSystem.Models
         [MaxLength(50)]
         public string? Category { get; set; } // Optional category with a maximum length of 50
 
-        [Required]
         //[Range(0, int.MaxValue)]
         public int OriginalStock { get; set; } // Non-negative integer for original stock
 
-        [Required]
         //[Range(0, int.MaxValue)]
         public int CurrentStock { get; set; } // Non-negative integer for current stock
 

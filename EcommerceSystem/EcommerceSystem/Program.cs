@@ -14,6 +14,12 @@ builder.Services.AddHttpClient<ProductService>(client =>
     client.BaseAddress = new Uri("http://localhost:5263/"); // Replace with Inventory System URL
 });
 
+// Inventory service
+builder.Services.AddHttpClient<InventoryService>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5263/"); // Replace with Inventory System URL
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

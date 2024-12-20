@@ -11,11 +11,13 @@ namespace EcommerceSystem.Controllers
         private readonly ILogger<ProductController> _logger;
         private readonly ProductService _productService;
         private readonly ApplicationDbContext _context;
-        public ProductController(ILogger<ProductController> logger, ProductService productService, ApplicationDbContext context)
+        private readonly InventoryService _inventoryService;
+        public ProductController(ILogger<ProductController> logger, ProductService productService, ApplicationDbContext context, InventoryService inventoryService)
         {
             _logger = logger;
             _productService = productService;
             _context = context;
+            _inventoryService = inventoryService;
         }
 
         // returns product page html view
@@ -46,6 +48,7 @@ namespace EcommerceSystem.Controllers
 
             // Fetch products for the current page
             var products = allProducts
+                            .Where(p => !p.IsDeleted && p.IsBeingSold)  // Exclude soft-deleted products
                             .Skip((page - 1) * pageSize) // Skip products from previous pages
                             .Take(pageSize) // Take products for the current page
                             .ToList();
@@ -116,48 +119,96 @@ namespace EcommerceSystem.Controllers
             return RedirectToAction("Product");
         }
 
-
-
-
        public IActionResult ProductDetails()
         {
             // Fetch products and include their associated images
-            var products = _context.Products.Include(p => p.Images).ToList();
+            var products = _context.Products
+                .Include(p => p.Images)
+                            .Include(p => p.Images)
+                            .Where(p => !p.IsDeleted && p.IsBeingSold)  // Exclude soft-deleted products
+                            .ToList();
             return View(products);
         }
 
 
+        // GET: EditProduct
+        public IActionResult EditProductPage(int id)
+        {
+            var product = _context.Products.Find(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
+
+// Action for editing product details
+        [HttpPost]
+        public async Task<IActionResult> EditProduct(Product product, IFormFile? Image)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Return the user back to the form if the model state is invalid
+                Console.WriteLine("Error Editing Product!");
+                return View("EditProductPage", product);
+            }
+
+            // Handle the image upload if a new image is provided
+            if (Image != null && Image.Length > 0)
+            {
+                // Define the file path to save the image
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", Image.FileName);
+
+                // Save the image to the server
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Image.CopyToAsync(stream);
+                }
+
+                // Create a new ProductImage record
+                var productImage = new ProductImage
+                {
+                    ProductId = product.Id,
+                    FilePath = $"/images/products/{Image.FileName}"
+                };
+
+                // Add the new ProductImage to the context
+                _context.ProductImages.Add(productImage);
+            }
+
+            // Update the product details in the Inventory System
+            await _inventoryService.UpdateProductInInventorySystem(product);
+
+            // Save the changes to the database
+            await _context.SaveChangesAsync();
+
+            // Redirect the user to the product list or details page
+            return RedirectToAction("Product");
+        }
 
 
+        // Delete Product in the Ecommerce by setting IsBeingSold to false
+        // When a product is deleted in the Ecommerce, the IsDeleted is not set true, instead, the IsBeingSold is set to false in the Inventory System
+        // It is not the job of the admin or manager of the Ecommerce to soft delete product by setting ISDeleted to true
+        // That is the job of the admin or manager of the Inventory System
+        // The Ecommerce admin or manager can only delete a product by setting IsBeingSold to false in the Inventory System
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = _context.Products.Find(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
 
-        // // For pagination of Product Details
-        // public async Task<IActionResult> ProductDetails(int page = 1)
-        // {
-        //     int pageSize = 9; // 9 products per page (3 rows of 3 products)
+            await _inventoryService.DeleteProductInInventorySystem(id);
 
-        //     // Fetch all products from the database
-        //     var products = _context.Products.Include(p => p.Images);
+            // Save changes to the database
+            await _context.SaveChangesAsync();
 
-        //     // Apply pagination
-        //     var paginatedProducts = products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
-
-        //     // Get the total number of products to calculate total pages
-        //     var totalProducts = products.Count();
-        //     var totalPages = (int)Math.Ceiling(totalProducts / (double)pageSize);
-
-        //     // Create a PaginatedProductModel to pass the paginated data
-        //     var model = new PaginatedProductModel
-        //     {
-        //         Products = paginatedProducts,
-        //         CurrentPage = page,
-        //         TotalPages = totalPages,
-        //         PageSize = pageSize
-        //     };
-
-        //     return View(model);
-        // }
-
-
+            return RedirectToAction("Product");
+        }    
 
     }
 }
+
+
