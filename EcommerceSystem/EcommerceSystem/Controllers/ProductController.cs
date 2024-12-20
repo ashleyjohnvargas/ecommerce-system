@@ -11,11 +11,13 @@ namespace EcommerceSystem.Controllers
         private readonly ILogger<ProductController> _logger;
         private readonly ProductService _productService;
         private readonly ApplicationDbContext _context;
-        public ProductController(ILogger<ProductController> logger, ProductService productService, ApplicationDbContext context)
+        private readonly InventoryService _inventoryService;
+        public ProductController(ILogger<ProductController> logger, ProductService productService, ApplicationDbContext context, InventoryService inventoryService)
         {
             _logger = logger;
             _productService = productService;
             _context = context;
+            _inventoryService = inventoryService;
         }
 
         // returns product page html view
@@ -135,5 +137,108 @@ namespace EcommerceSystem.Controllers
             return View(product);
         }
 
+// Action for editing product details
+        [HttpPost]
+        public async Task<IActionResult> EditProduct(Product product, IFormFile? Image)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Return the user back to the form if the model state is invalid
+                Console.WriteLine("Error Editing Product!");
+                return View("EditProductPage", product);
+            }
+
+            // Handle the image upload if a new image is provided
+            if (Image != null && Image.Length > 0)
+            {
+                // Define the file path to save the image
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", Image.FileName);
+
+                // Save the image to the server
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Image.CopyToAsync(stream);
+                }
+
+                // Create a new ProductImage record
+                var productImage = new ProductImage
+                {
+                    ProductId = product.Id,
+                    FilePath = $"/images/products/{Image.FileName}"
+                };
+
+                // Add the new ProductImage to the context
+                _context.ProductImages.Add(productImage);
+            }
+
+            // Update the product details in the Inventory System
+            await _inventoryService.UpdateProductInInventorySystem(product);
+
+            // Save the changes to the database
+            await _context.SaveChangesAsync();
+
+            // Redirect the user to the product list or details page
+            return RedirectToAction("Product");
+        }
+            
+
     }
 }
+
+
+
+
+
+/* [HttpPost]
+        public async Task<IActionResult> EditProduct(Product product, IFormFile? Image)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Return the user back to the form if the model state is invalid
+                Console.WriteLine("Error Editing Product!");
+                return View("EditProductPage", product);
+            }
+
+            // Find the existing product in the database
+            var existingProduct = await _context.Products.FindAsync(product.Id);
+            if (existingProduct == null)
+            {
+                return NotFound();
+            }
+
+            // Update the product fields with the new values from the form
+            existingProduct.Name = product.Name;
+            existingProduct.Description = product.Description;
+            existingProduct.Price = product.Price;
+            existingProduct.Color = product.Color;
+            existingProduct.Category = product.Category;
+
+            // Handle the image upload if a new image is provided
+            if (Image != null && Image.Length > 0)
+            {
+                // Define the file path to save the image
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", Image.FileName);
+
+                // Save the image to the server
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Image.CopyToAsync(stream);
+                }
+
+                // Create a new ProductImage record
+                var productImage = new ProductImage
+                {
+                    ProductId = product.Id,
+                    FilePath = $"/images/products/{Image.FileName}"
+                };
+
+                // Add the new ProductImage to the context
+                _context.ProductImages.Add(productImage);
+            }
+
+            // Save the changes to the database
+            await _context.SaveChangesAsync();
+
+            // Redirect the user to the product list or details page
+            return RedirectToAction("Product");
+        }*/

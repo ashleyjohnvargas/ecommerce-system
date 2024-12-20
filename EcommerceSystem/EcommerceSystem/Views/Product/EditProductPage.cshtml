@@ -18,7 +18,7 @@
             <div class="card-body">
                 <form asp-action="EditProduct" method="post" enctype="multipart/form-data">
                     <!-- Hidden Product ID -->
-                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" name="Id" asp-for="Id" />
 
                     <!-- Product Image -->
                     <div class="form-group mb-4">
@@ -37,19 +37,19 @@
                     <!-- Product Name -->
                     <div class="form-group mb-4">
                         <label for="Name" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Product Name</label>
-                        <input type="text" class="form-control form-control-lg" id="Name" asp-for="Name" required style="width: 93%;" />
+                        <input type="text" class="form-control form-control-lg" id="Name" name="Name" asp-for="Name" style="width: 93%;" required />
                     </div>
 
                     <!-- Product Description -->
                     <div class="form-group mb-4">
                         <label for="Description" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Product Description</label>
-                        <textarea class="form-control form-control-lg" id="Description" asp-for="Description" rows="3" placeholder="Enter a brief description..." required style="width: 93%;"></textarea>
+                        <textarea class="form-control form-control-lg" id="Description" name="Description" asp-for="Description" rows="3" placeholder="Enter a brief description..." style="width: 93%;" ></textarea>
                     </div>
 
                     <!-- Base Price -->
                     <div class="form-group mb-4">
                         <label for="Price" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Base Price</label>
-                        <input type="number" step="0.01" class="form-control form-control-lg" id="Price" asp-for="Price" placeholder="e.g., 59.99" required style="width: 93%;" />
+                        <input type="number" step="0.01" class="form-control form-control-lg" id="Price" name="Price" asp-for="Price" placeholder="e.g., 59.99" style="width: 93%;" required />
                     </div>
 
                     <!-- Color -->
@@ -61,8 +61,29 @@
                     <!-- Category -->
                     <div class="form-group mb-4">
                         <label for="Category" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Category</label>
-                        <input type="text" class="form-control form-control-lg" id="Category" asp-for="Category" placeholder="e.g., Electronics" required style="width: 93%;" />
+                        <input type="text" class="form-control form-control-lg" id="Category" name="Category" asp-for="Category" placeholder="e.g., Electronics" style="width: 93%;" />
                     </div>
+
+                    <!-- Hidden Original Stock -->
+                    <input type="hidden" name="OriginalStock" asp-for="OriginalStock" />
+
+                    <!-- Hidden Current Stock-->
+                    <input type="hidden" name="CurrentStock" asp-for="CurrentStock" />
+
+                    <!-- Hidden Stock Status-->
+                    <input type="hidden" name="StockStatus" asp-for="StockStatus" />
+
+                    <!-- Hidden Is Being Sold -->
+                    <input type="hidden" name="IsBeingSold" asp-for="IsBeingSold" />
+
+                    <!-- Hidden Is Deleted -->
+                    <input type="hidden" name="IsDeleted" asp-for="IsDeleted" />
+
+                    <!-- Hidden Date Added -->
+                    <input style="display: none;" type="hidden" name="DateAdded" asp-for="DateAdded" required/>
+
+                    <!-- Hidden Images -->
+                    <input type="hidden" name="Images" asp-for="Images" />
 
                     <!-- Submit Button -->
                     <div class="text-center">
