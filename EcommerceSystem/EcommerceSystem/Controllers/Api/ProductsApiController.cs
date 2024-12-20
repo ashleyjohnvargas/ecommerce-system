@@ -24,7 +24,7 @@ namespace EcommerceSystem.Controllers.Api
             return BadRequest("Invalid product data.");
         }
 
-        // Find the product in the InventorySystem database
+        // Find the product in the EcommerceSystem database
         var existingProduct = _context.Products.FirstOrDefault(p => p.Id == product.Id);
 
         if (existingProduct == null)
