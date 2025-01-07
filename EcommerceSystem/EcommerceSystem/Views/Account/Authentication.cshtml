@@ -1,71 +1,60 @@
-@model EcommerceSystem.Models.Customer
-
 @{
-    Layout = null; // Disable layout for this view
     ViewData["Title"] = "Authentication";
+    Layout = null;
 }
+
+@model User
+
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-        <link rel="stylesheet" href="~/css/login.css" asp-append-version="true">
-        <title>@ViewData["Title"]</title>
-    </head>
-    <body>
-        <div class="container" id="container">
-            <!-- Sign Up Form -->
-            <div class="form-container sign-up">
-                <form asp-action="Register" asp-controller="Account" method="post">
-                    <h1>Create an Account</h1>
-                    @if (ViewBag.RegisterErrorMessage != null) // you can change the position of this error message for sign up
-                    {
-                        <div class="alert alert-danger">
-                            @ViewBag.RegisterErrorMessage
-                        </div>
-                    }
-                    <div class="social-icons">
-                        <a href="https://accounts.google.com/" target="_blank" class="icon"><i class="fa-brands fa-google"></i></a>
-                        <a href="https://www.facebook.com/" target="_blank" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://x.com/i/flow/login?lang=en" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://login.yahoo.com/" class="icon"><i class="fa-brands fa-yahoo"></i></a>
-                    </div>
-                    <span>or use your email for registration</span>
-                    <input asp-for="Name" placeholder="Name" required />
-                    <input asp-for="Email" type="email" placeholder="Email" required />
-                    <input asp-for="Password" type="password" placeholder="Password" required />
-                    <input asp-for="PhoneNumber" type="text" placeholder="Phone Number (Optional)" />
-                    <input asp-for="Address" placeholder="Address (Optional)" />
-                    <button type="submit">Sign Up</button>
-                </form>
-            </div>
-            <!-- Sign In Form -->
-            <div class="form-container sign-in">
-                <form asp-action="Login" asp-controller="Account" method="post">
-                    <h1>Sign In</h1>
-                    <div class="social-icons">
-                        <a href="https://accounts.google.com/" class="icon"><i class="fa-brands fa-google"></i></a>
-                        <a href="https://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://x.com/i/flow/login?lang=en" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://login.yahoo.com/" class="icon"><i class="fa-brands fa-yahoo"></i></a>
-                    </div>
-                    <span>or use your email and password</span>
-                    <input asp-for="Email" type="email" placeholder="Email" required />
-                    <input asp-for="Password" type="password" placeholder="Password" required />
-                    @if (ViewBag.LoginErrorMessage != null)
-                    {
-                        <div class="alert alert-danger" style="font-size: 12px; color:red;">
-                            @ViewBag.LoginErrorMessage
-                        </div>
-                    }
-                    <a href="#">Forgot Your Password?</a>
-                    <button type="submit">Sign In</button>
-                </form>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/authentication.css">
+    <title>Gizmode: Sign-In</title>
+</head>
+<body>
 
-            <div class="toggle-container">
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form asp-action="Register" method="post">
+                <h1>Create an Account</h1>
+                <div class="social-icons">
+                    <a href="https://accounts.google.com/" target="_blank" class="icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://x.com/i/flow/login?lang=en" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://login.yahoo.com/" class="icon"><i class="fa-brands fa-yahoo"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" asp-for="UserName" placeholder="Username">
+                <input type="email" asp-for="Email" placeholder="Email">
+                <input type="password" asp-for="Password" placeholder="Password">
+                <!--Below are the hidden inputs-->
+                <input type="hidden" asp-for="Id">
+                <input type="hidden" asp-for="PhoneNumber">
+                <input type="hidden" asp-for="Address">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form asp-action="Login" method="post">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="https://accounts.google.com/" class="icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://x.com/i/flow/login?lang=en" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://login.yahoo.com/" class="icon"><i class="fa-brands fa-yahoo"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
                     <h1>Hi again, Friend!</h1>
@@ -79,7 +68,9 @@
                 </div>
             </div>
         </div>
-        </div>
-        <script src="~/js/login.js"></script>
-    </body>
+    </div>
+
+    <script src="~/js/authentication.js"></script>
+</body>
+
 </html>

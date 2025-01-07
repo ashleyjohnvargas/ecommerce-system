@@ -1,0 +1,160 @@
+
+/* General reset */
+body, html {
+    height: 100%; /* Ensure the body and html take full height */
+}
+
+body {
+    min-height: 100%; /* Ensure the body takes full height of the viewport */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100%; /* Ensure body takes full height */
+}
+
+.parent-container {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap:15px;;
+    background-color: #f9f9f9;
+    height:auto;
+}
+
+.headers-container {
+    display: flex; /* Use flex to ensure children align properly */
+    flex-direction: column; /* Ensure content stacks vertically */
+    height: auto; /* Let it adjust based on content */
+    background-color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+/* Top Bar Header */
+.top-header {
+    background-image: linear-gradient(to right, violet, #8a2be2);
+    color: white;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Main Header Container */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    color: white;
+    margin: 0;
+    background-color: black;
+    min-height: 100vh;
+}
+
+nav {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+ul {
+    display: flex;
+    flex-direction:column;
+    gap:13px;
+    list-style: none;
+    margin:0 0 0 93px;
+    padding:0;
+    min-width: 100%;
+}
+
+li {
+    margin:0;
+    transition: all 0.3s ease-in-out;
+}
+
+li:hover {
+    transform: scale(1.1);
+    transform: translateX(5px);
+}
+
+li a {
+    padding:0%;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: all 0.1s ease-in-out; 
+}
+
+li a:hover {
+    background-image: linear-gradient(to right, violet, #8a2be2);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+} 
+
+i {
+    margin-right: 10px;
+}
+
+/* Logo Container */
+.logo-container {
+    background-color: black; /* Black background for the container */
+    text-align: center; /* Center the h1 inside the container */
+    padding: 20px; /* Add some padding for better spacing */
+    padding-bottom: 25px;
+}
+
+/* Logo */
+h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: bold;
+    background-image: linear-gradient(to right, violet, #8a2be2);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Banner Image */
+.banner {
+    margin-top: 0;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+    z-index: 100;
+    width: 100%; /* Prevent unexpected behavior in smaller containers */
+}
+
+footer p {
+    text-align: center;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

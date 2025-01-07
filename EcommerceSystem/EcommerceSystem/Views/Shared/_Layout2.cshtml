@@ -1,0 +1,187 @@
+@* <!--LAYOUT FOR Customer User in Ecommerce-->
+<!--LAYOUT FOR Customer User in Ecommerce-->
+<!--LAYOUT FOR Customer User in Ecommerce-->
+<!--LAYOUT FOR Customer User in Ecommerce-->
+<!--LAYOUT FOR Customer User in Ecommerce-->
+<!--LAYOUT FOR Customer User in Ecommerce-->
+<head>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/customerLayout.css" />
+</head>
+
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <!-- Optional: Add top header content here -->
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="main-header">
+            <!-- Logo -->
+            <h1>Gizmode</h1>
+
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="CustomerIndex">Home</a></li>
+                    <li><a asp-controller="Product" asp-action="CustomerAllProducts">Products</a></li>
+                    <li><a asp-controller="Account" asp-action="Authentication">Sign In/Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search your product">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Cart Icon and Profile Icon -->
+            <div class="cart-profile-icons">
+                <!-- Cart icon -->
+                <a asp-controller="Cart" asp-action="CustomerCart"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                <!-- Profile icon -->
+                <div class="profile-container">
+                    <i class="fas fa-user profile-icon"></i> 
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-link">Profile</a>
+                        <a href="#" class="dropdown-link"><i class="fas fa-sign-out-alt logout-icon"></i>Logout</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container" id="main-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Gizmode. All rights reserved.</p>
+            <p>
+                Follow us on:
+                <a href="#">Facebook</a>,
+                <a href="#">Twitter</a>,
+                <a href="#">Instagram</a>
+            </p>
+        </div>
+    </footer>
+</body>
+ *@
+
+ @using Microsoft.AspNetCore.Http
+<head>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/customerLayout.css" />
+</head>
+
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <!-- Optional: Add top header content here -->
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="main-header">
+            <!-- Logo -->
+            <h1>Gizmode</h1>
+
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="CustomerIndex">Home</a></li>
+                    <li><a asp-controller="Product" asp-action="CustomerAllProducts">Products</a></li>
+                    @if (Context.Session.GetInt32("UserId") == null)
+                    {
+                        <!-- Display "Sign In/Sign Up" when user is not logged in -->
+                        <li><a asp-controller="Account" asp-action="Authentication">Sign In/Sign Up</a></li>
+                    }
+                    else
+                    {
+                        <!-- Display "Contact" when user is logged in -->
+                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    }
+                </ul>
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search your product">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Cart Icon and Profile Icon -->
+            <div class="cart-profile-icons">
+                <!-- Cart icon -->
+                @if (Context.Session.GetInt32("UserId") == null)
+                {
+                    <!-- Redirect to Authentication if user is not logged in -->
+                    <a asp-controller="Account" asp-action="Authentication"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                }
+                else
+                {
+                    <!-- Redirect to CustomerCart if user is logged in -->
+                    <a asp-controller="Cart" asp-action="CustomerCart"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                }
+
+                <!-- Profile icon -->
+                <div class="profile-container">
+                    <i class="fas fa-user profile-icon"></i>
+                    @if (Context.Session.GetInt32("UserId") == null)
+                    {
+                        <!-- Hide dropdown and redirect to Authentication on click if user is not logged in -->
+                        <script>
+                            document.querySelector('.profile-icon').addEventListener('click', () => {
+                                window.location.href = '@Url.Action("Authentication", "Account")';
+                            });
+                        </script>
+                    }
+                    else
+                    {
+                        <!-- Display dropdown and redirect to Profile on click if user is logged in -->
+                        <div class="dropdown-menu">
+                            <a class="dropdown-link">Profile</a>
+                            <a asp-controller="Account" asp-action="Logout" class="dropdown-link">
+                                <i class="fas fa-sign-out-alt logout-icon"></i>Logout
+                            </a>
+                        </div>  
+                    }
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container" id="main-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Gizmode. All rights reserved.</p>
+            <p>
+                Follow us on:
+                <a href="#">Facebook</a>,
+                <a href="#">Twitter</a>,
+                <a href="#">Instagram</a>
+            </p>
+        </div>
+    </footer>
+</body>

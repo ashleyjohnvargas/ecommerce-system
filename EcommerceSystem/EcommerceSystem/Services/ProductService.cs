@@ -29,11 +29,16 @@ namespace EcommerceSystem.Services
             _context = context;
         }
 
-        public async Task<List<Product>> GetAllProductsAsync()
+        public virtual async Task<List<Product>> GetAllProductsAsync()
         {
+            // response is an HTTP content that contains JSON content
+            // Basically, the response from the request is in JSON content format
             var response = await _httpClient.GetAsync("api/ProductsApi/GetAllProducts"); // Correct endpoint
             response.EnsureSuccessStatusCode();
             var products = await response.Content.ReadFromJsonAsync<List<Product>>();
+            // ReadFromJsonAsync purpose:  It is used to deserialize the JSON content of an HTTP response into a strongly-typed .NET object or collection.
+            // Thus, the products above is in List<Product> object format, and not JSON format
+            // Please go to the bottom part of the page to see how JSON and List looks like in the backend.
 
             // Persist the products into the EcommerceSystem database
             if (products != null && products.Any())
@@ -110,3 +115,80 @@ namespace EcommerceSystem.Services
 
     }
 }
+
+
+
+/*
+This is how JSON looks like:
+[
+  {
+    "Id": 1,
+    "Name": "Smartphone",
+    "Description": "High-end smartphone",
+    "Price": 699.99,
+    "Color": "Black",
+    "Category": "Electronics",
+    "OriginalStock": 50,
+    "CurrentStock": 20,
+    "StockStatus": "In Stock",
+    "IsBeingSold": true,
+    "IsDeleted": false,
+    "DateAdded": "2024-12-01T00:00:00"
+  },
+  {
+    "Id": 2,
+    "Name": "Laptop",
+    "Description": "Gaming laptop",
+    "Price": 1499.99,
+    "Color": "Silver",
+    "Category": "Computers",
+    "OriginalStock": 30,
+    "CurrentStock": 15,
+    "StockStatus": "In Stock",
+    "IsBeingSold": true,
+    "IsDeleted": false,
+    "DateAdded": "2024-12-02T00:00:00"
+  }
+]
+
+
+
+Then this is how List looks like:
+
+List<Product> products = new List<Product>
+{
+    new Product
+    {
+        Id = 1,
+        Name = "Smartphone",
+        Description = "High-end smartphone",
+        Price = 699.99,
+        Color = "Black",
+        Category = "Electronics",
+        OriginalStock = 50,
+        CurrentStock = 20,
+        StockStatus = "In Stock",
+        IsBeingSold = true,
+        IsDeleted = false,
+        DateAdded = DateTime.Parse("2024-12-01T00:00:00")
+    },
+    new Product
+    {
+        Id = 2,
+        Name = "Laptop",
+        Description = "Gaming laptop",
+        Price = 1499.99,
+        Color = "Silver",
+        Category = "Computers",
+        OriginalStock = 30,
+        CurrentStock = 15,
+        StockStatus = "In Stock",
+        IsBeingSold = true,
+        IsDeleted = false,
+        DateAdded = DateTime.Parse("2024-12-02T00:00:00")
+    }
+};
+
+
+
+*/

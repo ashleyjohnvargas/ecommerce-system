@@ -1,379 +1,395 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\about.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\about.css",
       "PackagePath": "staticwebassets\\css\\about.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\login.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\adminLayout.css",
+      "PackagePath": "staticwebassets\\css\\adminLayout.css"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\authentication.css",
+      "PackagePath": "staticwebassets\\css\\authentication.css"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\customerAllProducts.css",
+      "PackagePath": "staticwebassets\\css\\customerAllProducts.css"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\customerCart.css",
+      "PackagePath": "staticwebassets\\css\\customerCart.css"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\customerLayout.css",
+      "PackagePath": "staticwebassets\\css\\customerLayout.css"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\productDetails.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\productDetails.css",
       "PackagePath": "staticwebassets\\css\\productDetails.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\about.html",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\71EVBJVMSoL.jpg",
+      "PackagePath": "staticwebassets\\images\\71EVBJVMSoL.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\Screenshot 2025-01-06 093955.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2025-01-06 093955.png"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\SmartwatchCOLMIP76blackbuttonleftview.webp",
+      "PackagePath": "staticwebassets\\images\\SmartwatchCOLMIP76blackbuttonleftview.webp"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\about.html",
       "PackagePath": "staticwebassets\\images\\about.html"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ash.jpg",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ash.jpg",
       "PackagePath": "staticwebassets\\images\\ash.jpg"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\camera.jpg",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\camera.jpg",
       "PackagePath": "staticwebassets\\images\\camera.jpg"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\che.jpg",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\che.jpg",
       "PackagePath": "staticwebassets\\images\\che.jpg"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\headphones.jpeg",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\headphones.jpeg",
       "PackagePath": "staticwebassets\\images\\headphones.jpeg"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\homepage.html",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\homepage.html",
       "PackagePath": "staticwebassets\\images\\homepage.html"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\laptop.html",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\item-1-638647379620869041-3kf1bc.jpeg",
+      "PackagePath": "staticwebassets\\images\\item-1-638647379620869041-3kf1bc.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\laptop.html",
       "PackagePath": "staticwebassets\\images\\laptop.html"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\laptop.jpg",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\laptop.jpg",
       "PackagePath": "staticwebassets\\images\\laptop.jpg"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\pdetails.html",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\online-electronics-shopping-delivery-banner-260nw-2267698723.webp",
+      "PackagePath": "staticwebassets\\images\\online-electronics-shopping-delivery-banner-260nw-2267698723.webp"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\pdetails.html",
       "PackagePath": "staticwebassets\\images\\pdetails.html"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\pfp-example.png",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\pfp-example.png",
       "PackagePath": "staticwebassets\\images\\pfp-example.png"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\phone.webp",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\phone.webp",
       "PackagePath": "staticwebassets\\images\\phone.webp"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products.html",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products.html",
       "PackagePath": "staticwebassets\\images\\products.html"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\043DROGFihmSgG7S6LUb006-1.webp",
-      "PackagePath": "staticwebassets\\images\\products\\043DROGFihmSgG7S6LUb006-1.webp"
-    },
-    {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\184940_2022.jpg",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\184940_2022.jpg",
       "PackagePath": "staticwebassets\\images\\products\\184940_2022.jpg"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\61wQNtMZHgL._AC_SL1500_.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\61wQNtMZHgL._AC_SL1500_.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\71EVBJVMSoL.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\71EVBJVMSoL.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\Everyday-Essentials-All-Purpose-1-2-Inch-High-Density-Foam-Exercise-Yoga-Mat-Anti-Tear-with-Carrying-Strap-Blue_f4b717d9-6dc1-4198-b0f8-3e88d8a2d09f.02e132731c4b639cee0057c099b45f37.webp",
-      "PackagePath": "staticwebassets\\images\\products\\Everyday-Essentials-All-Purpose-1-2-Inch-High-Density-Foam-Exercise-Yoga-Mat-Anti-Tear-with-Carrying-Strap-Blue_f4b717d9-6dc1-4198-b0f8-3e88d8a2d09f.02e132731c4b639cee0057c099b45f37.webp"
-    },
-    {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\IPHONE15PLUS1_COLOR-PINK_CAPACITY-ALL_1000x.webp",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\IPHONE15PLUS1_COLOR-PINK_CAPACITY-ALL_1000x.webp",
       "PackagePath": "staticwebassets\\images\\products\\IPHONE15PLUS1_COLOR-PINK_CAPACITY-ALL_1000x.webp"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\bae7bc14-dcc1-11ec-a0c8-f26ae8b7d411.webp",
-      "PackagePath": "staticwebassets\\images\\products\\bae7bc14-dcc1-11ec-a0c8-f26ae8b7d411.webp"
-    },
-    {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\beautiful-unique-logo-design-ecommerce-retail-company_1287271-11486.avif",
-      "PackagePath": "staticwebassets\\images\\products\\beautiful-unique-logo-design-ecommerce-retail-company_1287271-11486.avif"
-    },
-    {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\iphone__kqge21l9n26q_og.png",
-      "PackagePath": "staticwebassets\\images\\products\\iphone__kqge21l9n26q_og.png"
-    },
-    {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\microsoft-surface-laptop-138-touch-snapdragon-x-elite-integrated-qualcomm-adreno-32gb-lpddr5x-1tb-ssd-.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\microsoft-surface-laptop-138-touch-snapdragon-x-elite-integrated-qualcomm-adreno-32gb-lpddr5x-1tb-ssd-.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5-down.webp",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5-down.webp",
       "PackagePath": "staticwebassets\\images\\ps5-down.webp"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5-front.webp",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5-front.webp",
       "PackagePath": "staticwebassets\\images\\ps5-front.webp"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5-side.webp",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5-side.webp",
       "PackagePath": "staticwebassets\\images\\ps5-side.webp"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5.webp",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5.webp",
       "PackagePath": "staticwebassets\\images\\ps5.webp"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\sarah.webp",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\sarah.webp",
       "PackagePath": "staticwebassets\\images\\sarah.webp"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\smartphones.html",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\smartphones.html",
       "PackagePath": "staticwebassets\\images\\smartphones.html"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\user-settings.html",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\user-settings.html",
       "PackagePath": "staticwebassets\\images\\user-settings.html"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\login.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\authentication.js",
+      "PackagePath": "staticwebassets\\js\\authentication.js"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\productDetails.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\productDetails.js",
       "PackagePath": "staticwebassets\\js\\productDetails.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

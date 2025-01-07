@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General reset */
+body, ul {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Top Bar Header */
+.top-header {
+    background-image: linear-gradient(to right, violet, #8a2be2);
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Main Header Container */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+}
+
+    /* Logo */
+    .main-header h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: bold;
+        background-image: linear-gradient(to right, violet, #8a2be2);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    /* Navigation Menu */
+    .main-header nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .main-header nav ul li {
+            margin: 0 15px;
+        }
+
+            .main-header nav ul li a {
+                text-decoration: none;
+                color: white;
+                font-size: 1rem;
+                transition: color 0.3s ease;
+                padding: 5px 10px;
+            }
+
+                .main-header nav ul li a:hover {
+                    color: #ffd700;
+                }
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+    .search-bar input {
+        padding: 8px;
+        width: 100%;
+        border: none;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        font-size: 0.9rem;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 0 20px 20px 0;
+}
+
+    .search-btn i {
+        font-size: 1.5rem;
+        color: violet   ;
+        transition: color 0.3s ease;
+    }
+
+    .search-btn:hover i {
+        color: #ffd700;
+    }
+
+/* Cart and Profile Icon Container */
+.cart-profile-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 40px;
+}
+
+/* Cart Icon */
+.cart-icon {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px; /* Space between cart and profile icons */
+    transition: color 0.3s ease;
+}
+
+.cart-icon:hover {
+    color: #ffd700;
+}
+
+/* Profile Icon Container for Hover */
+.profile-container {
+    position: relative; /* Make sure the dropdown positions correctly relative to the profile icon */
+    padding: 10px;
+}
+
+/* Profile Icon */
+.profile-icon {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+    color: #ffd700;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    top: 100%; /* Position the dropdown directly below the profile icon */
+    left: 50%; /* Position the dropdown to the center horizontally */
+    transform: translateX(-50%); /* Offset by 50% of its width to center it */
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the dropdown is above other elements */
+}
+
+.profile-container:hover .dropdown-menu {
+    display: block; /* Show the dropdown when hovering over the profile icon container */
+}
+
+/* Dropdown Links */
+.dropdown-link {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 80px;
+}
+
+.dropdown-link:hover {
+    background-color: #8a2be2;
+    color: #fff;
+}
+
+/* Logout Icon */
+.logout-icon {
+    margin-right: 8px;
+}
+
+
+/* Main Content*/
+#main-content {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+    footer p {
+        text-align: center;
+    }
+
+    footer a {
+        color: #ffd700;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }

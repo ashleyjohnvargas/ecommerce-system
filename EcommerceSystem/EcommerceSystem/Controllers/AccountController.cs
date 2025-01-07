@@ -20,35 +20,71 @@ namespace EcommerceSystem.Controllers
             return View();
         }
 
+        // Action for storing the user's data after registration or sign up
+        public IActionResult Register(User user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+
+            // Store user information in the session
+            HttpContext.Session.SetInt32("UserId", user.Id);
+            HttpContext.Session.SetString("UserName", user.UserName);
+            HttpContext.Session.SetString("Email", user.Email);
+            HttpContext.Session.SetString("PhoneNumber", user.PhoneNumber ?? string.Empty);
+            HttpContext.Session.SetString("Address", user.Address ?? string.Empty);
+
+             // Check if the email contains "@admin"
+            if (user.Email.Contains("@admin"))
+            {
+                // Redirect to the desired controller and action for admin
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                // Redirect to the default Index action of Home controller
+                return RedirectToAction("CustomerIndex", "Home");
+            }
+        }
+
+
+        // Action for logging in the user
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Register(Customer customer)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Customers.Add(customer);
-                _context.SaveChanges();
-                return RedirectToAction("Index", "Home"); // if successful sign up, go to the home page
-            }
-            ViewBag.RegisterErrorMessage = "Please provide accurate information.";
-            return View("Authentication");
-        }
-
-        [HttpPost]
         public IActionResult Login(string email, string password)
         {
-            var customer = _context.Customers
-                .FirstOrDefault(c => c.Email == email && c.Password == password);
-
-            if (customer != null)
+            var user = _context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            if (user != null)
             {
-                // Logic for successful login
-                return RedirectToAction("Index", "Home"); // Redirect to home
+                // Store user information in the session
+                HttpContext.Session.SetInt32("UserId", user.Id);
+                HttpContext.Session.SetString("UserName", user.UserName);
+                HttpContext.Session.SetString("Email", user.Email);
+                HttpContext.Session.SetString("PhoneNumber", user.PhoneNumber ?? string.Empty);
+                HttpContext.Session.SetString("Address", user.Address ?? string.Empty);
+
+                // Check if the email contains "@admin"
+                if (email.Contains("@admin"))
+                {
+                    // Redirect to the desired controller and action for admin
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    // Redirect to the default Index action of Home controller
+                    return RedirectToAction("CustomerIndex", "Home");
+                }
             }
 
-            ViewBag.LoginErrorMessage = "Invalid email or password.";
+            ViewBag.ErrorMessage = "Invalid email or password";
             return View("Authentication");
         }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Authentication");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\EcommerceSystem.csproj": {}
+    "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\EcommerceSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\EcommerceSystem.csproj": {
+    "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\EcommerceSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\EcommerceSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\EcommerceSystem.csproj",
         "projectName": "EcommerceSystem",
-        "projectPath": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\EcommerceSystem.csproj",
+        "projectPath": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\EcommerceSystem.csproj",
         "packagesPath": "C:\\Users\\Angel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Angel\\OneDrive\\Documents\\ashley\\Integrated Systems\\Ecommerce\\EcommerceSystem\\EcommerceSystem\\obj\\",
+        "outputPath": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Angel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"

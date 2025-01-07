@@ -1,4 +1,11 @@
 ﻿
+
+<!--LAYOUT FOR Admin User in Ecommerce-->
+<!--LAYOUT FOR Admin User in Ecommerce-->
+<!--LAYOUT FOR Admin User in Ecommerce-->
+<!--LAYOUT FOR Admin User in Ecommerce-->
+<!--LAYOUT FOR Admin User in Ecommerce-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,218 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
-    <style>
-        * {
-            font-family: "Poppins", serif;
-        }
-        /* General reset */
-        body, html {
-            height: 100%; /* Ensure the body and html take full height */
-        }
-
-        body {
-            min-height: 100%; /* Ensure the body takes full height of the viewport */
-        }
-
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            min-height: 100%; /* Ensure body takes full height */
-        }
-
-        .parent-container {
-            display: grid;
-            grid-template-columns: 290px 1fr;
-            gap:15px;;
-            background-color: #f9f9f9;
-            height:auto;
-        }
-
-        .headers-container {
-            display: flex; /* Use flex to ensure children align properly */
-            flex-direction: column; /* Ensure content stacks vertically */
-            height: auto; /* Let it adjust based on content */
-            background-color: black;
-        }
-
-        header {
-            display: flex;
-            flex-direction: column;
-            background-color: black;
-        }
-
-        /* Top Bar Header */
-        .top-header {
-            background-image: linear-gradient(to right, violet, #8a2be2);
-            color: white;
-            padding: 8px 20px;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        /* Main Header Container */
-        .main-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap:15px;
-            color: white;
-            margin: 0;
-            background-color: black;
-            min-height: 100vh;
-        }
-
-        nav {
-            min-width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        } 
-
-        ul {
-            display: flex;
-            flex-direction:column;
-            gap:13px;
-            list-style: none;
-            margin:0 0 0 93px;
-            padding:0;
-            min-width: 100%;
-        }
-
-        li {
-            margin:0;
-            transition: all 0.3s ease-in-out;
-        }
-
-        li:hover {
-            transform: scale(1.1);
-            transform: translateX(5px);
-        }
-
-        li a {
-            padding:0%;
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-            transition: all 0.1s ease-in-out; 
-        }
-
-        li a:hover {
-            background-image: linear-gradient(to right, violet, #8a2be2);
-            -webkit-background-clip: text;
-            color: transparent;
-            font-weight: bold;
-        } 
-
-        i {
-            margin-right: 10px;
-        }
-
-        /* Logo Container */
-        .logo-container {
-            background-color: black; /* Black background for the container */
-            text-align: center; /* Center the h1 inside the container */
-            padding: 20px; /* Add some padding for better spacing */
-            padding-bottom: 25px;
-        }
-
-        /* Logo */
-        h1 {
-            font-size: 1.8rem;
-            margin: 0;
-            font-weight: bold;
-            background-image: linear-gradient(to right, violet, #8a2be2);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        @* /* Search Bar */
-        .search-bar {
-            display: flex;
-            align-items: center;
-            width: 300px;
-        }
-
-        .search-bar input {
-            padding: 8px;
-            width: 100%;
-            border: none;
-            border-radius: 20px 0 0 20px;
-            outline: none;
-            font-size: 0.9rem;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-btn {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 0 20px 20px 0;
-        }
-
-        .search-btn i {
-            font-size: 1.5rem;
-            color: #007bff;
-            transition: color 0.3s ease;
-        }
-
-        .search-btn:hover i {
-            color: #ffd700;
-        } *@
-
-        @* /* Cart Icon */
-        .cart-icon {
-            font-size: 1.5rem;
-            color: white;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .cart-icon:hover {
-            color: #ffd700;
-        } *@
-
-        /* Banner Image */
-        .banner {
-            margin-top: 0;
-            width: 100%;
-            height: 300px;
-            text-align: center;
-        }
-
-        .banner-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            margin-bottom: 0;
-            margin-top: auto; /* Pushes footer to the bottom */
-            z-index: 100;
-            width: 100%; /* Prevent unexpected behavior in smaller containers */
-        }
-
-        footer p {
-            text-align: center;
-        }
-
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="~/css/adminLayout.css">
 </head>
 <body>
     <div class="parent-container">
@@ -250,21 +46,10 @@
                         <li><a><i class="fas fa-shopping-bag"></i>Orders</a></li>
                         <li><a><i class="fas fa-users"></i>Customers</a></li>
                         <li><a><i class="fas fa-user-shield"></i>Admin</a></li>
-                        <li><a><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-                        <li><a asp-controller="Account" asp-action="Authentication"><i class="fas fa-user"></i>Sign In/Sign Up</a></li>
+                        <li><a asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        @* <li><a asp-controller="Account" asp-action="Authentication"><i class="fas fa-user"></i>Sign In/Sign Up</a></li> *@
                     </ul>
                 </nav>
-
-                @* <!-- Search Bar -->
-                <div class="search-bar">
-                    <input type="text" placeholder="Search your product">
-                    <button class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-
-                <!-- Cart Icon -->
-                <i class="fas fa-shopping-cart cart-icon"></i> *@
             </div>
         </div>
 

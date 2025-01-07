@@ -14,6 +14,12 @@ builder.Services.AddHttpClient<ProductService>(client =>
     client.BaseAddress = new Uri("http://localhost:5263/"); // Replace with Inventory System URL
 });
 
+// Inventory service
+builder.Services.AddHttpClient<InventoryService>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5263/"); // Replace with Inventory System URL
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -21,6 +27,16 @@ builder.Services.AddControllersWithViews();
 // Configure DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Add session services to the container
+builder.Services.AddDistributedMemoryCache(); // Adds in-memory caching for session
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout as per your requirement
+    options.Cookie.HttpOnly = true; // Only accessible by the server
+    options.Cookie.IsEssential = true; // Necessary for session management
+});
+
 
 var app = builder.Build();
 
@@ -37,11 +53,14 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Add session middleware to the request pipeline
+app.UseSession(); // This should come before UseAuthorization
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=CustomerIndex}");
 
 app.Run();
 

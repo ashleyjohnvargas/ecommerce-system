@@ -19,6 +19,12 @@ public class HomeController : Controller
         return View();
     }
 
+    // This returns the Index or HomePage of the Customer user
+     public IActionResult CustomerIndex()
+    {
+        return View();
+    }
+
     // This returns the HTML file of the About page
     public IActionResult About()
     {
