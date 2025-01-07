@@ -84,3 +84,11 @@ select {
             background: #6415ae;
             color: white;
         }
+
+.product-link {
+    display: flex;
+}
+
+#product-link {
+    display: flex;
+}

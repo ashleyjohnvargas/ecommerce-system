@@ -1,0 +1,183 @@
+@* <!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="custProductDetails.css">
+    <title>Gizmode: Product Details</title>
+</head>
+<body>
+<!-- ------- single product details ----------- -->
+
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <!--The first image of the product should be displayed in the image element below-->
+                <img src="ps5-front.webp" alt="product-1" width="80%" id="product-img">
+
+                <!--The small images of the product should be displayed in the small-img-row element below-->
+                <!--Please modify the code below such that the number of images depends on the number of images that a product has in the database-->
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="ps5-down.webp" alt="product-1" width="80%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="ps5-front.webp" alt="product-1" width="80%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="ps5-side.webp" alt="product-1" width="80%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="ps5.webp" alt="product-1" width="80%" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <!--The product name should be displayed in the h1 below-->
+                <h1>PS5 DualSense Controller</h1>
+                <!--The product price should be displayed in the element below but with a peso currency symbol on its left-->
+                <h4>$700.00</h4>
+                <input type="number" value="1">
+                <a href="#" class="btn">Add to Cart</a>
+
+                <h3>Product Details</h3>
+                <!--The product description should be displayed in the element below-->
+                <p>The DualSense wireless controller for PS5 consoles 
+                offers immersive haptic feedback, dynamic adaptive triggers 
+                and a built-in microphone, all integrated into an iconic design.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------title-------- -->
+    <div class="small-container">
+        <div class="row row-2"></div>
+        <h2>Related Products</h2>
+    </div>
+
+
+    <!--Please modify the code below such that it displays all the products in the database that have the same category with the product above.-->
+    <!--Please include the stock status of each product-->
+    <!--Please choose only one image for each product-->
+    <div class="small-container">
+        <div class="row">
+            <div class="col-4">
+                <img src="phone.webp" alt="product1">
+                <h4>Phone</h4>
+                <!--Please change the currency to peso-->
+                <p>$499.99</p>
+            </div>
+        </div>
+
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
+        </div>
+    </div>
+
+    <!-- -------------js for prodcut gallery--------- -->
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+            SmallImg[0].onclick = function() 
+            {
+                ProductImg.src = SmallImg[0].src;
+            }
+            SmallImg[1].onclick = function() 
+            {
+                ProductImg.src = SmallImg[1].src;
+            }
+            SmallImg[2].onclick = function() 
+            {
+                ProductImg.src = SmallImg[2].src;
+            }
+            SmallImg[3].onclick = function() 
+            {
+                ProductImg.src = SmallImg[3].src;
+            }
+    </script>
+</body>
+</html>
+
+
+ *@
+
+@{
+    Layout = "_Layout2";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="custProductDetails.css">
+    <title>Gizmode: Product Details</title>
+</head>
+<body>
+    <div class="small-container single-product" style="display: flex; align-items: center; justify-content: center;">
+        <div class="row" style="display: flex; width: 1100px; margin-top: 100px;">
+            <div class="col-2" style="flex: 1;">
+                <!-- Display the main product image -->
+                <img src="@Model.MainImage" alt="@Model.Name" width="80%" id="product-img">
+
+                <!-- Display small images dynamically -->
+                <div class="small-img-row" style="display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; justify-items: center;">
+                    @foreach (var image in Model.Images)
+                    {
+                        <div class="small-img-col" style="    display: flex; align-items: center; justify-content: center;">
+                            <img src="@image" alt="@Model.Name" width="80%" class="small-img">
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-2" style="flex: 1;">
+                <h1>@Model.Name</h1>
+                <h4>₱@Model.Price</h4>
+                <input type="number" value="1">
+                <a href="#" class="btn">Add to Cart</a>
+
+                <h3>Product Details</h3>
+                <p>@Model.Description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products Section -->
+    <div class="small-container" style="display: flex; flex-direction: column; justify-self: center; margin-top: 180px; margin-bottom:100px;">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+        </div>
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 100px;">
+            @foreach (var relatedProduct in Model.RelatedProducts)
+            {
+                <div class="col-4" style="width: 200px;">
+                    <img style="width: -webkit-fill-available;" src="@relatedProduct.Image" alt="@relatedProduct.Name">
+                    <h4>@relatedProduct.Name</h4>
+                    <p>₱@relatedProduct.Price</p>
+                    <p>@(relatedProduct.StockStatus)</p>
+                </div>
+            }
+        </div>
+    </div>
+
+    <script>
+        var ProductImg = document.getElementById("product-img");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        for (let i = 0; i < SmallImg.length; i++) {
+            SmallImg[i].onclick = function () {
+                ProductImg.src = SmallImg[i].src;
+            }
+        }
+    </script>
+</body>
+</html>
+

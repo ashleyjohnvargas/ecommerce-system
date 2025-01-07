@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\authentication.css"
     },
     {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\custProductDetails.css",
+      "PackagePath": "staticwebassets\\css\\custProductDetails.css"
+    },
+    {
       "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\customerAllProducts.css",
       "PackagePath": "staticwebassets\\css\\customerAllProducts.css"
     },
@@ -113,12 +117,52 @@
       "PackagePath": "staticwebassets\\images\\products.html"
     },
     {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\043DROGFihmSgG7S6LUb006-1.webp",
+      "PackagePath": "staticwebassets\\images\\products\\043DROGFihmSgG7S6LUb006-1.webp"
+    },
+    {
       "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\184940_2022.jpg",
       "PackagePath": "staticwebassets\\images\\products\\184940_2022.jpg"
     },
     {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\1_e9deca64-84a3-4429-9a51-b28c4c479d38.webp",
+      "PackagePath": "staticwebassets\\images\\products\\1_e9deca64-84a3-4429-9a51-b28c4c479d38.webp"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\4babcf3e-0280-4419-b175-c48e89bf4f29.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\4babcf3e-0280-4419-b175-c48e89bf4f29.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\64fd168b9b83c012287986e9-dell-inspiron-15-6-fhd-touchscreen.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\64fd168b9b83c012287986e9-dell-inspiron-15-6-fhd-touchscreen.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\71EVBJVMSoL.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\71EVBJVMSoL.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\Commercial-IP-CCTV-e1636962813621.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\Commercial-IP-CCTV-e1636962813621.jpg"
+    },
+    {
       "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\IPHONE15PLUS1_COLOR-PINK_CAPACITY-ALL_1000x.webp",
       "PackagePath": "staticwebassets\\images\\products\\IPHONE15PLUS1_COLOR-PINK_CAPACITY-ALL_1000x.webp"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\MQLH3.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\MQLH3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\bae7bc14-dcc1-11ec-a0c8-f26ae8b7d411.webp",
+      "PackagePath": "staticwebassets\\images\\products\\bae7bc14-dcc1-11ec-a0c8-f26ae8b7d411.webp"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\iphone__kqge21l9n26q_og.png",
+      "PackagePath": "staticwebassets\\images\\products\\iphone__kqge21l9n26q_og.png"
+    },
+    {
+      "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\microsoft-surface-laptop-138-touch-snapdragon-x-elite-integrated-qualcomm-adreno-32gb-lpddr5x-1tb-ssd-.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\microsoft-surface-laptop-138-touch-snapdragon-x-elite-integrated-qualcomm-adreno-32gb-lpddr5x-1tb-ssd-.jpg"
     },
     {
       "Id": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\ps5-down.webp",

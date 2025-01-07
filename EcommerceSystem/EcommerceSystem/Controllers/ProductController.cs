@@ -21,10 +21,85 @@ namespace EcommerceSystem.Controllers
         }
 
         // This returns the all products page for Customer user
-        public IActionResult CustomerAllProducts()
+        public async Task<IActionResult> CustomerAllProducts()
         {
-            return View();
+            // trigger the GetAllProductsAsync method from the ProductService to update database in Ecommerce based
+            // on the products in the Inventory System
+            List<Product> allProducts;
+            allProducts = await _productService.GetAllProductsAsync();
+
+            var products = _context.Products
+                .Where(p => p.IsBeingSold && !p.IsDeleted)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Price,
+                    p.StockStatus,
+                    ImagePath = _context.ProductImages
+                        .Where(pi => pi.ProductId == p.Id)
+                        .Select(pi => pi.FilePath)
+                        .FirstOrDefault() // Get the first image for each product
+                })
+                .ToList();
+
+            return View(products);
         }
+
+        
+        public IActionResult CustProductDetails(int id)
+        {
+            // Fetch the product details, including images and related products
+            var product = _context.Products
+                .Include(p => p.Images)
+                .FirstOrDefault(p => p.Id == id && !p.IsDeleted && p.IsBeingSold);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            // Fetch related products in the same category
+            var relatedProducts = _context.Products
+                .Where(p => p.Category == product.Category && p.Id != product.Id && !p.IsDeleted && p.IsBeingSold)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Price,
+                    p.StockStatus,
+                    Image = _context.ProductImages.Where(pi => pi.ProductId == p.Id).Select(pi => pi.FilePath).FirstOrDefault()
+                })
+                .ToList();
+
+            // Exclude the main image from the list of images
+            var imagesExcludingMain = product.Images
+                .Skip(1) // Skip the first image (assumed to be the main image)
+                .Select(img => img.FilePath);
+
+            // Create a model for the view
+            var viewModel = new
+            {
+                product.Id,
+                product.Name,
+                product.Price,
+                product.Description,
+                MainImage = product.Images.FirstOrDefault()?.FilePath,
+                Images = imagesExcludingMain,
+                RelatedProducts = relatedProducts.Select(rp => new
+                {
+                    rp.Name,
+                    rp.Price,
+                    rp.StockStatus,
+                    rp.Image
+                })
+            };
+
+            return View("CustProductDetails", viewModel);
+        }
+
+
+
 
          // returns product page html view
         public async Task<IActionResult> Product(int page = 1)
@@ -218,39 +293,5 @@ namespace EcommerceSystem.Controllers
 
             return RedirectToAction("Product");
         }    
-
-
-
-
-
-        // // For pagination of Product Details
-        // public async Task<IActionResult> ProductDetails(int page = 1)
-        // {
-        //     int pageSize = 9; // 9 products per page (3 rows of 3 products)
-
-        //     // Fetch all products from the database
-        //     var products = _context.Products.Include(p => p.Images);
-
-        //     // Apply pagination
-        //     var paginatedProducts = products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
-
-        //     // Get the total number of products to calculate total pages
-        //     var totalProducts = products.Count();
-        //     var totalPages = (int)Math.Ceiling(totalProducts / (double)pageSize);
-
-        //     // Create a PaginatedProductModel to pass the paginated data
-        //     var model = new PaginatedProductModel
-        //     {
-        //         Products = paginatedProducts,
-        //         CurrentPage = page,
-        //         TotalPages = totalPages,
-        //         PageSize = pageSize
-        //     };
-
-        //     return View(model);
-        // }
-
-
-
     }
 }

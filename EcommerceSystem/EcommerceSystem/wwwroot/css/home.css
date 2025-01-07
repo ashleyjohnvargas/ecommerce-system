@@ -3,6 +3,10 @@
     font-family: "Poppins", serif;
 }
 
+.headers-container {
+    background-color: black;
+}
+
 .banner {
     margin-top: 0;
     width: 100%;
