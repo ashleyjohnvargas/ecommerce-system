@@ -106,7 +106,8 @@
                     @if (Context.Session.GetInt32("UserId") == null)
                     {
                         <!-- Display "Sign In/Sign Up" when user is not logged in -->
-                        <li><a asp-controller="Account" asp-action="Authentication">Sign In/Sign Up</a></li>
+                        <li><a asp-controller="Account" asp-action="Authentication">Sign In</a></li>
+                        <li><a asp-controller="Account" asp-action="Authentication">Sign Up</a></li>
                     }
                     else
                     {
@@ -135,7 +136,7 @@
                 else
                 {
                     <!-- Redirect to CustomerCart if user is logged in -->
-                    <a asp-controller="Cart" asp-action="CustomerCart"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                    <a asp-controller="Cart" asp-action="CustomerCartIcon"><i class="fas fa-shopping-cart cart-icon"></i></a>
                 }
 
                 <!-- Profile icon -->

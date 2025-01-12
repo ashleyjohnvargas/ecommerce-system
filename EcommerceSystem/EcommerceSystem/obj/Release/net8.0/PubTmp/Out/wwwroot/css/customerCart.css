@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f1f3f5;
+    font-family: "Poppins", sans-serif;
+}
+.product-img {
+    width: 200px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.cart-summary {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+table thead th {
+    text-align: center;
+    font-size: 16px;
+}
+table tbody tr {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+table tbody td {
+    text-align: center; /* Centers content horizontally */
+    vertical-align: middle; /* Centers content vertically */
+    padding: 12px;
+    font-size: 15px;
+}
+.product-info {
+    text-align: left;
+}
+.product-info .name {
+    font-weight: bold;
+}
+.product-info .description {
+    font-size: 14px;
+    color: #6c757d;
+}
+.product-info .details {
+    font-size: 13px;
+    color: #495057;
+}
+.remove-link {
+    font-size: 13px;
+    color: #dc3545;
+    cursor: pointer;
+}
+h1 {
+    font-weight: 600;
+    color: #343a40;
+}
+.quantity-column {
+    justify-items: center;
+}
+.input-group {
+    width: 90px; /* Adjust the width for a shorter column */
+    justify-content: center; /* Centers the input group within the column */
+    align-items: center; /* Vertically centers the buttons and input */
+    display: flex;
+    gap: 4px; /* Space between input and buttons */
+}
+.input-group .btn {
+    font-size: 14px;
+    padding: 2px 6px; /* Smaller button padding for compact design */
+}
+.quantity {
+    text-align: center;
+    padding: 0 4px; /* Adjust padding to reduce width further */
+    width: 40px; /* Consistent width for quantity input */
+}
+
+.cart-summary h4 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #495057;
+}
+.cart-summary div {
+    margin-bottom: 10px;
+}
+.cart-summary hr {
+    margin: 20px 0;
+}
+.product-details {
+    width: auto;
+    gap: 10px;
+}

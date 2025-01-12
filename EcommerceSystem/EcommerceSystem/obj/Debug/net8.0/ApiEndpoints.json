@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "EcommerceSystem.Controllers.Api.ProductsApiController",
+    "Method": "EditProductFromInventory",
+    "RelativePath": "api/ProductsApi/EditProductFromInventory",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "EcommerceSystem.Models.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

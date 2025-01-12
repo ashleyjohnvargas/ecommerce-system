@@ -258,7 +258,7 @@ namespace EcommerceSystem.Controllers
                 };
 
                 // Add the new ProductImage to the context
-                _context.ProductImages.Add(productImage);
+                _context.ProductImages.Add(productImage);               
             }
 
             // Update the product details in the Inventory System

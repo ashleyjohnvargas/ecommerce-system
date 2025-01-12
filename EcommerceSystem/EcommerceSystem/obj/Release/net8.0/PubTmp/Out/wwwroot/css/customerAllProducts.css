@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General reset */
+body, ul {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* -------all products page -------- */
+.row-2 {
+    /* display: flex;  */
+    justify-content: space-between;
+    /* align-items: center; */
+    margin: 100px auto 50px;
+    /* gap: 1; */
+    /* padding: 10px 30px; */
+}
+
+select {
+    border: 1px solid #6415ae;
+    padding: 5px;
+    margin: auto;
+}
+
+    select:focus {
+        outline: none;
+    }
+
+.small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-4 {
+    flex-basis: 15%;
+    padding: 10px;
+    min-width: 20px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+
+    .col-4 img {
+        width: 100%;
+    }
+
+    .col-4 p {
+        font-size: 14px;
+    }
+
+    .col-4:hover {
+        transform: translateY(-5px);
+    }
+
+.rating .fa {
+    color: #ffd700;
+}
+
+.page-btn {
+    margin: 0 auto 80px;
+}
+
+    .page-btn span {
+        display: inline-block;
+        border: 1px solid #6415ae;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+    }
+
+        .page-btn span:hover {
+            background: #6415ae;
+            color: white;
+        }
+
+.product-link {
+    display: flex;
+}
+
+#product-link {
+    display: flex;
+}

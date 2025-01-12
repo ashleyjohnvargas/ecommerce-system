@@ -51,6 +51,9 @@ namespace EcommerceSystem.Services
 
        private async Task PersistProductsAsync(List<Product> products)
         {
+            
+
+
             // Delete all existing products in the database before adding new ones
             try
             {

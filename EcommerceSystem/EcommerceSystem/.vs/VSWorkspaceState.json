@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Properties"
   ],
-  "SelectedNode": "\\EcommerceSystem.csproj",
+  "SelectedNode": "\\Properties\\launchSettings.json",
   "PreviewInSolutionExplorer": false
 }

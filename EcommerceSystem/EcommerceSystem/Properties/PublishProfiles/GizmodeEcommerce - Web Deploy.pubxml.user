@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7uGbe8sqIk+gbl5FcPNwFQAAAAACAAAAAAAQZgAAAAEAACAAAABVk2qeqI4BOx8eXVHX3/19iim707+mb02bKzyRAATsvgAAAAAOgAAAAAIAACAAAACynWEHcWMOZcFomnTpfKsLN013q+tg/nbxgmnbRe2h/4AAAABOcXjuZ7BWZceIoR2fekADLps1SNk3RiiGzuSbTSlDALDIX1AhidV8RqlruQJipU3UdOnJYJVaIS9DS49sCm4X7dygoFoZPop50PQSVtPOnnol2DDjW0WJ8ydk0ntAbRUA/6lpk2xdFBmUg3wpx4b2f6CkQQ6sYF45hZKpwUhoU0AAAACJAjRai7YzuwUtBQFVFysT5GeFjblMBVJ2d25WM+daTYPPG3ZbMUlaMRu1FnmeNRUS8sDSSeAMKphqkn6y38BA</EncryptedPassword>
+    <History>True|2025-01-09T11:24:34.2642092Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:gizmodeecommerceserver.database.windows.net,1433%3bInitial Catalog=EcommerceDB%3bPersist Security Info=False%3bUser ID=ashleyjohnvargas%3bPassword=4774.R81m%24%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

@@ -9,7 +9,11 @@ namespace EcommerceSystem.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set;}
         public DbSet<ProductImage> ProductImages { get; set;}
+        public DbSet<ProductImageCopy> ProductImageCopy { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<ProductCopy> ProductCopy { get; set; }
 
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {

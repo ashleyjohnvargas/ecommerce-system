@@ -147,3 +147,7 @@ select:focus {
     flex-basis: 24%;
     cursor: pointer;
 }
+
+add-to-cart-btn:hover {
+    color: #bb7af6;
+}
