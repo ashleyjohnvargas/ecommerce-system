@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\cart\\customercarticon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\cart\\customercarticon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\home\\customerindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\home\\customerindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\cart\\customercart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\cart\\customercart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\shared\\_layout2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\shared\\_layout2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\product\\customerallproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\product\\customerallproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\models\\billing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\models\\billing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\product\\custproductdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\product\\custproductdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\shared\\_layout2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\shared\\_layout2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +37,38 @@
     {
       "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\checkout\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\checkout\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\models\\checkoutviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\models\\checkoutviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\cart\\customercart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\cart\\customercart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\cart\\customercarticon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\cart\\customercarticon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\wwwroot\\css\\customercart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\wwwroot\\css\\customercart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|c:\\users\\angel\\onedrive\\documents\\ecommerceclone2\\ecommerce-system\\ecommercesystem\\ecommercesystem\\views\\product\\custproductdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D8AFFE7-243C-4D5B-9105-FFCC077D2EBF}|EcommerceSystem\\EcommerceSystem.csproj|solutionrelative:ecommercesystem\\views\\product\\custproductdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,17 +78,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "CustomerCart.cshtml",
               "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Cart\\CustomerCart.cshtml",
               "RelativeDocumentMoniker": "EcommerceSystem\\Views\\Cart\\CustomerCart.cshtml",
               "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Cart\\CustomerCart.cshtml",
               "RelativeToolTip": "EcommerceSystem\\Views\\Cart\\CustomerCart.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADUAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-11T09:05:31Z",
               "IsPinned": true,
@@ -56,13 +96,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "EcommerceSystem\\Controllers\\CartController.cs",
               "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Controllers\\CartController.cs",
               "RelativeToolTip": "EcommerceSystem\\Controllers\\CartController.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAAowLsAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAuwIYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T06:58:35.184Z",
               "IsPinned": true,
@@ -70,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "CustProductDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Product\\CustProductDetails.cshtml",
               "RelativeDocumentMoniker": "EcommerceSystem\\Views\\Product\\CustProductDetails.cshtml",
@@ -79,34 +119,35 @@
               "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-11T06:31:27.402Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Cart.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "EcommerceSystem\\Models\\Cart.cs",
               "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\Cart.cs",
               "RelativeToolTip": "EcommerceSystem\\Models\\Cart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T08:34:56.177Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CartItem.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\CartItem.cs",
               "RelativeDocumentMoniker": "EcommerceSystem\\Models\\CartItem.cs",
               "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\CartItem.cs",
               "RelativeToolTip": "EcommerceSystem\\Models\\CartItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T08:40:01.627Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -114,28 +155,157 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Billing.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\Billing.cs",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Models\\Billing.cs",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\Billing.cs",
+              "RelativeToolTip": "EcommerceSystem\\Models\\Billing.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBQAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T03:17:12.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "CustomerCartIcon.cshtml",
               "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Cart\\CustomerCartIcon.cshtml",
               "RelativeDocumentMoniker": "EcommerceSystem\\Views\\Cart\\CustomerCartIcon.cshtml",
               "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Cart\\CustomerCartIcon.cshtml",
               "RelativeToolTip": "EcommerceSystem\\Views\\Cart\\CustomerCartIcon.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAkwDoAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAF8AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-12T10:04:40.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "_Layout2.cshtml",
               "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Shared\\_Layout2.cshtml",
               "RelativeDocumentMoniker": "EcommerceSystem\\Views\\Shared\\_Layout2.cshtml",
               "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Shared\\_Layout2.cshtml",
               "RelativeToolTip": "EcommerceSystem\\Views\\Shared\\_Layout2.cshtml",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIoAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFYAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-12T10:03:54.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "customerCart.css",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\customerCart.css",
+              "RelativeDocumentMoniker": "EcommerceSystem\\wwwroot\\css\\customerCart.css",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\css\\customerCart.css",
+              "RelativeToolTip": "EcommerceSystem\\wwwroot\\css\\customerCart.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-12T11:52:08.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Controllers\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Controllers\\CheckoutController.cs",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Controllers\\CheckoutController.cs",
+              "RelativeToolTip": "EcommerceSystem\\Controllers\\CheckoutController.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAqwJsAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T02:21:55.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Checkout\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Views\\Checkout\\Checkout.cshtml",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Checkout\\Checkout.cshtml",
+              "RelativeToolTip": "EcommerceSystem\\Views\\Checkout\\Checkout.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAJ4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T02:25:24.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\Order.cs",
+              "RelativeToolTip": "EcommerceSystem\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T03:13:20.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\OrderItem.cs",
+              "RelativeToolTip": "EcommerceSystem\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T03:15:37.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "EcommerceSystem\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T03:18:05.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CheckoutViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\CheckoutViewModel.cs",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Models\\CheckoutViewModel.cs",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Models\\CheckoutViewModel.cs",
+              "RelativeToolTip": "EcommerceSystem\\Models\\CheckoutViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T03:53:28.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomerAllProducts.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Product\\CustomerAllProducts.cshtml",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Views\\Product\\CustomerAllProducts.cshtml",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Product\\CustomerAllProducts.cshtml",
+              "RelativeToolTip": "EcommerceSystem\\Views\\Product\\CustomerAllProducts.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T06:18:48.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Home\\CustomerIndex.cshtml",
+              "RelativeDocumentMoniker": "EcommerceSystem\\Views\\Home\\CustomerIndex.cshtml",
+              "ToolTip": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\Views\\Home\\CustomerIndex.cshtml",
+              "RelativeToolTip": "EcommerceSystem\\Views\\Home\\CustomerIndex.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T06:23:58.606Z",
               "EditorCaption": ""
             }
           ]

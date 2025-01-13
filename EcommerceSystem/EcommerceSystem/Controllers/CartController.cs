@@ -108,6 +108,7 @@ public class CartController : Controller
         var cartModel = new
         {
             CartItems = cartItems,
+            CartID = activeCart.CartId,
             CartTotalPrice = activeCart.TotalPrice
         };
 
@@ -135,7 +136,7 @@ public class CartController : Controller
         {
             // If no active cart exists, return a view with an empty cart model
             var emptyCartModel = new
-            {
+            {   
                 CartItems = new List<object>(),
                 CartTotalPrice = 0
             };
@@ -164,6 +165,7 @@ public class CartController : Controller
         var cartModel = new
         {
             CartItems = cartItems,
+            CartID = activeCart.CartId,
             CartTotalPrice = activeCart.TotalPrice
         };
 

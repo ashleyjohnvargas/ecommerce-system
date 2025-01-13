@@ -4,6 +4,21 @@
 
 <link rel="stylesheet" href="~/css/home.css" />
 
+@if (TempData["ShowPopup"] != null && (bool)TempData["ShowPopup"])
+{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                title: 'Success!',
+                text: '@TempData["PopupMessage"]',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+}
+
+
 <!-- Banner Section -->
 <section class="banner">
     <img src="~/images/Screenshot 2025-01-06 093955.png" alt="Banner Image" class="banner-image">

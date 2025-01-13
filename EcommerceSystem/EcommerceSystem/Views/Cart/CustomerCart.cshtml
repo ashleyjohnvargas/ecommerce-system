@@ -12,6 +12,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/customerCart.css">
+    <style>
+        .checkout-button:hover {
+            background-color: #8a2be2;
+        }
+
+        #check-out-button:hover {
+            background-color: #8a2be2;
+        }
+    </style>
 </head>
 <body>
 
@@ -33,9 +42,9 @@
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-start product-details">
-                                        <img src="@item.ImagePath" alt="Product Image" class="product-img me-2">
-                                        <div class="product-info">
-                                            <div class="name">@item.ProductName</div>
+                                        <img src="@item.ImagePath" alt="Product Image" class="product-img me-2" style="height: 200px;">
+                                        <div class="product-info" style="margin-top: 10px;">
+                                            <div class="name" style="font-size: 18px;">@item.ProductName</div>
                                             <div class="description">@item.ProductDescription</div>
                                             <div class="details">Price: &#8369;@item.ProductPrice</div>
                                             <div class="remove-link mt-3">
@@ -79,6 +88,11 @@
                     <div class="d-flex justify-content-between">
                         <strong>Total:</strong>
                         <strong>&#8369;<span id="cart-total">@Model.CartTotalPrice</span></strong>
+                    </div>
+                    <!--Proceed to Checkout button-->
+                    <div style="display: flex;justify-content: center;">
+                        <a class="btn btn-primary mt-3 checkout-button" id="check-out-button" style="background-color: violet;border-color: violet;" onmouseover="this.style.backgroundColor='#8a2be2'" 
+   onmouseout="this.style.backgroundColor='violet'" asp-controller="Checkout" asp-action="Checkout">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>
