@@ -5,6 +5,7 @@ namespace EcommerceSystem.Models
 {
     public class OrderItem
     {
+        [Key]
         public int OrderItemId { get; set; }  // Unique identifier for each item in the order
         [ForeignKey("Order")]
         public int? OrderId { get; set; }  // Reference to the associated order (nullable)

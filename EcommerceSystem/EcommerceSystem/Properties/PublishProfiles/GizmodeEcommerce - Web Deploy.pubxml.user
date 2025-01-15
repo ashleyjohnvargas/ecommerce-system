@@ -6,13 +6,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project>
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7uGbe8sqIk+gbl5FcPNwFQAAAAACAAAAAAAQZgAAAAEAACAAAABVk2qeqI4BOx8eXVHX3/19iim707+mb02bKzyRAATsvgAAAAAOgAAAAAIAACAAAACynWEHcWMOZcFomnTpfKsLN013q+tg/nbxgmnbRe2h/4AAAABOcXjuZ7BWZceIoR2fekADLps1SNk3RiiGzuSbTSlDALDIX1AhidV8RqlruQJipU3UdOnJYJVaIS9DS49sCm4X7dygoFoZPop50PQSVtPOnnol2DDjW0WJ8ydk0ntAbRUA/6lpk2xdFBmUg3wpx4b2f6CkQQ6sYF45hZKpwUhoU0AAAACJAjRai7YzuwUtBQFVFysT5GeFjblMBVJ2d25WM+daTYPPG3ZbMUlaMRu1FnmeNRUS8sDSSeAMKphqkn6y38BA</EncryptedPassword>
-    <History>True|2025-01-09T11:24:34.2642092Z||;</History>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7uGbe8sqIk+gbl5FcPNwFQAAAAACAAAAAAAQZgAAAAEAACAAAAC7USw1WdcALJt7jeR3YFih3HtmwXEWKHVVZfuySWio9gAAAAAOgAAAAAIAACAAAAAP3wTG0D8RdpbKxGr7m3au/n54lnAkeawNc5lVJk8/6IAAAAD3PEOmA2g1wkfaWCRi0vmErNxEIfMzKe96ix12QzZClaepd247aLJJaP0pouJrGP+ZsyELwYuUse4FWXvmQ8H5qVXPZwWkQTFHCk40x4FiwiHpDNLSQ4xTBI56mKCVNQnhiORxrryddRxO4kU+ip5beDm/cNxb5mlkP27qVL3VsEAAAABYgc0pVbKOJAKqZ/nvlSVSEmNQ8kjXnauBXSRbTEbSd1FpQ8+T+LH5a9Wy1PjQEgqXm55dFzccP5SVitZtEwHV</EncryptedPassword>
+    <History>True|2025-01-13T08:29:38.7608120Z||;False|2025-01-13T16:27:48.2461598+08:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <DestinationConnectionStrings Include="DefaultConnection">
-      <Value>Server=tcp:gizmodeecommerceserver.database.windows.net,1433%3bInitial Catalog=EcommerceDB%3bPersist Security Info=False%3bUser ID=ashleyjohnvargas%3bPassword=4774.R81m%24%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+      <Value>Server=tcp:gizmodeecommercedbserver.database.windows.net,1433%3bInitial Catalog=EcommerceDB%3bPersist Security Info=False%3bUser ID=ashleyjohnvargas%3bPassword=4774.R81m%24%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
     </DestinationConnectionStrings>
   </ItemGroup>
 </Project>

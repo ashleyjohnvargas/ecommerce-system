@@ -29,8 +29,8 @@
                 </div>
                 <span>or use your email for registration</span>
                 <input type="text" asp-for="UserName" placeholder="Username">
-                <input type="email" asp-for="Email" placeholder="Email">
-                <input type="password" asp-for="Password" placeholder="Password">
+                <input type="email" asp-for="Email" placeholder="Email" required>
+                <input type="password" asp-for="Password" placeholder="Password" required>
                 <!--Below are the hidden inputs-->
                 <input type="hidden" asp-for="Id">
                 <input type="hidden" asp-for="PhoneNumber">

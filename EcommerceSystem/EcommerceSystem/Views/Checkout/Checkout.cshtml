@@ -146,11 +146,11 @@
                     <h2>Billing Details</h2>
                     <div class="form-group">
                         <label>First Name</label>
-                        <input asp-for="@checkoutModel.FirstName" name="FirstName" placeholder="Enter your first name">
+                        <input asp-for="@checkoutModel.FirstName" name="FirstName" placeholder="Enter your first name" required>
                     </div>
                     <div class="form-group">
                         <label>Last Name</label>
-                        <input asp-for="@checkoutModel.LastName" name="LastName" placeholder="Enter your last name">
+                        <input asp-for="@checkoutModel.LastName" name="LastName" placeholder="Enter your last name" required>
                     </div>
                     <div class="form-group">
                         <label>Company Name</label>
@@ -158,29 +158,29 @@
                     </div>
                     <div class="form-group">
                         <label>Address</label>
-                        <input asp-for="@checkoutModel.Address" name="Address" placeholder="Address">
+                        <input asp-for="@checkoutModel.Address" name="Address" placeholder="Address" required>
                     </div>
                     <div class="form-group">
                         <label>Phone Number</label>
-                        <input asp-for="@checkoutModel.PhoneNumber" name="PhoneNumber" placeholder="Enter your phone number">
+                        <input asp-for="@checkoutModel.PhoneNumber" name="PhoneNumber" placeholder="Enter your phone number" required>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input asp-for="@checkoutModel.EmailAddress" name="EmailAddress" placeholder="Enter your email address">
+                        <input asp-for="@checkoutModel.EmailAddress" name="EmailAddress" placeholder="Enter your email address" required>
                     </div>
                     <!-- Payment Methods -->
                     <div class="payment-methods">
                         <h3>Payment Methods</h3>
                         <div class="payment-method">
-                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="bank" name="PaymentMethod" value="Bank">
+                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="bank" name="PaymentMethod" value="Bank" required>
                             <label for="bank">Bank</label>
                         </div>
                         <div class="payment-method">
-                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="ewallet" name="PaymentMethod" value="E-Wallet">
+                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="ewallet" name="PaymentMethod" value="E-Wallet" required>
                             <label for="ewallet">E-Wallet</label>
                         </div>
                         <div class="payment-method">
-                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="cod" name="PaymentMethod" value="CashOnDelivery">
+                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="cod" name="PaymentMethod" value="CashOnDelivery" required>
                             <label for="cod">Cash on Delivery</label>
                         </div>
                     </div>

@@ -6,6 +6,7 @@ namespace EcommerceSystem.Models
     public class Order
     {
         public int OrderId { get; set; }  // Unique identifier for the order
+        [ForeignKey("Customer")]
         public int? CustomerId { get; set; }  // Reference to the customer placing the order (nullable)
         public decimal? TotalPrice { get; set; }  // Final price (subtotal + tax + shipping)
         public string? PaymentMethod { get; set; }  // Chosen payment method

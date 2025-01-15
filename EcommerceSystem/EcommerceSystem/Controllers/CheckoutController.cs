@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using EcommerceSystem.Models;
 using Microsoft.EntityFrameworkCore;
+using EcommerceSystem.Services;
 
 namespace EcommerceSystem.Controllers
 {
@@ -9,11 +10,13 @@ namespace EcommerceSystem.Controllers
     {
         private readonly ILogger<CartController> _logger;
         private readonly ApplicationDbContext _context;
+        private readonly PosService _posService;
 
-        public CheckoutController(ILogger<CartController> logger, ApplicationDbContext context)
+        public CheckoutController(ILogger<CartController> logger, ApplicationDbContext context, PosService posService)
         {
             _logger = logger;
             _context = context;
+            _posService = posService;
         }
 
 
@@ -73,8 +76,10 @@ namespace EcommerceSystem.Controllers
 
 
 
+        
+        // public IActionResult PlaceOrder(CheckoutViewModel checkoutModel)
         [HttpPost]
-        public IActionResult PlaceOrder(CheckoutViewModel checkoutModel)
+        public async Task<IActionResult> PlaceOrder(CheckoutViewModel checkoutModel)
         {
             // Get the current user's ID from session
             int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
@@ -99,29 +104,58 @@ namespace EcommerceSystem.Controllers
                 CustomerId = userId,
                 TotalPrice = activeCart.TotalPrice,
                 PaymentMethod = checkoutModel.PaymentMethod,
-                OrderStatus = "Pending",
+                OrderStatus = "Order Placed",
                 CreatedAt = DateTime.Now
             };
 
-            // Add order to database and save changes
-            _context.Orders.Add(order);
-            _context.SaveChanges();
-
-            // Create OrderItems for each item in the active cart
-            foreach (var cartItem in activeCart.CartItems)
+            // Check if the Order entity is already tracked in the context
+            var existingOrder = _context.Orders.Local.FirstOrDefault(o => o.OrderId == order.OrderId);
+            if (existingOrder == null)
             {
-                var orderItem = new OrderItem
-                {
-                    OrderId = order.OrderId,
-                    ProductId = cartItem.ProductId,
-                    Quantity = cartItem.Quantity,
-                    Subtotal = cartItem.Subtotal
-                };
-
-                // Add each order item to the database
-                _context.OrderItems.Add(orderItem);
+                _context.Orders.Add(order);  // Add only if not tracked
             }
+            _context.SaveChanges();  // Save order (this ensures the OrderId is set)
+
+            //// Add order to database and save changes
+            //_context.Orders.Add(order);
+            //_context.SaveChanges();
+
+            // // Create OrderItems for each item in the active cart
+            // foreach (var cartItem in activeCart.CartItems)
+            // {
+            //     var orderItem = new OrderItem
+            //     {
+            //         OrderId = order.OrderId,
+            //         ProductId = cartItem.ProductId,
+            //         Quantity = cartItem.Quantity,
+            //         Subtotal = cartItem.Subtotal
+            //     };
+
+            //     // Add each order item to the database
+            //     _context.OrderItems.Add(orderItem);
+            // }
+            // _context.SaveChanges();
+
+            // Create order items
+            var orderItems = activeCart.CartItems.Select(cartItem => new OrderItem
+            {
+                // OrderItemId = 0, // Reset ID to avoid conflicts
+                OrderId = order.OrderId,
+                ProductId = cartItem.ProductId,
+                Quantity = cartItem.Quantity,
+                Subtotal = cartItem.Subtotal
+            }).ToList();
+            _context.OrderItems.AddRange(orderItems);
             _context.SaveChanges();
+
+            // Map OrderItems to OrderItemDTO
+            var orderItemDTOs = orderItems.Select(orderItem => new OrderItemCopy
+            {
+                OrderId = orderItem.OrderId,
+                ProductId = orderItem.ProductId,
+                Quantity = orderItem.Quantity,
+                Subtotal = orderItem.Subtotal
+            }).ToList();
 
             // Create a Billing instance
             var billing = new Billing
@@ -143,10 +177,53 @@ namespace EcommerceSystem.Controllers
                 EmailAddress = checkoutModel.EmailAddress,
                 PaymentMethod = checkoutModel.PaymentMethod
             };
-
             // Add the billing to the database and save changes
             _context.Billings.Add(billing);
             _context.SaveChanges();
+
+
+            // Send customer data to POS
+            var customer = new Customer
+            {
+                CustomerName = $"{checkoutModel.FirstName} {checkoutModel.LastName}",
+                Address = checkoutModel.Address,
+                PhoneNumber = checkoutModel.PhoneNumber,
+                Email = checkoutModel.EmailAddress
+            };
+            await _posService.SyncCustomer(customer); // POS Service 1 : Done
+
+            await _posService.CreateOrder(order); // POS Service 2 : Done
+            await _posService.CreateOrderItems(orderItemDTOs); // POS Service 3 : Done
+
+            var invoice = new Invoice
+            {
+                OrderId = order.OrderId,
+                CustomerId = userId,
+                SaleDate = DateTime.Now,
+                TotalAmount = order.TotalPrice,
+                PaymentStatus = "Pending",
+                PaymentMethod = checkoutModel.PaymentMethod
+            };
+            await _posService.CreateInvoice(invoice); // POS Service 4 : Done
+
+            // Sync products with POS
+            var productDtos = _context.Products.Select(p => new ProductDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Description = p.Description,
+                Price = p.Price,
+                Color = p.Color,
+                Category = p.Category,
+                OriginalStock = p.OriginalStock,
+                CurrentStock = p.CurrentStock,
+                StockStatus = p.StockStatus,
+                IsBeingSold = p.IsBeingSold,
+                IsDeleted = p.IsDeleted,
+                DateAdded = p.DateAdded
+            }).ToList();
+            
+            await _posService.SyncProducts(productDtos); // POS Service 5 : Done
 
             // Optional: Update the cart status to 'Inactive' or similar after the order is placed
             activeCart.Status = "Completed";

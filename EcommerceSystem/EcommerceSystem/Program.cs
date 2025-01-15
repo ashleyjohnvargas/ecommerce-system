@@ -4,25 +4,44 @@
 
     var builder = WebApplication.CreateBuilder(args);
 
-    // Add services to the container.
-    // This service adds a a client code of the EcommerceSystem which is the ProductService
-    // ProductService is a client that sends HTTP request which is HTTP GET to retrieve a list of products from the Inventory System
-    // In the code below, the ProductService is a client of Inventory System
-    // The URL of the Inventory System is provided below to specify if in what system the Product Service client is making an HTTP request for
-    builder.Services.AddHttpClient<ProductService>(client =>
-    {
-        client.BaseAddress = new Uri("http://localhost:5000/"); // Replace with Inventory System URL
-    });
+// Add services to the container.
+// This service adds a a client code of the EcommerceSystem which is the ProductService
+// ProductService is a client that sends HTTP request which is HTTP GET to retrieve a list of products from the Inventory System
+// In the code below, the ProductService is a client of Inventory System
+// The URL of the Inventory System is provided below to specify if in what system the Product Service client is making an HTTP request for
+builder.Services.AddHttpClient<ProductService>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5000/"); // Replace with Inventory System URL
+});
 
-    // Inventory service
-    builder.Services.AddHttpClient<InventoryService>(client =>
-    {
-        client.BaseAddress = new Uri("http://localhost:5000/"); // Replace with Inventory System URL
-    });
+// Inventory service
+builder.Services.AddHttpClient<InventoryService>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5000/"); // Replace with Inventory System URL
+});
+
+// POS Service
+builder.Services.AddHttpClient<PosService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7196/"); // Replace with POS URL
+    // client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
 
 
-    // Add services to the container.
-    builder.Services.AddControllersWithViews();
+
+//builder.Services.AddHttpClient<ProductService>(client =>
+//{
+//    client.BaseAddress = new Uri("https://gizmodeinventorysystem.azurewebsites.net"); // Replace with Inventory System URL
+//});
+
+//// Inventory service
+//builder.Services.AddHttpClient<InventoryService>(client =>
+//{
+//    client.BaseAddress = new Uri("https://gizmodeinventorysystem.azurewebsites.net"); // Replace with Inventory System URL
+//});
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
 
     // Configure DbContext
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
