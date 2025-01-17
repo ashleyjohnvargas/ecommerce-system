@@ -12,6 +12,7 @@ namespace EcommerceSystem.Models
         public string? PaymentMethod { get; set; }  // Chosen payment method
         public string? OrderStatus { get; set; }  // Status of the order (e.g., Pending, Shipped, Delivered)
         public DateTime? CreatedAt { get; set; }  // Timestamp when the order was placed (nullable)
+        public bool IsDeleted { get; set; } = false; // Indicates if the record is soft-deleted
 
         // Navigation property for the related User (Customer)
         public virtual User? Customer { get; set; }

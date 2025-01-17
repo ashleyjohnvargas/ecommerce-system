@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EcommerceSystem.Models
 {
-    public class Customer
+    public class CustomerDto
     {
         public int CustomerId { get; set; }
         public string? CustomerName { get; set; }

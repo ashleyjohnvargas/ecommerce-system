@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "EcommerceSystem.Controllers.Api.OrdersApiController",
+    "Method": "GetAllOrderItems",
+    "RelativePath": "api/OrdersApi/GetAllOrderItems/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EcommerceSystem.Controllers.Api.ProductsApiController",
     "Method": "EditProductFromInventory",
     "RelativePath": "api/ProductsApi/EditProductFromInventory",

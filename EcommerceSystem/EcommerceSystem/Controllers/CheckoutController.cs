@@ -98,14 +98,20 @@ namespace EcommerceSystem.Controllers
                 return RedirectToAction("Index", "Home"); // If no active cart found, redirect to home page
             }
 
+            // Set OrderStatus based on PaymentMethod
+            string orderStatus = (checkoutModel.PaymentMethod == "E-Wallet" || checkoutModel.PaymentMethod == "Bank") 
+                ? "Order Confirmed" 
+                : "Order Placed";
+
             // Create an Order instance and set its properties
             var order = new Order
             {
                 CustomerId = userId,
                 TotalPrice = activeCart.TotalPrice,
                 PaymentMethod = checkoutModel.PaymentMethod,
-                OrderStatus = "Order Placed",
-                CreatedAt = DateTime.Now
+                OrderStatus = orderStatus,
+                CreatedAt = DateTime.Now,
+                IsDeleted = false
             };
 
             // Check if the Order entity is already tracked in the context
@@ -115,26 +121,6 @@ namespace EcommerceSystem.Controllers
                 _context.Orders.Add(order);  // Add only if not tracked
             }
             _context.SaveChanges();  // Save order (this ensures the OrderId is set)
-
-            //// Add order to database and save changes
-            //_context.Orders.Add(order);
-            //_context.SaveChanges();
-
-            // // Create OrderItems for each item in the active cart
-            // foreach (var cartItem in activeCart.CartItems)
-            // {
-            //     var orderItem = new OrderItem
-            //     {
-            //         OrderId = order.OrderId,
-            //         ProductId = cartItem.ProductId,
-            //         Quantity = cartItem.Quantity,
-            //         Subtotal = cartItem.Subtotal
-            //     };
-
-            //     // Add each order item to the database
-            //     _context.OrderItems.Add(orderItem);
-            // }
-            // _context.SaveChanges();
 
             // Create order items
             var orderItems = activeCart.CartItems.Select(cartItem => new OrderItem
@@ -157,6 +143,10 @@ namespace EcommerceSystem.Controllers
                 Subtotal = orderItem.Subtotal
             }).ToList();
 
+            string paymentStatus = (checkoutModel.PaymentMethod == "E-Wallet" || checkoutModel.PaymentMethod == "Bank") 
+                ? "Paid" 
+                : "Pending";
+
             // Create a Billing instance
             var billing = new Billing
             {
@@ -165,7 +155,7 @@ namespace EcommerceSystem.Controllers
                 BillingDate = DateTime.Now,
                 DueDate = DateTime.Now.AddDays(3),
                 TotalAmount = order.TotalPrice,
-                PaymentStatus = "Pending",
+                PaymentStatus = paymentStatus,
                 BillingAddress = checkoutModel.Address,
                 TaxAmount = 0, // Default value
                 ShippingFee = 0, // Default value
@@ -181,32 +171,7 @@ namespace EcommerceSystem.Controllers
             _context.Billings.Add(billing);
             _context.SaveChanges();
 
-
-            // Send customer data to POS
-            var customer = new Customer
-            {
-                CustomerName = $"{checkoutModel.FirstName} {checkoutModel.LastName}",
-                Address = checkoutModel.Address,
-                PhoneNumber = checkoutModel.PhoneNumber,
-                Email = checkoutModel.EmailAddress
-            };
-            await _posService.SyncCustomer(customer); // POS Service 1 : Done
-
-            await _posService.CreateOrder(order); // POS Service 2 : Done
-            await _posService.CreateOrderItems(orderItemDTOs); // POS Service 3 : Done
-
-            var invoice = new Invoice
-            {
-                OrderId = order.OrderId,
-                CustomerId = userId,
-                SaleDate = DateTime.Now,
-                TotalAmount = order.TotalPrice,
-                PaymentStatus = "Pending",
-                PaymentMethod = checkoutModel.PaymentMethod
-            };
-            await _posService.CreateInvoice(invoice); // POS Service 4 : Done
-
-            // Sync products with POS
+             // Sync products with POS
             var productDtos = _context.Products.Select(p => new ProductDto
             {
                 Id = p.Id,
@@ -225,6 +190,33 @@ namespace EcommerceSystem.Controllers
             
             await _posService.SyncProducts(productDtos); // POS Service 5 : Done
 
+
+
+            // Send customer data to POS
+            var customer = new Customer
+            {
+                CustomerId = userId,
+                CustomerName = $"{checkoutModel.FirstName} {checkoutModel.LastName}",
+                Address = checkoutModel.Address,
+                PhoneNumber = checkoutModel.PhoneNumber,
+                Email = checkoutModel.EmailAddress
+            };
+            await _posService.SyncCustomer(customer); // POS Service 1 : Done
+            await _posService.CreateOrder(order); // POS Service 2 : Done
+            await _posService.CreateOrderItems(orderItemDTOs); // POS Service 3 : Done
+
+            var invoice = new Invoice
+            {
+                OrderId = order.OrderId,
+                CustomerId = userId,
+                SaleDate = DateTime.Now,
+                TotalAmount = order.TotalPrice,
+                PaymentStatus = paymentStatus,
+                PaymentMethod = checkoutModel.PaymentMethod
+            };
+            await _posService.CreateInvoice(invoice); // POS Service 4 : Done
+
+           
             // Optional: Update the cart status to 'Inactive' or similar after the order is placed
             activeCart.Status = "Completed";
             _context.SaveChanges();

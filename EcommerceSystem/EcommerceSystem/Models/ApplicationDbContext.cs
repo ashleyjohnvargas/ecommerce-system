@@ -15,6 +15,9 @@ namespace EcommerceSystem.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }    
         public DbSet<Billing> Billings { get; set; }
+        // public DbSet<TransactionDto> TransactionsDto { get; set; }
+        // public DbSet<TransactionItemDto> TransactionItemsDto { get; set; }
+        // public DbSet<PaymentDto> PaymentsDto { get; set; }
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {
         //     base.OnModelCreating(modelBuilder);
