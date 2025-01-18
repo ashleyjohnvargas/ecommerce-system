@@ -4,6 +4,9 @@
     Layout = "_Layout2";
 }
 
+ @using Microsoft.AspNetCore.Http
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +40,13 @@
                     <form method="post" asp-controller="Cart" asp-action="CustomerCart" style="display: flex; gap: 20px; min-height: 30px; width: auto; margin: 40px 0;">
                         <input type="hidden" id="Id" name="Id" value="@Model.Id" />
                         <input type="number" value="1" name="Quantity" id="Quantity" style="padding: 10px;max-width: 100px;font-size: 16px;text-align: center;">
-                        <button type="submit" class="btn add-to-cart-btn" style="background-color: #8a2be2;text-decoration: none;padding: 10px;min-width: 100px;text-align: center;border-radius: 10px;color: white;cursor: pointer;">Add to Cart</button>
+                        @if (Context.Session.GetInt32("UserId") == null) {
+                            <a asp-controller="Account" asp-action="Authentication" style="background-color: #8a2be2;text-decoration: none;padding: 10px;min-width: 100px;text-align: center;border-radius: 10px;color: white;cursor: pointer;">Add to Cart</a>
+                        }
+                        else {
+                            <button type="submit" class="btn add-to-cart-btn" style="background-color: #8a2be2;text-decoration: none;padding: 10px;min-width: 100px;text-align: center;border-radius: 10px;color: white;cursor: pointer;">Add to Cart</button>
+                        }
+                        
                     </form>
                 </div>
                 
