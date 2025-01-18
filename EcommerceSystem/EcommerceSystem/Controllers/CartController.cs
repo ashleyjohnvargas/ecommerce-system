@@ -49,6 +49,20 @@ public class CartController : Controller
         {
             return NotFound("The product does not exist or is unavailable.");
         }
+        // Calculate the new stock after the deduction
+        var newStock = product.CurrentStock - Quantity;
+
+        // Check if the stock is insufficient
+        if (newStock < 0)
+        {
+            // Set an error message with the remaining stock and product name
+            // TempData["ErrorMessage"] = $"There are only {product.CurrentStock} stocks left for {product.Name}.";
+            TempData["ShowPopup"] = true; // Indicate that the popup should be shown
+            TempData["PopupMessage"] = $"There are only {product.CurrentStock} stocks left for {product.Name}.";
+
+            // Redirect back to the CustProductDetails action in the ProductController, passing the Id
+            return RedirectToAction("CustProductDetails", "Product", new { Id });
+        }
 
         // Step 4: Check if the product is already in the cart
         var existingCartItem = _context.CartItems
