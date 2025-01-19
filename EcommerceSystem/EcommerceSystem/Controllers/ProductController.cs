@@ -41,6 +41,7 @@ namespace EcommerceSystem.Controllers
                         .Select(pi => pi.FilePath)
                         .FirstOrDefault() // Get the first image for each product
                 })
+                .Where(p => !string.IsNullOrEmpty(p.ImagePath)) // Exclude products with no image
                 .ToList();
 
             return View(products);
@@ -128,7 +129,13 @@ namespace EcommerceSystem.Controllers
             var totalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
 
             // Fetch products for the current page
-            var products = allProducts
+            // var products = allProducts
+            //                 .Where(p => !p.IsDeleted && p.IsBeingSold)  // Exclude soft-deleted products
+            //                 .Skip((page - 1) * pageSize) // Skip products from previous pages
+            //                 .Take(pageSize) // Take products for the current page
+            //                 .ToList();
+
+            var products = _context.Products
                             .Where(p => !p.IsDeleted && p.IsBeingSold)  // Exclude soft-deleted products
                             .Skip((page - 1) * pageSize) // Skip products from previous pages
                             .Take(pageSize) // Take products for the current page

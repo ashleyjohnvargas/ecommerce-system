@@ -162,11 +162,11 @@
                     </div>
                     <div class="form-group">
                         <label>Phone Number</label>
-                        <input asp-for="@checkoutModel.PhoneNumber" name="PhoneNumber" placeholder="Enter your phone number" required>
+                        <input asp-for="@checkoutModel.PhoneNumber" name="PhoneNumber" minlength="11" placeholder="Enter your phone number" required>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input asp-for="@checkoutModel.EmailAddress" name="EmailAddress" placeholder="Enter your email address" required>
+                        <input asp-for="@checkoutModel.EmailAddress" type="email" name="EmailAddress" placeholder="Enter your email address" required>
                     </div>
                     <!-- Payment Methods -->
                     <div class="payment-methods">

@@ -58,7 +58,7 @@ public class CartController : Controller
             // Set an error message with the remaining stock and product name
             // TempData["ErrorMessage"] = $"There are only {product.CurrentStock} stocks left for {product.Name}.";
             TempData["ShowPopup"] = true; // Indicate that the popup should be shown
-            TempData["PopupMessage"] = $"There are only {product.CurrentStock} stocks left for {product.Name}.";
+            TempData["PopupMessage"] = $"There are only {product.CurrentStock} stock(s) left for {product.Name}.";
 
             // Redirect back to the CustProductDetails action in the ProductController, passing the Id
             return RedirectToAction("CustProductDetails", "Product", new { Id });

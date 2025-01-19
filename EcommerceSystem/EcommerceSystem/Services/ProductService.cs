@@ -41,10 +41,11 @@ namespace EcommerceSystem.Services
             // Please go to the bottom part of the page to see how JSON and List looks like in the backend.
 
             // Persist the products into the EcommerceSystem database
-            if (products != null && products.Any())
-            {
-                await PersistProductsAsync(products);
-            }
+            // if (products != null && products.Any())
+            // {
+            //     await PersistProductsAsync(products);
+            // }
+            await PersistProductsAsync(products);
 
             return products ?? new List<Product>(); // Return an empty list if no products are found
         }
@@ -71,7 +72,7 @@ namespace EcommerceSystem.Services
             try
             {
                 Console.WriteLine("Resetting identity for Products table...");
-                await _context.Database.ExecuteSqlRawAsync("DBCC CHECKIDENT ('Products', RESEED, 0)"); // Resets identity to 1
+                await _context.Database.ExecuteSqlRawAsync("DBCC CHECKIDENT ('Products', RESEED, 1)"); // Resets identity to 1
                 Console.WriteLine("Identity reset successful.");
             }
             catch (Exception ex)
@@ -86,6 +87,7 @@ namespace EcommerceSystem.Services
                 // No need to check if the product exists because the table has been cleared
                 _context.Products.Add(new Product
                 {
+                    Id = product.Id,
                     Name = product.Name,
                     Description = product.Description,
                     Price = product.Price,
