@@ -46,7 +46,7 @@
                                         <div class="product-info" style="margin-top: 10px;">
                                             <div class="name" style="font-size: 18px;">@item.ProductName</div>
                                             <div class="description">@item.ProductDescription</div>
-                                            <div class="details">Price: &#8369;@item.ProductPrice</div>
+                                            <div class="details">Price: ₱@String.Format("{0:n}", item.ProductPrice)</div>
                                             <div class="remove-link mt-3">
                                                 <a asp-action="RemoveItem" asp-route-id="@item.CartItemID">
                                                     Remove
