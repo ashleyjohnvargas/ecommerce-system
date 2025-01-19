@@ -80,6 +80,7 @@
  *@
 
  @using Microsoft.AspNetCore.Http
+
 <head>
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
@@ -120,7 +121,7 @@
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <input type="text" placeholder="Search your product">
+                <input type="text" id="searchInput" placeholder="Search your product">
                 <button class="search-btn">
                     <i class="fas fa-search"></i>
                 </button>
@@ -186,4 +187,46 @@
             </p>
         </div>
     </footer>
+
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('searchInput');
+
+        // Add event listener for input
+        searchInput.addEventListener('input', function () {
+            const query = searchInput.value;
+
+            // Perform an AJAX request to fetch filtered products
+            fetch(`/Product/Search?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Update the product list dynamically
+                    const productContainer = document.querySelector('#all-products'); // Assuming the products are inside a container with class "row"
+                    productContainer.innerHTML = ''; // Clear the existing products
+
+                    data.forEach(product => {
+                        const productHTML = `
+                            <a style="display: grid; grid-template-columns: 182px; text-decoration: none; color: black;" 
+                            href="/Product/CustProductDetails?id=${product.id}">
+                                <div class="col-4 product-box">
+                                    <img src="${product.imagePath}" alt="${product.name}" />
+                                    <h4>${product.name || 'No name available'}</h4>
+                                    <p>${product.stockStatus || 'Status not available'}</p>
+                                    <p>${product.formattedPrice || '₱0'}</p>
+                                </div>
+                            </a>
+                        `;
+
+                        productContainer.innerHTML += productHTML;
+                    });
+                })
+                .catch(error => console.error('Error fetching products:', error));
+        });
+    });
+
+
+
+    </script>
+
 </body>

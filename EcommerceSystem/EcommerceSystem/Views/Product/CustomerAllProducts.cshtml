@@ -27,7 +27,7 @@
     <!-- Products Section -->
     <div class="small-container">
         <h2>Featured Products</h2>
-        <div class="row">
+        <div class="row" id="all-products">
             @foreach (var product in Model)
             {
                 <a style="display: grid; grid-template-columns: 182px; text-decoration: none; color: black;" asp-controller="Product" asp-action="CustProductDetails" asp-route-id="@product.Id">

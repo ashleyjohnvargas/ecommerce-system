@@ -47,6 +47,55 @@ namespace EcommerceSystem.Controllers
             return View(products);
         }
 
+        // Search action to return filtered products based on search query
+        [HttpGet]
+        public JsonResult Search(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                var allProducts = _context.Products
+                    .Where(p => p.IsBeingSold && !p.IsDeleted) // Include only active products
+                    .Select(p => new
+                    {
+                        p.Id,
+                        p.Name,
+                        // Format price with comma and peso symbol
+                        FormattedPrice = "₱" + string.Format("{0:N0}", p.Price),
+                        p.StockStatus,
+                        // Fetch the first image from the navigation property
+                        ImagePath = p.Images
+                            .Select(pi => pi.FilePath)
+                            .FirstOrDefault() // Get the first image for each product
+                    })
+                    .Where(p => !string.IsNullOrEmpty(p.ImagePath)) // Exclude products with no image
+                    .ToList();
+
+                return Json(allProducts);
+            }
+
+
+            var filteredProducts = _context.Products
+                .Where(p => p.Name.Contains(query) && p.IsBeingSold && !p.IsDeleted) // Filter products by name and include only active products
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    // Format price with comma and peso symbol
+                    FormattedPrice = "₱" + string.Format("{0:N0}", p.Price),
+                    p.StockStatus,
+                    // Fetch the first image from the navigation property
+                    ImagePath = p.Images
+                        .Select(pi => pi.FilePath)
+                        .FirstOrDefault() // Get the first image for each product
+                })
+                .Where(p => !string.IsNullOrEmpty(p.ImagePath)) // Exclude products with no image
+                .ToList();
+
+            return Json(filteredProducts);
+        }
+
+
+
         
         public IActionResult CustProductDetails(int id)
         {
