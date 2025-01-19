@@ -198,13 +198,15 @@
                     <div class="cart-item">
                         <img src="@item.ImagePath" alt="Product Image">
                         <span class="name">@item.ProductName</span>
-                        <span class="subtotal">₱@item.ProductSubtotal</span>
+                        <span class="subtotal">₱@String.Format("{0:n}", item.ProductSubtotal)</span>
+                        
                     </div>
                 }
                 <div class="summary">
                     <div class="row">
                         <span>Subtotal:</span>
-                        <span>₱@Model.CartTotalPrice</span>
+                        <span>₱@String.Format("{0:n}", Model.CartTotalPrice)</span>
+                        
                     </div>
                     <div class="row shipping">
                         <span>Shipping:</span>
@@ -212,7 +214,8 @@
                     </div>
                     <div class="row">
                         <span>Total:</span>
-                        <span>₱@Model.CartTotal</span>
+                        <span>₱@String.Format("{0:n}", Model.CartTotal)</span>
+                        
                     </div>
                 </div>
             </div>

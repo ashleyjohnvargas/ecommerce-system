@@ -46,7 +46,7 @@
                                         <div class="product-info" style="margin-top: 10px;">
                                             <div class="name" style="font-size: 18px;">@item.ProductName</div>
                                             <div class="description">@item.ProductDescription</div>
-                                            <div class="details">Price: &#8369;@item.ProductPrice</div>
+                                            <div class="details">Price: ₱@String.Format("{0:n}", item.ProductPrice)</div>
                                             <div class="remove-link mt-3">
                                                 <a asp-action="RemoveItem" asp-route-id="@item.CartItemID">
                                                     Remove
@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>&#8369;<span class="price">@item.ProductPrice</span></td>
+                                <td>₱@String.Format("{0:n}", item.ProductPrice)</td>
                                 <td class="quantity-column">
                                     <!--COMMENTED UP AND DOWN BUTTON FOR QUANTITY OF PRODUCT ORDERED-->
                                     <div class="input-group">
@@ -64,7 +64,7 @@
                                         @* <button class="btn btn-outline-secondary increment" type="button">+</button> *@
                                     </div>
                                 </td>
-                                <td>&#8369;<span class="subtotal">@item.ProductSubtotal</span></td>
+                                <td>₱@String.Format("{0:n}", item.ProductSubtotal)</td>                               
                             </tr>
                         }
                     </tbody>
@@ -75,7 +75,8 @@
                     <h4 class="text-center">Cart Total</h4>
                     <div class="d-flex justify-content-between">
                         <span>Subtotal:</span>
-                        <span>&#8369;<span id="cart-subtotal">@Model.CartTotalPrice</span></span>
+                        <span>₱@String.Format("{0:n}", Model.CartTotalPrice)</span>
+                        
                     </div>
                     <div class="d-flex justify-content-between">
                         <span>Shipping Fee:</span>
@@ -84,7 +85,8 @@
                     <hr>
                     <div class="d-flex justify-content-between">
                         <strong>Total:</strong>
-                        <strong>&#8369;<span id="cart-total">@Model.CartTotalPrice</span></strong>
+                        <strong>₱@String.Format("{0:n}", Model.CartTotalPrice)</strong>
+                        
                     </div>
                     <!--Proceed to Checkout button-->
                     <div style="display: flex;justify-content: center;">
