@@ -39,16 +39,17 @@ namespace EcommerceSystem.Controllers
             var orders = _context.Orders
                 .Where(o => o.CustomerId == user.Id && !o.IsDeleted)
                 .OrderByDescending(o => o.CreatedAt)
-                .Include(o => o.OrderItems)
                 .ToList();
 
-            // Create a model for the view, which includes the order details
+            // For each order, manually fetch the order items using OrderId
             var orderHistoryViewModel = orders.Select(order => new OrderHistoryViewModel
             {
                 OrderId = order.OrderId,
                 CreatedAt = order.CreatedAt?.ToString("yyyy-MM-dd"), // Format the date
                 OrderStatus = order.OrderStatus,
-                ItemsCount = order.OrderItems?.Sum(oi => oi.Quantity) ?? 0
+                ItemsCount = _context.OrderItems
+                    .Where(oi => oi.OrderId == order.OrderId)
+                    .Sum(oi => oi.Quantity.GetValueOrDefault()) // Safely convert to non-nullable int
             }).ToList();
 
             return View(orderHistoryViewModel); // Return the view with the order history model

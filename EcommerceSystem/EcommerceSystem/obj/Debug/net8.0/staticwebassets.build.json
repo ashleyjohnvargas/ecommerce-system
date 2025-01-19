@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K09/N4xHY3vHwU+1fxUrbpo5EsJb9jPX7DmURgjIS0U=",
+  "Hash": "PQjQ1iGYPjrq5++HPupTKMO1NJU8behkF2mtXi4GFSk=",
   "Source": "EcommerceSystem",
   "BasePath": "_content/EcommerceSystem",
   "Mode": "Default",
@@ -566,6 +566,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\184940_2022.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\61wQNtMZHgL._AC_SL1500_.jpg",
+      "SourceId": "EcommerceSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\",
+      "BasePath": "_content/EcommerceSystem",
+      "RelativePath": "images/products/61wQNtMZHgL._AC_SL1500_.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\61wQNtMZHgL._AC_SL1500_.jpg"
     },
     {
       "Identity": "C:\\Users\\Angel\\OneDrive\\Documents\\EcommerceClone2\\ecommerce-system\\EcommerceSystem\\EcommerceSystem\\wwwroot\\images\\products\\71Mt4JAZQtL._AC_SL1500_.jpg",
