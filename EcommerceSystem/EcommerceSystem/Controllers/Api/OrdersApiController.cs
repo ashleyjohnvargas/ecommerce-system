@@ -42,6 +42,33 @@ namespace EcommerceSystem.Controllers.Api
         }
 
 
+        // ROute: api/OrdersApi/UpdateOrder
+        [HttpPost("UpdateOrder")]
+        public IActionResult UpdateOrder([FromBody] OrderRefundModel model)
+        {
+            if (model == null)
+            {
+                return BadRequest("Invalid data.");
+            }
+
+            // Find the order in the Ecommerce system by OrderId
+            var order = _context.Orders.FirstOrDefault(o => o.OrderId == model.OrderId);
+            if (order == null)
+            {
+                return NotFound("Order not found.");
+            }
+
+            // Update the OrderStatus and CreatedAt in the Ecommerce system
+            order.OrderStatus = "Refunded";
+            order.CreatedAt = model.RefundDate;
+
+            // Save changes to the database
+            _context.SaveChanges();
+
+            return Ok("Order updated successfully.");
+        }
+
+
 
     }
 }
