@@ -37,7 +37,7 @@ namespace EcommerceSystem.Controllers
             if (user.Email.Contains("@admin"))
             {
                 // Redirect to the desired controller and action for admin
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Product", "Product");
             }
             else
             {
@@ -66,7 +66,7 @@ namespace EcommerceSystem.Controllers
                 if (email.Contains("@admin"))
                 {
                     // Redirect to the desired controller and action for admin
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Product", "Product");
                 }
                 else
                 {

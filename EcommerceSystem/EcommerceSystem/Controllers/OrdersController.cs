@@ -37,7 +37,7 @@ namespace EcommerceSystem.Controllers
 
             // Fetch orders for the logged-in user, ordered by CreatedAt (most recent first)
             var orders = _context.Orders
-                .Where(o => o.CustomerId == user.Id && !o.IsDeleted)
+                .Where(o => o.CustomerId == user.Id)
                 .OrderByDescending(o => o.CreatedAt)
                 .ToList();
 

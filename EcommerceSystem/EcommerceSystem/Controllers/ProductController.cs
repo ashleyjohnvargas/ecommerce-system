@@ -120,6 +120,7 @@ namespace EcommerceSystem.Controllers
                     p.StockStatus,
                     Image = _context.ProductImages.Where(pi => pi.ProductId == p.Id).Select(pi => pi.FilePath).FirstOrDefault()
                 })
+                .Where(p => !string.IsNullOrEmpty(p.Image)) // Exclude products with no image
                 .ToList();
 
             // Exclude the main image from the list of images

@@ -70,5 +70,27 @@ namespace EcommerceSystem.Controllers.Api
 
 
 
+        [HttpPost("CancelOrder/{orderId}")]
+        public async Task<IActionResult> CancelOrder(int orderId)
+        {
+            var order = await _context.Orders.FirstOrDefaultAsync(o => o.OrderId == orderId);
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            // Update the order status
+            order.OrderStatus = "Cancelled";
+            order.IsDeleted = true;
+            
+            // Save changes in the Ecommerce database
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+
+
+
     }
 }

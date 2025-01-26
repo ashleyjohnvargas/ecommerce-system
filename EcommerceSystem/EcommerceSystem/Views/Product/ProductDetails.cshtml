@@ -36,7 +36,7 @@
                 </div>
                 <div class="product-info">
                     <h2>@product.Name</h2>
-                    <p><strong>Price:</strong> @product.Price.ToString("C")</p>
+                    <p><strong>Price:</strong> ₱@String.Format("{0:n}", product.Price)</p>
                     <p><strong>Description:</strong> @product.Description</p>
                     <p><strong>Color:</strong> @product.Color</p>
                     <p><strong>Category:</strong> @product.Category</p>

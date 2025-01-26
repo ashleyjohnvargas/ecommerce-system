@@ -7,7 +7,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7uGbe8sqIk+gbl5FcPNwFQAAAAACAAAAAAAQZgAAAAEAACAAAAAUiiHxeSDVJbHjubqfNCozKL46gF+4yiJzG06gC3BLowAAAAAOgAAAAAIAACAAAAAaeITpwYIU93YidpdPuUAl4HUOjTHq1I9kJnpJVaaY0IAAAABZS9HVFkRvYBFEd8RdUoOyvS5u8FeWb7v8sSiyOfDI1O7v8XnFRYcl/t12FTzXvmYzniYb3Mqam9RYcAvc1gJKZO/RA8x/9OK8mhiCKCyL30B4MW4di5ISg01yZeFv080TEoEu6+rpt9HDyDasSUMN/hgoDcMRqd5ER2lBYKbncUAAAADeNp+0/KxRApnE/zB6B0bqzayFsbsCzYu63Y0+HdZx7jq/bFq1N722aO7/lgLmZQrQy16XjezAeb0aX78VkoUl</EncryptedPassword>
-    <History>True|2025-01-13T08:43:20.4639774Z||;</History>
+    <History>True|2025-01-20T08:35:00.0846404Z||;True|2025-01-20T16:29:33.7153026+08:00||;True|2025-01-20T16:09:45.8450366+08:00||;True|2025-01-20T16:05:50.7521362+08:00||;True|2025-01-20T15:56:36.0522766+08:00||;True|2025-01-13T16:43:20.4639774+08:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:gizmodeecommercedbserver.database.windows.net,1433%3bInitial Catalog=EcommerceDB%3bPersist Security Info=False%3bUser ID=ashleyjohnvargas%3bPassword=4774.R81m%24%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>
