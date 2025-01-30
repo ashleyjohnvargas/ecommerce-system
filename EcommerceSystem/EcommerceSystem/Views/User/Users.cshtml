@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@model List<UserViewModel>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+</head>
+@* //@Html.DisplayFor(model => model.IsActive ? "Active" : "Inactive") *@
+<style>
+    .mt-5 {
+        margin-left:20px;
+        margin-right:20px;
+    }
+    /* Table Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #e2dfd8;
+    }
+
+    /* Header alignment */
+    .mb-4.d-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        margin-right: 40px;
+        margin-left: 10px;
+    }
+
+    /* Optional: Actions alignment in the table */
+    .action-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    /* Style for Success Message */
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border-color: #c3e6cb;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.2); /* Optional shadow for emphasis */
+    }
+
+        .alert-success i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+            color: #155724;
+        }
+
+    /* Style for Error Message */
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); /* Optional shadow for emphasis */
+    }
+
+        .alert-danger i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+            color: #721c24;
+        }
+
+    /* Optional: Style the message box container to center it */
+    .alert {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+</style>
+<div class="container mt-5">
+    @{
+        var successMessage = TempData["SuccessMessage"];
+        var errorMessage = TempData["ErrorMessage"];
+    }
+
+    @if (successMessage != null)
+    {
+        <div class="alert alert-success">
+            @successMessage
+        </div>
+    }
+
+    @if (errorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @errorMessage
+        </div>
+    }
+    <div class="mb-4 d-flex justify-content-between ">
+        <h1 class="mb-0">
+            <span>Admin</span>
+        </h1>
+        <a asp-controller="User" asp-action="AddUser" method="get" title="Add" style="text-decoration: none; background-color:  #954bd6; color: white; padding: 10px 20px; border-radius: 10px;">Add User</a>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Email Address</th>
+                <th>Status</th> <!--Active users? only-->
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                int index = 1;
+                foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@index</td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>
+                            @(user.IsActive ? "Active" : "Inactive")
+                        </td>
+                        <td class="action-icons">
+                            <a asp-action="EditUser" asp-route-id="@user.Id" title="Edit" style="color:#b086e5;font-size: 20px;"><i class="fas fa-edit edit"></i></a>
+                            <!-- Form for deleting the unit -->
+                            <form asp-action="DeleteUser" asp-route-id="@user.Id" method="post" style="display:inline;" onsubmit="return confirmDelete()">
+                                <button type="submit" title="Delete" style="color:#e15b64; background: none; border: none; padding: 0; width: fit-content; height: fit-content; font-size: 19px;">
+                                    <i class="fas fa-trash delete" ></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    index++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" style="text-align:center;">No users found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function confirmDelete() {
+        return confirm("Are you sure you want to delete this user?");
+    }
+</script>

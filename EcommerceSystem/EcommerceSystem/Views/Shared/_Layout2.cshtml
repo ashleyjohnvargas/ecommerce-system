@@ -157,8 +157,8 @@
                     {
                         <!-- Display dropdown and redirect to Profile on click if user is logged in -->
                         <div class="dropdown-menu">
-                            <a class="dropdown-link">Profile</a>
-                            <a asp-controller="Account" asp-action="Logout" class="dropdown-link">
+                            <a asp-controller="Profile" asp-action="EditProfile" class="dropdown-link"> <i class="fas fa-user logout-icon"></i>Profile</a>
+                            <a asp-controller="Account" asp-action="Logout" class="dropdown-link" onclick="return confirm('Are you sure you want to log out?');">
                                 <i class="fas fa-sign-out-alt logout-icon"></i>Logout
                             </a>
                         </div>  
@@ -178,7 +178,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Gizmode. All rights reserved.</p>
+            <p>&copy; 2025 Gizmode. All rights reserved.</p>
             <p>
                 Follow us on:
                 <a href="#">Facebook</a>,
@@ -225,7 +225,20 @@
         });
     });
 
-
+        // Show/Hide Password
+            function togglePasswordVisibility(fieldId, toggleIcon) {
+                const passwordField = document.getElementById(fieldId);
+                const icon = toggleIcon.querySelector("i");
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                    icon.classList.remove("bx-hide");
+                    icon.classList.add("bx-show");
+                } else {
+                    passwordField.type = "password";
+                    icon.classList.remove("bx-show");
+                    icon.classList.add("bx-hide");
+                }
+            }
 
     </script>
 

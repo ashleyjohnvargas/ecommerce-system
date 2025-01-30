@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EcommerceSystem.Models
 {
@@ -10,6 +11,8 @@ namespace EcommerceSystem.Models
         public DbSet<Product> Products { get; set;}
         public DbSet<ProductImage> ProductImages { get; set;}
         public DbSet<User> Users { get; set; }
+        public DbSet<Profile> UserProfiles { get; set; }
+
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Order> Orders { get; set; }

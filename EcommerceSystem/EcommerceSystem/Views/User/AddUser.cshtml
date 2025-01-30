@@ -1,0 +1,292 @@
+﻿@{
+    ViewData["Title"] = "Add User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@model UserViewModel
+<head>
+  
+    <!-- Font Awesome (for the arrow icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Boxicons (for the password toggle icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+
+
+
+</head>
+<style>
+    /* Container for password input and icon */
+    .password-container {
+        position: relative; /* Enables absolute positioning for the toggle button */
+        margin-bottom: 1.5rem;
+    }
+
+    /* General Styling for All Input Fields */
+    .form-control, .form-control-lg {
+        width: 100%; /* Ensures the inputs take up the full width of the container */
+        max-width: 500px; /* Optional: Set a maximum width for input fields */
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.4rem;
+        transition: border-color 0.2s ease-in-out;
+        line-height: 1.5; /* Ensure consistent height alignment */
+        background-color: #f9f9f9;
+        margin-bottom: 1.5rem;
+    }
+
+        /* Highlight on focus for all input fields */
+        .form-control:focus, .form-control-lg:focus {
+            outline: none;
+            border-color: #4a90e2; /* Highlight color on focus */
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* Light blue glow */
+        }
+
+    /* Custom Password Input Styling */
+    .password-input {
+        /* padding-right: 3rem; /* Space for the toggle icon */ */
+    }
+
+    /* Toggle Password Visibility Button */
+    .toggle-password {
+        position: absolute;
+        top: 59%; /* Center vertically */
+        right: 60px;
+        transform: translateY(-50%); /* Align with middle of input field */
+        cursor: pointer;
+        color: #333;
+        font-size: 1.2rem;
+        transition: color 0.2s ease-in-out;
+    }
+
+        /* Hover effect for icon */
+        .toggle-password:hover {
+            color: #4a90e2; /* Change color on hover */
+        }
+
+        /* Icon Styling */
+        .toggle-password i {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+    /* Add custom page styling */
+    .custom-page-wrapper {
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+        /* Form Title */
+        .custom-page-wrapper h2 {
+            font-size: 1.8rem;
+            color: #343a40;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+    /* Form Group */
+    .form-group {
+        margin-bottom: 0.8rem;
+    }
+
+    /* Label Styling */
+    .form-label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #555;
+        display: block; /* Make sure label takes up full width */
+        margin-bottom: 0.5rem; /* Add space between label and input */
+    }
+
+    /* Button Styling */
+    button[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        width: 60%;
+        transition: background-color 0.2s ease-in-out;
+        margin: 0 auto; /* Center the button */
+        display: block; /* Make the button a block-level element to center it */
+    }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+    /* Go Back Link */
+    .go-back-link {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2rem;
+        margin-right: 15px;
+    }
+
+        .go-back-link:hover {
+            color: #4a90e2;
+        }
+
+    /* Style for Error Message */
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); /* Optional shadow for emphasis */
+    }
+
+        .alert-danger i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+            color: #721c24;
+        }
+
+    /* Optional: Style the message box container to center it */
+    .alert {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+</style>
+@{
+    <br>
+    var successMessage = TempData["SuccessMessage"];
+    var errorMessage = TempData["ErrorMessage"];
+}
+
+@if (successMessage != null)
+{
+    <div class="alert alert-success">
+        @successMessage
+    </div>
+}
+
+@if (errorMessage != null)
+{
+    <div class="alert alert-danger">
+        @errorMessage
+    </div>
+}
+<div class="custom-page-wrapper">
+    <!-- Page Header with Go Back Icon -->
+    <div class="d-flex align-items-center mb-4">
+        <a asp-action="Users" class="text-decoration-none me-3 text-dark" title="Go Back">
+            <i class="fa-solid fa-arrow-left fs-3"></i>
+        </a>
+        <h2 class="mb-0 fw-bold" style="font-size: 1.8rem; color: #343a40;">Add New User</h2>
+    </div>
+
+    <form asp-action="AddUser" method="post" id="addUserForm">
+        <div class="form-group mb-4">
+            <label for="UserName" class="form-label">Full Name</label>
+            <input type="text" class="form-control form-control-lg" id="UserName" name="UserName" required>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control form-control-lg" id="Email" name="Email" required>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Status" class="form-label">Status</label>
+            <select class="form-control form-control-lg" id="Status" name="Status" style="width:100%">
+                <option value="Active" selected>Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-4 password-container">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control form-control-lg password-input" id="Password" name="Password" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility('Password', this)" title="Show/Hide Password">
+                <i class="bx bx-hide"></i>
+            </span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success btn-lg px-5" style="border-radius: 25px; font-size: 1.1rem;">
+                <i class="bx bxs-save"></i> Add User
+            </button>
+        </div>
+        <br >
+    </form>
+</div>
+
+@*
+<div class="custom-page-wrapper">
+
+    @* <div class="container mt-5"> *@
+
+    @* <h1 class="mb-4">Add New User</h1> 
+    <!-- Page Header with Go Back Icon -->
+    <div class="d-flex align-items-center mb-4">
+        <a asp-action="Users" class="text-decoration-none me-3 text-dark" title="Go Back">
+            <i class="fa-solid fa-arrow-left fs-3"></i>
+        </a>
+        <h2 class="mb-0 fw-bold" style="font-size: 1.8rem; color: #343a40;">Add New User</h2>
+    </div>
+
+    <form asp-action="AddUser" method="post">
+        <div class="form-group mb-4">
+            <label for="UserName" class="form-label">Full Name</label>
+            <input type="text" class="form-control form-control-lg" id="UserName" name="UserName" required>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control form-control-lg" id="Email" name="Email" required>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Status" class="form-label" >Status</label>
+            <select class="form-control form-control-lg" id="Status" name="Status">
+                <option value="Active" selected>Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-4 password-container">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control form-control-lg password-input" id="Password" name="Password" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility('Password', this)" title="Show/Hide Password">
+                <i class="bx bx-hide"></i>
+            </span>
+        </div>
+
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success btn-lg px-5" style="border-radius: 25px; font-size: 1.1rem;">
+                <i class="bx bxs-save"></i> Add User
+            </button>
+        </div>
+    </form>
+
+
+</div> *@
+<script> 
+// Show/Hide Password
+        function togglePasswordVisibility(fieldId, toggleIcon) {
+            const passwordField = document.getElementById(fieldId);
+            const icon = toggleIcon.querySelector("i");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove("bx-hide");
+                icon.classList.add("bx-show");
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove("bx-show");
+                icon.classList.add("bx-hide");
+            }
+        }
+</script>

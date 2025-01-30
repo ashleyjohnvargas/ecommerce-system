@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Gizmode Ecommerce - Customers";
+    Layout = "~/Views/Shared/_LayoutPM.cshtml";
+}
+
+<h1>User Management</h1>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            @* <th>Role</th> *@
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>john_doe</td>
+            <td>john@example.com</td>
+            @* <td> *@
+            @*     Customer *@
+                @* <select> *@
+                @*     <option value="tenant">Tenant</option> *@
+                @*     <option value="property_manager">Property Manager</option> *@
+                @*     <option value="maintenance_staff">Maintenance Staff</option> *@
+                @* </select> *@
+            @* </td> *@
+            <td>
+                <select>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </td>
+            <td><button class="button">Update</button></td>
+        </tr>
+       
+        <!-- More rows as needed -->
+    </tbody>
+</table>
+@* </div> *@
+
+<script>
+            // script.js
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function () {
+            const row = this.closest('tr');
+            const userId = row.cells[0].textContent;
+            const username = row.cells[1].textContent;
+            const email = row.cells[2].textContent;
+            // const role = row.cells[3].value;
+            const status = row.querySelectorAll('select')[1].value;
+
+            alert(`Updating user ${username} (ID: ${userId})\nEmail: ${email}\nStatus: ${status}`); //\nRole: ${role}
+
+            //  send this data to a backend system to update the user's status.
+        });
+    });
+
+</script>
+
