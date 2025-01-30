@@ -1,8 +1,8 @@
-@* @model EcommerceSystem.Models.Profile *@
-@model UserViewModel
+@model EcommerceSystem.Models.Profile
+@* @model EcommerceSystem.Models.UserViewModel *@
 @{
     ViewData["Title"] = "Edit Profile";
-    
+    Layout = "_Layout2";
 }
 <head>
     <meta charset="UTF-8">
@@ -137,7 +137,9 @@
 </head>
 
 
-<div class="fade-in">
+@* <div class="fade-in"> *@
+<div class="container mt-5">
+
   
 
     <!-- Page Header with Go Back Icon -->
@@ -150,29 +152,26 @@
         @* </a> *@
         <h2 class="mb-0 fw-bold" style="font-size: 1.8rem; color: #333;">Edit Profile</h2>
     </div>
-        @{
-            var successMessage = TempData["SuccessMessage"];
-            var errorMessage = TempData["ErrorMessage"];
-        }
-        @if (ViewData["ErrorMessage"] != null)
-        {
-            <div class="alert alert-danger mt-3 text-center">
-                @ViewData["ErrorMessage"]
-            </div>
-        }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
 
-        @if (ViewData["SuccessMessage"] != null)
-        {
-            <div class="alert alert-success mt-3 text-center">
-                @ViewData["SuccessMessage"]
-            </div>
-        }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
     <!-- Centered Form in a Card -->
     <div class="container d-flex justify-content-center" style="margin-bottom: 80px;">
         <div class="card shadow-sm p-4" style="width: 100%; max-width: 750px; border-radius: 12px; background-color: #ffffff;">
             <div class="card-body">
                 <form asp-action="EditProfile" method="post">
-                    <input type="hidden" asp-for="Id" />
+                    @* <input type="hidden" asp-for="Id" /> *@
 
                     <!-- Full Name -->
                     @* <div class="form-group mb-4"> *@
@@ -180,29 +179,32 @@
                     @*     <input type="hidden" name="FullName" /> *@
                     @* </div> *@
                     <div class="form-group mb-4">
-                        <label asp-for="UserName" class="form-label">Username</label>
-                        <input asp-for="UserName" class="form-control" value="@Model.UserName" required />
+                        <label for="UserName" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="UserName" name="UserName" value="@Model.UserName" required />
                     </div>
                     <!-- Email -->
                     <div class="form-group mb-4">
-                        <label asp-for="Email" class="form-label">Email</label>
-                        <input asp-for="Email" type="email" class="form-control" value="@Model.Email" required />
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required />
                         @* <label for="Email" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Email</label> *@
                         @* <input type="email" class="form-control form-control-lg" id="Email" name="Email" value="@Model.Email" required> *@
                     </div>
                  
                     <!-- Phone Number -->
                     <div class="form-group mb-4">
-                        <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
-                        <input asp-for="PhoneNumber" type="tel" class="form-control" value="@Model.PhoneNumber" />
+                        <label for="PhoneNumber" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" />
                         @* <label for="PhoneNumber" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Phone Number</label> *@
                         @* <input type="tel" class="form-control form-control-lg" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber"> *@
                     </div>
 
                     <!-- Address -->
                     <div class="form-group mb-4">
-                        <label asp-for="Address" class="form-label">Address</label>
-                        <textarea asp-for="Address" class="form-control" value="@Model.Address"></textarea>
+                        <label for="Address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="Address" name="Address" value="@Model.Address" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+
+                        @* <textarea class="form-control" id="Address" name="Address">@Model.Address</textarea> *@
                         @* <label for="Address" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Address</label> *@
                         @* <input type="text" class="form-control form-control-lg" id="Address" name="Address" value="@Model.Address"> *@
                     </div>
@@ -213,8 +215,8 @@
                     @* </div> *@
                     <!-- Password Field -->
                     <div class="form-group mb-4" style="position: relative;">
-                        <label asp-for="Password" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Password</label>
-                        <input asp-for="Password" type="password" class="form-control form-control-lg" id="Password" name="Password">
+                        <label for="Password" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Password</label>
+                        <input type="password" class="form-control form-control-lg" id="Password" name="Password">
                         <span class="toggle-password" onclick="togglePasswordVisibility('Password', this)"
                               title="Show/Hide Password"
                               style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); cursor: pointer;">

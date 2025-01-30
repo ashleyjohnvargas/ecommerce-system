@@ -1,5 +1,6 @@
 ﻿using EcommerceSystem.Models;
 using Microsoft.AspNetCore.Mvc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace EcommerceSystem.Controllers
@@ -25,21 +26,22 @@ namespace EcommerceSystem.Controllers
         //public IActionResult CustomerProfile()
         //{
         //    return View();
+        ////}
+        //////GET: Customer/Profile
+        //public IActionResult Profile(int id)
+        //{
+        //    // Replace with actual user ID or authentication logic
+        //    var customer = _context.Users.FirstOrDefault(u => u.Id == id);
+
+        //    if (customer == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(customer);
         //}
-        ////GET: Customer/Profile
-        public IActionResult Profile(int id)
-        {
-            // Replace with actual user ID or authentication logic
-            var customer = _context.Users.FirstOrDefault(u => u.Id == id);
 
-            if (customer == null)
-            {
-                return NotFound();
-            }
-
-            return View(customer);
-        }
-
+        [HttpGet]
         public IActionResult EditProfile()
         {
             var userId = HttpContext.Session.GetInt32("UserId"); // Retrieve the user ID from the session
@@ -58,21 +60,24 @@ namespace EcommerceSystem.Controllers
                 return RedirectToAction("Authentication", "Account");
             }
 
-            var model = new UserViewModel
+            var model = new Profile
             {
                 Id = user.Id,
                 UserName = user.UserName,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 Address = user.Address,
-                IsActive = user.IsActive
+                //IsActive = user.IsActive
             };
 
             return View(model);
         }
 
+
+
+
         [HttpPost]
-        public IActionResult EditProfile(UserViewModel model)
+        public IActionResult EditProfile(Profile model)
         {
             if (!ModelState.IsValid)
             {
@@ -97,16 +102,27 @@ namespace EcommerceSystem.Controllers
                 return RedirectToAction("Authentication", "Account"); // If user is not found, redirect to login page
             }
 
-            try
+            // Ensure the profile and user exist before updating
+            if (user != null)
             {
-                // Update user details with the data from the form (model)
-                user.UserName = model.UserName;
-                user.Email = model.Email;
-                user.PhoneNumber = model.PhoneNumber;
-                user.Address = model.Address;
-                user.IsActive = model.Status == "Active"; // Assuming 'Status' is used for active status
+                // Only update the fields if the user has provided new values
+                if (!string.IsNullOrEmpty(model.UserName))
+                {
+                    user.UserName = model.UserName;
+                }
 
-                // Update password if provided
+                if (!string.IsNullOrEmpty(model.Email))
+                {
+                    user.Email = model.Email;
+                }
+                if (!string.IsNullOrEmpty(model.PhoneNumber))
+                {
+                    user.PhoneNumber = model.PhoneNumber;
+                }
+                if (!string.IsNullOrEmpty(model.Address))
+                {
+                    user.Address = model.Address;
+                }
                 if (!string.IsNullOrEmpty(model.Password))
                 {
                     user.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);  // Hash the new password before saving
@@ -115,15 +131,115 @@ namespace EcommerceSystem.Controllers
                 // Save changes to the database
                 _context.SaveChanges();
 
+                // Set success message
                 TempData["SuccessMessage"] = "Profile updated successfully!";
-                return RedirectToAction("EditProfile");  // Stay on the Edit Profile page after successful update
             }
-            catch (Exception ex)
+            else
             {
-                TempData["ErrorMessage"] = $"Error occurred: {ex.Message}";
-                return View(model);  // Return to the form if an error occurs
+                // Handle case where profile or user doesn't exist
+                TempData["ErrorMessage"] = "Profile not found.";
+                return RedirectToAction("CustomerIndex", "Home");
             }
+
+            // Redirect to the profile page after update
+            return RedirectToAction("CustomerIndex", "Home");
         }
+        //[HttpPost]
+        //public IActionResult EditProfile(UserViewModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model);
+        //    }
+
+        //    // Retrieve the user ID from session
+        //    var userId = HttpContext.Session.GetInt32("UserId");
+
+        //    if (userId == null)
+        //    {
+        //        TempData["ErrorMessage"] = "You need to be logged in to update your profile.";
+        //        return RedirectToAction("Authentication", "Account");  // Redirect to login page if not logged in
+        //    }
+
+        //    // Retrieve the user from the database using the ID from session
+        //    var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+
+        //    if (user == null)
+        //    {
+        //        TempData["ErrorMessage"] = "User not found.";
+        //        return RedirectToAction("Authentication", "Account"); // If user is not found, redirect to login page
+        //    }
+
+        //    // Ensure the profile and user exist before updating
+        //    if (user != null)
+        //    {
+        //        // Only update the fields if the user has provided new values
+        //        if (!string.IsNullOrEmpty(model.UserName))
+        //        {
+        //            user.UserName = model.UserName;
+        //        }
+
+        //        if (!string.IsNullOrEmpty(model.Email))
+        //        {
+        //            user.Email = model.Email;
+        //        }
+        //        if (!string.IsNullOrEmpty(model.PhoneNumber))
+        //        {
+        //            user.PhoneNumber = model.PhoneNumber;
+        //        }
+        //        if (!string.IsNullOrEmpty(model.Address))
+        //        {
+        //            user.Address = model.Address;
+        //        }
+        //        if (!string.IsNullOrEmpty(model.Password))
+        //        {
+        //            user.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);  // Hash the new password before saving
+        //        }
+
+        //       // Save changes to the database
+        //        _context.SaveChanges();
+
+        //        // Set success message
+        //        TempData["SuccessMessage"] = "Profile updated successfully!";
+        //    }
+        //    else
+        //    {
+        //        // Handle case where profile or user doesn't exist
+        //        TempData["ErrorMessage"] = "Profile not found.";
+        //        return RedirectToAction("CustomerIndex", "Home");
+        //    }
+
+        //    // Redirect to the profile page after update
+        //    return RedirectToAction("CustomerIndex", "Home");
+        //}
+        //try
+        //{
+
+        //    // Update user details with the data from the form (model)
+        //    user.UserName = model.UserName;
+        //    user.Email = model.Email;
+        //    user.PhoneNumber = model.PhoneNumber;
+        //    user.Address = model.Address;
+        //    //user.IsActive = model.Status == "Active"; // Assuming 'Status' is used for active status
+
+        //    // Update password if provided
+        //    if (!string.IsNullOrEmpty(model.Password))
+        //    {
+        //        user.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);  // Hash the new password before saving
+        //    }
+
+        //    // Save changes to the database
+        //    _context.SaveChanges();
+
+        //    TempData["SuccessMessage"] = "Profile updated successfully!";
+        //    return RedirectToAction("CustomerIndex", "Home");  // Stay on the Edit Profile page after successful update
+        //}
+        //catch (Exception ex)
+        //{
+        //    TempData["ErrorMessage"] = $"Error occurred: {ex.Message}";
+        //    return View(model);  // Return to the form if an error occurs
+        //}
+        //}
 
 
         // Display the Edit Profile page for the signed-in user

@@ -14,11 +14,13 @@ namespace EcommerceSystem.Models
         // public string? Status { get; set; } // Use this field for Active/Inactive
         public string Status { get; set; } // For dropdown value
 
-        public string? Password { get; set; } // Store hashed passwords
+       
                                               //public string Status => IsActive ? "Active" : "Inactive";
-
+        [Phone]
         public string? PhoneNumber { get; set; }
         public string? Address { get; set; }
+
+        public string? Password { get; set; } // Store hashed passwords
 
 
     }
