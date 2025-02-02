@@ -46,7 +46,7 @@
                         <li><a><i class="fas fa-shopping-bag"></i>Orders</a></li>
                         <li><a><i class="fas fa-users"></i>Customers</a></li> *@
                         @* <li><a><i class="fas fa-user-shield"></i>Admin</a></li> *@
-                        <li><a asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        <li><a id="logout-btn" asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                         @* <li><a asp-controller="Account" asp-action="Authentication"><i class="fas fa-user"></i>Sign In/Sign Up</a></li> *@
                     </ul>
                 </nav>
@@ -62,17 +62,26 @@
         </div>
     </div>
     
-    <!-- Footer -->
+    @* <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <p>&copy; 2023 Gizmode. All rights reserved.</p>
+            <p> </p>
             <p>Follow us on:
                 <a href="#">Facebook</a>,
                 <a href="#">Twitter</a>,
                 <a href="#">Instagram</a>
             </p>
         </div>
-    </footer>
+    </footer> *@
+
+    <script>
+        // Logout Button
+		document.getElementById("logout-btn").addEventListener("click", function () {
+			if (confirm("Are you sure you want to logout?")) {
+				window.location.href = this.href;
+			}
+		});
+    </script>
 
 </body>
 </html>

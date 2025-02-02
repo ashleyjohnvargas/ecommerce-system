@@ -138,6 +138,20 @@
 </head>
 <body>
 
+    @if (TempData["ShowPopup"] != null && (bool)TempData["ShowPopup"])
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                Swal.fire({
+                    title: 'Invalid input!',
+                    text: '@TempData["PopupMessage"]',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
+    }
+
     <div class="temp-body">
         <div class="checkout-container">
             <!-- Column 1: Billing Details -->
@@ -145,42 +159,42 @@
                 <form method="post" asp-action="PlaceOrder">
                     <h2>Billing Details</h2>
                     <div class="form-group">
-                        <label>First Name</label>
-                        <input asp-for="@checkoutModel.FirstName" name="FirstName" placeholder="Enter your first name" required>
+                        <label>First Name<span style="color: red;"> *</span></label>
+                        <input asp-for="@checkoutModel.FirstName" name="FirstName" placeholder="Enter your first name">
                     </div>
                     <div class="form-group">
-                        <label>Last Name</label>
-                        <input asp-for="@checkoutModel.LastName" name="LastName" placeholder="Enter your last name" required>
+                        <label>Last Name<span style="color: red;"> *</span></label>
+                        <input asp-for="@checkoutModel.LastName" name="LastName" placeholder="Enter your last name">
                     </div>
                     <div class="form-group">
                         <label>Company Name</label>
                         <input asp-for="@checkoutModel.CompanyName" name="CompanyName" placeholder="Enter your company name">
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
-                        <input asp-for="@checkoutModel.Address" name="Address" placeholder="Address" required>
+                        <label>Address<span style="color: red;"> *</span></label>
+                        <input asp-for="@checkoutModel.Address" name="Address" placeholder="Address">
                     </div>
                     <div class="form-group">
-                        <label>Phone Number</label>
-                        <input asp-for="@checkoutModel.PhoneNumber" name="PhoneNumber" minlength="11" placeholder="Enter your phone number" required>
+                        <label>Phone Number<span style="color: red;"> *</span></label>
+                        <input asp-for="@checkoutModel.PhoneNumber" name="PhoneNumber" minlength="11" placeholder="Enter your phone number">
                     </div>
                     <div class="form-group">
-                        <label>Email Address</label>
-                        <input asp-for="@checkoutModel.EmailAddress" type="email" name="EmailAddress" placeholder="Enter your email address" required>
+                        <label>Email Address<span style="color: red;"> *</span></label>
+                        <input asp-for="@checkoutModel.EmailAddress" type="email" name="EmailAddress" placeholder="Enter your email address">
                     </div>
                     <!-- Payment Methods -->
                     <div class="payment-methods">
-                        <h3>Payment Methods</h3>
+                        <h3>Payment Methods<span style="color: red;"> *</span></h3>
                         <div class="payment-method">
-                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="bank" name="PaymentMethod" value="Bank" required>
+                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="bank" name="PaymentMethod" value="Bank">
                             <label for="bank">Bank</label>
                         </div>
                         <div class="payment-method">
-                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="ewallet" name="PaymentMethod" value="E-Wallet" required>
+                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="ewallet" name="PaymentMethod" value="E-Wallet">
                             <label for="ewallet">E-Wallet</label>
                         </div>
                         <div class="payment-method">
-                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="cod" name="PaymentMethod" value="CashOnDelivery" required>
+                            <input asp-for="@checkoutModel.PaymentMethod" type="radio" id="cod" name="PaymentMethod" value="CashOnDelivery">
                             <label for="cod">Cash on Delivery</label>
                         </div>
                     </div>

@@ -11,19 +11,19 @@
 // The URL of the Inventory System is provided below to specify if in what system the Product Service client is making an HTTP request for
 builder.Services.AddHttpClient<ProductService>(client =>
 {
-    client.BaseAddress = new Uri("http://localhost:5000/"); // Replace with Inventory System URL
+    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net/"); // Replace with Inventory System URL
 });
 
 // Inventory service
 builder.Services.AddHttpClient<InventoryService>(client =>
 {
-    client.BaseAddress = new Uri("http://localhost:5000/"); // Replace with Inventory System URL
+    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net/"); // Replace with Inventory System URL
 });
 
 // POS Service
 builder.Services.AddHttpClient<PosService>(client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7196/"); // Replace with POS URL
+    client.BaseAddress = new Uri("https://gizmodepos-aybqb7e6cyhvaabk.southeastasia-01.azurewebsites.net/"); // Replace with POS URL
     // client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 

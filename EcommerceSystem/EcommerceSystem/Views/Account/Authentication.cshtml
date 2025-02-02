@@ -14,23 +14,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="~/css/authentication.css">
     <title>Gizmode: Sign-In</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet" asp-append-version="true">
 </head>
 <body>
+
+    @if (TempData["ShowPopup"] != null && (bool)TempData["ShowPopup"])
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                Swal.fire({
+                    title: 'Invalid input!',
+                    text: '@TempData["PopupMessage"]',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
+    }
 
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form asp-action="Register" method="post">
                 <h1>Create an Account</h1>
-                <div class="social-icons">
+                @* <div class="social-icons">
                     <a href="https://accounts.google.com/" target="_blank" class="icon"><i class="fa-brands fa-google"></i></a>
                     <a href="https://www.facebook.com/" target="_blank" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://x.com/i/flow/login?lang=en" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="https://login.yahoo.com/" class="icon"><i class="fa-brands fa-yahoo"></i></a>
-                </div>
-                <span>or use your email for registration</span>
+                </div> *@
+                @* <span>or use your email for registration</span> *@
                 <input type="text" asp-for="UserName" placeholder="Username">
-                <input type="email" asp-for="Email" placeholder="Email" required>
-                <input type="password" asp-for="Password" placeholder="Password" required>
+                <input type="email" asp-for="Email" placeholder="Email">
+                <div class="password-container" style="position: relative; width: 304px;">
+                    <input type="password" id="password" name="password" asp-for="Password" placeholder="Password">
+                    <span class="toggle-password" onclick="togglePasswordVisibility('password', this)"
+                            style="position: absolute; top: 20px; right: 15px; cursor: pointer;">
+                        <i class="bx bx-hide" style="font-size: 16px;"></i>
+                    </span>
+                </div>
+                
                 <!--Below are the hidden inputs-->
                 <input type="hidden" asp-for="Id">
                 <input type="hidden" asp-for="PhoneNumber">
@@ -41,17 +67,24 @@
         <div class="form-container sign-in">
             <form asp-action="Login" method="post">
                 <h1>Sign In</h1>
-                <div class="social-icons">
+                @* <div class="social-icons">
                     <a href="https://accounts.google.com/" class="icon"><i class="fa-brands fa-google"></i></a>
                     <a href="https://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://x.com/i/flow/login?lang=en" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="https://login.yahoo.com/" class="icon"><i class="fa-brands fa-yahoo"></i></a>
-                </div>
-                <span>or use your email password</span>
+                </div> *@
+                @* <span>or use your email password</span> *@
                 <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button>Sign In</button>
+@*                 <input type="password" name="password" placeholder="Password">
+ *@             <div class="password-container" style="position: relative; width: 304px;">
+                    <input type="password" id="passwordz" name="password" placeholder="Password">
+                    <span class="toggle-password" onclick="togglePasswordVisibility('passwordz', this)"
+                            style="position: absolute; top: 20px; right: 15px; cursor: pointer;">
+                        <i class="bx bx-hide" style="font-size: 16px;"></i>
+                    </span>
+                </div>
+@*                 <a href="#">Forget Your Password?</a>
+ *@                <button>Sign In</button>
             </form>
         </div>
         <div class="toggle-container">
@@ -71,6 +104,19 @@
     </div>
 
     <script src="~/js/authentication.js"></script>
+    <script>
+        function togglePasswordVisibility(passwordId, icon) {
+        const passwordField = document.getElementById(passwordId);
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            icon.innerHTML = '<i class="bx bx-show"></i>';
+        } else {
+            passwordField.type = 'password';
+            icon.innerHTML = '<i class="bx bx-hide"></i>';
+        }
+    }
+
+    </script>
 </body>
 
 </html>

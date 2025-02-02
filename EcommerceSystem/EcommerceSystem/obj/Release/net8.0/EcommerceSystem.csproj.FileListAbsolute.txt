@@ -110,3 +110,4 @@ C:\Users\Angel\OneDrive\Documents\EcommerceClone2\ecommerce-system\EcommerceSyst
 C:\Users\Angel\OneDrive\Documents\EcommerceClone2\ecommerce-system\EcommerceSystem\EcommerceSystem\obj\Release\net8.0\EcommerceSystem.pdb
 C:\Users\Angel\OneDrive\Documents\EcommerceClone2\ecommerce-system\EcommerceSystem\EcommerceSystem\obj\Release\net8.0\EcommerceSystem.genruntimeconfig.cache
 C:\Users\Angel\OneDrive\Documents\EcommerceClone2\ecommerce-system\EcommerceSystem\EcommerceSystem\obj\Release\net8.0\ref\EcommerceSystem.dll
+C:\Users\Angel\OneDrive\Documents\EcommerceClone2\ecommerce-system\EcommerceSystem\EcommerceSystem\bin\Release\net8.0\BCrypt.Net-Next.dll

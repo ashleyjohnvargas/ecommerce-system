@@ -81,6 +81,14 @@ namespace EcommerceSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> PlaceOrder(CheckoutViewModel checkoutModel)
         {
+            if (checkoutModel.FirstName == null || checkoutModel.LastName == null || checkoutModel.Address == null
+                || checkoutModel.PhoneNumber == null || checkoutModel.EmailAddress == null || checkoutModel.PaymentMethod == null)
+            {
+                TempData["ShowPopup"] = true; // Indicate that the popup should be shown
+                TempData["PopupMessage"] = "Please input the required values";
+                return RedirectToAction("Checkout");
+            }
+
             // Get the current user's ID from session
             int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
 

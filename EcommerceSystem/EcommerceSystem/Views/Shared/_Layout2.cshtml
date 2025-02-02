@@ -157,8 +157,8 @@
                     {
                         <!-- Display dropdown and redirect to Profile on click if user is logged in -->
                         <div class="dropdown-menu">
-                            <a class="dropdown-link">Profile</a>
-                            <a asp-controller="Account" asp-action="Logout" class="dropdown-link">
+                            @* <a class="dropdown-link">Profile</a> *@
+                            <a id="logout-btn" asp-controller="Account" asp-action="Logout" class="dropdown-link">
                                 <i class="fas fa-sign-out-alt logout-icon"></i>Logout
                             </a>
                         </div>  
@@ -178,7 +178,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Gizmode. All rights reserved.</p>
+            <p>&copy; 2025 Gizmode. All rights reserved.</p>
             <p>
                 Follow us on:
                 <a href="#">Facebook</a>,
@@ -225,6 +225,12 @@
         });
     });
 
+        // Logout Button
+		document.getElementById("logout-btn").addEventListener("click", function () {
+			if (confirm("Are you sure you want to logout?")) {
+				window.location.href = this.href;
+			}
+		});
 
 
     </script>

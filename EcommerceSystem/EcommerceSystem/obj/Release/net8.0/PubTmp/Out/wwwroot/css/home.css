@@ -134,3 +134,64 @@
         .product button:hover {
             background-color: #8a2be2;
         }
+
+        /* CHART SECTION */
+        .charts-section {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        .charts {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .chart-container {
+            width: 45%;
+            margin: 20px 0;
+        }
+        canvas {
+            width: 100%;
+            height: auto;
+        }
+
+        /* DATE PICKER */
+        .date-picker {
+        margin: 20px 0;
+        text-align: center;
+        }
+
+        .date-picker input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-right: 10px;
+            width: 100px;
+        }
+
+        .date-picker button {
+            padding: 8px 15px;
+            border: none;
+            background-color: rgb(154, 75, 203);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .date-picker button i {
+            color: white;
+            font-size: 1rem;
+            padding-left: 3px;
+        }
+
+        .date-picker button:hover {
+            background-color: #8a2be2;
+        }
+
+
+#dashboard-title {
+    margin-left: 153px;
+    font-size: 1.8rem;
+    color: #333;
+}
