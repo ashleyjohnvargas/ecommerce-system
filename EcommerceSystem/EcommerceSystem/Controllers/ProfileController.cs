@@ -79,6 +79,7 @@ namespace EcommerceSystem.Controllers
         [HttpPost]
         public IActionResult EditProfile(Profile model)
         {
+
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -142,7 +143,7 @@ namespace EcommerceSystem.Controllers
             }
 
             // Redirect to the profile page after update
-            return RedirectToAction("CustomerIndex", "Home");
+            return RedirectToAction("EditProfile");
         }
         //[HttpPost]
         //public IActionResult EditProfile(UserViewModel model)

@@ -1,8 +1,10 @@
     using EcommerceSystem.Models;
     using EcommerceSystem.Services;
-    using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+using static EcommerceSystem.Controllers.AccountController;
 
-    var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // This service adds a a client code of the EcommerceSystem which is the ProductService
@@ -11,21 +13,47 @@
 // The URL of the Inventory System is provided below to specify if in what system the Product Service client is making an HTTP request for
 builder.Services.AddHttpClient<ProductService>(client =>
 {
-    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net/"); // Replace with Inventory System URL
+    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net"); // Replace with Inventory System URL
+    //client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_ACCESS_TOKEN");
+
 });
 
 // Inventory service
 builder.Services.AddHttpClient<InventoryService>(client =>
 {
-    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net/"); // Replace with Inventory System URL
+    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net"); // Replace with Inventory System URL
 });
 
 // POS Service
 builder.Services.AddHttpClient<PosService>(client =>
 {
-    client.BaseAddress = new Uri("https://gizmodepos-aybqb7e6cyhvaabk.southeastasia-01.azurewebsites.net"); // Replace with POS URL
+    client.BaseAddress = new Uri("https://gizmodepossystem.azurewebsites.net"); // Replace with POS URL
     // client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
+
+//builder.Services.AddHttpClient<ProductService>(client =>
+//{
+//    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net/");
+//    client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_ACCESS_TOKEN");
+//});
+
+//builder.Services.AddHttpClient<ProductService>(client =>
+//{
+//    client.BaseAddress = new Uri("https://localhost:44341"); // Replace with Inventory System URL
+//});
+
+//// Inventory service
+//builder.Services.AddHttpClient<InventoryService>(client =>
+//{
+//    client.BaseAddress = new Uri("https://localhost:44341"); // Replace with Inventory System URL
+//});
+
+//// POS Service
+//builder.Services.AddHttpClient<PosService>(client =>
+//{
+//    client.BaseAddress = new Uri("https://localhost:44359"); // Replace with POS URL
+//    // client.DefaultRequestHeaders.Add("Accept", "application/json");
+//});
 
 
 
@@ -42,10 +70,18 @@ builder.Services.AddHttpClient<PosService>(client =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-    // Configure DbContext
-    builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddRazorPages();
+// Configure DbContext
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+        sqlOptions => sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 3,                // Maximum number of retries
+                maxRetryDelay: TimeSpan.FromSeconds(5),  // Time to wait between retries
+                errorNumbersToAdd: null          // Optional: specify specific SQL error numbers to retry on
+                )
+            )
+        
+        );
 
     // Add session services to the container
     builder.Services.AddDistributedMemoryCache(); // Adds in-memory caching for session
@@ -55,9 +91,29 @@ builder.Services.AddControllersWithViews();
         options.Cookie.HttpOnly = true; // Only accessible by the server
         options.Cookie.IsEssential = true; // Necessary for session management
     });
+// Add background service for checking inactive users
+builder.Services.AddHostedService<InactiveUserChecker>();
+
+// configure authentication
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/Login/LoginPage"; // Redirect to login if unauthorized
+            options.LogoutPath = "/Logout";   // Redirect when logging out
+            options.AccessDeniedPath = "/Login/AccessDenied"; // Handle access denied scenario
+        });
 
 
-    var app = builder.Build();
+// Add session services to the container
+builder.Services.AddDistributedMemoryCache(); // Adds in-memory caching for session
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(60); // Set session timeout as per your requirement
+    options.Cookie.HttpOnly = true; // Only accessible by the server
+    options.Cookie.IsEssential = true; // Necessary for session management
+});
+
+var app = builder.Build();
 
     // Configure the HTTP request pipeline.
     if (!app.Environment.IsDevelopment())
@@ -66,22 +122,37 @@ builder.Services.AddControllersWithViews();
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
     }
+    else
+    {
+        app.UseExceptionHandler("/Home/Error");
+        app.UseStatusCodePagesWithReExecute("/Home/NotFound", "?code={0}"); // Handle 404 page
+        app.UseHsts();
+    }
 
-    app.UseHttpsRedirection();
+app.UseHttpsRedirection();
     app.UseStaticFiles();
 
     app.UseRouting();
 
     // Add session middleware to the request pipeline
     app.UseSession(); // This should come before UseAuthorization
-
+    app.UseAuthentication();  // If using authentication
     app.UseAuthorization();
 
-    app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=CustomerIndex}");
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=CustomerIndex}");
 
-    app.Run();
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}");
+
+//app.MapControllerRoute(
+//      name: "default",
+//      pattern: "{controller=Product}/{action=Product}");
+
+
+app.Run();
 
     /*
     Things/Services that are added in the container:

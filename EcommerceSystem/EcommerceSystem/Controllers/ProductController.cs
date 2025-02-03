@@ -153,8 +153,17 @@ namespace EcommerceSystem.Controllers
 
 
          // returns product page html view
+
         public async Task<IActionResult> Product(int page = 1)
         {
+            // Get the current user's ID from session
+            int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
+
+            if (userId == 0)
+            {
+                return RedirectToAction("Authentication", "Account"); // If not logged in, redirect to login page
+            }
+
             int pageSize = 10; // Number of products per page
 
             List<Product> allProducts;
@@ -207,6 +216,14 @@ namespace EcommerceSystem.Controllers
         // Returns the Add Image page view for the selected product
         public IActionResult AddImagePage(int id)
         {
+
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                return RedirectToAction("Authentication", "Account"); // or any page you prefer
+            }
+
             // Fetch the product from the database and include the related images
             var product = _context.Products
                 .Include(p => p.Images) // Include images for the product
@@ -225,6 +242,14 @@ namespace EcommerceSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> AddImage(int id, IFormFile imageFile)
         {
+            // Get the current user's ID from session
+            int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
+
+            if (userId == 0)
+            {
+                return RedirectToAction("Authentication", "Account"); // If not logged in, redirect to login page
+            }
+
             // Fetch the product from the database
             var product = _context.Products.FirstOrDefault(p => p.Id == id);
 
@@ -262,6 +287,13 @@ namespace EcommerceSystem.Controllers
 
        public IActionResult ProductDetails()
         {
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                return RedirectToAction("Authentication", "Account"); // or any page you prefer
+            }
+
             // Fetch products and include their associated images
             var products = _context.Products
                 .Include(p => p.Images)
@@ -274,6 +306,14 @@ namespace EcommerceSystem.Controllers
          // GET: EditProduct
         public IActionResult EditProductPage(int id)
         {
+
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                return RedirectToAction("Authentication", "Account"); // or any page you prefer
+            }
+            
             var product = _context.Products.Find(id);
             if (product == null)
             {

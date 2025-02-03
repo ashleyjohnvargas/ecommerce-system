@@ -34,16 +34,16 @@
             border-radius: 8px;
         }
 
-        .table th {
-            background-color: #69247C;
-            color: #ffffff;
-            font-size: 1.2rem;
-        }
+            .table th {
+                background-color: #69247C;
+                color: #ffffff;
+                font-size: 1.2rem;
+            }
 
-        .table td {
-            font-size: 1.1rem; /* Enlarge font size */
-            padding: 12px; /* Increase padding */
-        }
+            .table td {
+                font-size: 1.1rem; /* Enlarge font size */
+                padding: 12px; /* Increase padding */
+            }
 
         th:nth-child(1), td:nth-child(1) {
             width: 120px;
@@ -70,7 +70,7 @@
         }
 
         td:nth-child(3) {
-            text-align:right;
+            text-align: right;
         }
 
 
@@ -124,9 +124,9 @@
             transition: background-color 0.2s ease;
         }
 
-        .table tbody tr:hover {
-            background-color: #f8f9fa;
-        }
+            .table tbody tr:hover {
+                background-color: #f8f9fa;
+            }
 
         /* Flexbox for buttons to sit beside each other */
         .action-buttons {
@@ -144,10 +144,10 @@
             transition: all 0.3s ease-in-out;
         }
 
-        .edit-icon:hover {
-            transform: scale(1.07);
-            color: #ff1111;
-        }
+            .edit-icon:hover {
+                transform: scale(1.07);
+                color: #ff1111;
+            }
 
         .del-but {
             border: none;
@@ -166,18 +166,18 @@
             transition: all 0.3s ease-in-out;
         }
 
-        .delete-prod-icon:hover {
-            color: black;
-            background-color: #ff3636;
-            transform: scale(1.07);
-        }
+            .delete-prod-icon:hover {
+                color: black;
+                background-color: #ff3636;
+                transform: scale(1.07);
+            }
     </style>
 </head>
 
 <div class="centered-container">
     <div class="container table-container">
         <h2 class="mb-4 text-center">Product Management</h2>
-        
+
         <!-- Products Table -->
         <table class="table table-bordered table-hover">
             <thead>
@@ -201,9 +201,9 @@
                         <td>@product.Description</td>
                         <td>₱@String.Format("{0:n}", product.Price)</td>
                         <td>@product.Color</td>
-                        <td>@product.Category</td>  
-                        <td>@product.CurrentStock</td>    
-                        <td>@product.StockStatus</td>   
+                        <td>@product.Category</td>
+                        <td>@product.CurrentStock</td>
+                        <td>@product.StockStatus</td>
                         @* <td>
                             @if (product.Images != null && product.Images.Any())
                             {
@@ -221,7 +221,7 @@
                                 </a>
                                 <form asp-action="DeleteProduct" asp-route-id="@product.Id" method="post">
                                     <button type="submit" class="btn btn-sm btn-outline-danger del-but">
-                                        <i class="fas fa-trash-alt delete-prod-icon"></i> 
+                                        <i class="fas fa-trash-alt delete-prod-icon"></i>
                                     </button>
                                 </form>
                             </div>

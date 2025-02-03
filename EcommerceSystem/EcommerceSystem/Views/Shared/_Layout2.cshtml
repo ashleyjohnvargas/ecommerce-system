@@ -82,6 +82,10 @@
  @using Microsoft.AspNetCore.Http
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/customerLayout.css" />
@@ -121,7 +125,7 @@
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search your product">
+                <input type="text" id="searchInput" placeholder="Search product">
                 <button class="search-btn">
                     <i class="fas fa-search"></i>
                 </button>
@@ -158,7 +162,8 @@
                         <!-- Display dropdown and redirect to Profile on click if user is logged in -->
                         <div class="dropdown-menu">
                             <a asp-controller="Profile" asp-action="EditProfile" class="dropdown-link"> <i class="fas fa-user logout-icon"></i>Profile</a>
-                            <a asp-controller="Account" asp-action="Logout" class="dropdown-link" onclick="return confirm('Are you sure you want to log out?');">
+                            <a id="logout-btn" asp-controller="Account" asp-action="Logout" class="dropdown-link" onclick="return confirm('Are you sure you want to log out?');">
+                                <!-- onclick="return confirm('Are you sure you want to log out?');"-->
                                 <i class="fas fa-sign-out-alt logout-icon"></i>Logout
                             </a>
                         </div>  
@@ -180,13 +185,20 @@
         <div class="container">
             <p>&copy; 2025 Gizmode. All rights reserved.</p>
             <p>
-                Follow us on:
-                <a href="#">Facebook</a>,
-                <a href="#">Twitter</a>,
-                <a href="#">Instagram</a>
+                @* Follow us on: *@
+                @* <a href="#">Facebook</a>, *@
+                @* <a href="#">Twitter</a>, *@
+                @* <a href="#">Instagram</a> *@
             </p>
         </div>
     </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/script.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
 
 
     <script>
@@ -240,6 +252,23 @@
                 }
             }
 
+                 // Logout Button
+            // document.getElementById("logout-btn").addEventListener("click", function () {
+            //     if (confirm("Are you sure you want to logout?")) {
+            //         window.location.href = this.href;
+            //     }
+            // });
+                            // Function to confirm logout
+            function confirmLogout() {
+                return confirm('Are you sure you want to log out?'); // Native confirm dialog
+            }
+
     </script>
+    <script>
+        if (performance.navigation.type === 2) { // Detect back button navigation
+            location.reload(true); // Force reload to clear cache
+        }
+    </script>
+
 
 </body>

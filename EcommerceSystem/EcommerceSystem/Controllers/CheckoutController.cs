@@ -22,12 +22,19 @@ namespace EcommerceSystem.Controllers
 
         public IActionResult Checkout()
         {
-            // Step 1: Retrieve the user ID from the session
-            int? userId = HttpContext.Session.GetInt32("UserId");
+            int? userId = HttpContext.Session.GetInt32("UserId"); // Retrieve the user ID from the session
+
             if (userId == null)
             {
-                return RedirectToAction("Login", "Account"); // Redirect to login if user is not logged in
+                TempData["ErrorMessage"] = "You need to be logged in to access this page.";
+                return RedirectToAction("Authentication", "Account");  // Adjust according to your login page
             }
+            // Step 1: Retrieve the user ID from the session
+            //int? userId = HttpContext.Session.GetInt32("UserId");
+            //if (userId == null)
+            //{
+            //    return RedirectToAction("Login", "Account"); // Redirect to login if user is not logged in
+            //}
 
             // Step 2: Check for an active cart for the user
             var activeCart = _context.Carts.FirstOrDefault(c => c.CustomerId == userId && c.Status == "Active");
@@ -76,7 +83,7 @@ namespace EcommerceSystem.Controllers
 
 
 
-        
+
         // public IActionResult PlaceOrder(CheckoutViewModel checkoutModel)
         [HttpPost]
         public async Task<IActionResult> PlaceOrder(CheckoutViewModel checkoutModel)
@@ -89,6 +96,15 @@ namespace EcommerceSystem.Controllers
                 return RedirectToAction("Login", "Account"); // If not logged in, redirect to login page
             }
 
+            if (checkoutModel.FirstName == null || checkoutModel.LastName == null || checkoutModel.Address == null
+                || checkoutModel.PhoneNumber == null || checkoutModel.EmailAddress == null || checkoutModel.PaymentMethod == null)
+            {
+                TempData["ShowPopup"] = true; // Indicate that the popup should be shown
+                TempData["PopupMessage"] = "Please input the required values";
+                return RedirectToAction("Checkout");
+            }
+
+    
             // Find the active cart for the logged-in user
             var activeCart = _context.Carts.Include(c => c.CartItems)
                                            .FirstOrDefault(c => c.CustomerId == userId && c.Status == "Active");
@@ -99,8 +115,8 @@ namespace EcommerceSystem.Controllers
             }
 
             // Set OrderStatus based on PaymentMethod
-            string orderStatus = (checkoutModel.PaymentMethod == "E-Wallet" || checkoutModel.PaymentMethod == "Bank") 
-                ? "Order Confirmed" 
+            string orderStatus = (checkoutModel.PaymentMethod == "E-Wallet" || checkoutModel.PaymentMethod == "Bank")
+                ? "Order Confirmed"
                 : "Order Placed";
 
             // Create an Order instance and set its properties
@@ -143,8 +159,8 @@ namespace EcommerceSystem.Controllers
                 Subtotal = orderItem.Subtotal
             }).ToList();
 
-            string paymentStatus = (checkoutModel.PaymentMethod == "E-Wallet" || checkoutModel.PaymentMethod == "Bank") 
-                ? "Paid" 
+            string paymentStatus = (checkoutModel.PaymentMethod == "E-Wallet" || checkoutModel.PaymentMethod == "Bank")
+                ? "Paid"
                 : "Pending";
 
             // Create a Billing instance
@@ -171,7 +187,7 @@ namespace EcommerceSystem.Controllers
             _context.Billings.Add(billing);
             _context.SaveChanges();
 
-             // Sync products with POS
+            // Sync products with POS
             var productDtos = _context.Products.Select(p => new ProductDto
             {
                 Id = p.Id,
@@ -187,7 +203,7 @@ namespace EcommerceSystem.Controllers
                 IsDeleted = p.IsDeleted,
                 DateAdded = p.DateAdded
             }).ToList();
-            
+
             await _posService.SyncProducts(productDtos); // POS Service 5 : Done
 
 
@@ -216,7 +232,7 @@ namespace EcommerceSystem.Controllers
             };
             await _posService.CreateInvoice(invoice); // POS Service 4 : Done
 
-           
+
             // Optional: Update the cart status to 'Inactive' or similar after the order is placed
             activeCart.Status = "Completed";
             _context.SaveChanges();

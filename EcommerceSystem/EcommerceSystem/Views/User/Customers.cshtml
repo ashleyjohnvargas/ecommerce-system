@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Gizmode Ecommerce - Customers";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "_Layout";
 }
 @model List<UserViewModel>
 
@@ -148,7 +148,7 @@
                     <td class="action-icons">
                         <a asp-action="EditUser" asp-route-id="@user.Id" title="Edit" style="color:#b086e5;font-size: 20px;"><i class="fas fa-edit edit"></i></a>
                         <!-- Form for deleting the unit -->
-                            <form asp-action="DeleteUser" asp-route-id="@user.Id" method="post" style="display:inline;" onsubmit="return confirmDelete()">
+                            <form asp-action="DeleteCustomer" asp-route-id="@user.Id" method="post" style="display:inline;" onsubmit="return confirmDelete()">
                             <button type="submit" title="Delete" style="color:#e15b64; background: none; border: none; padding: 0; width: fit-content; height: fit-content; font-size: 19px;">
                                 <i class="fas fa-trash delete"></i>
                             </button>
@@ -161,7 +161,7 @@
         else
         {
             <tr>
-                <td colspan="5" style="text-align:center;">No users found.</td>
+                <td colspan="5" style="text-align:center;">No customers found.</td>
             </tr>
         }
     </tbody>

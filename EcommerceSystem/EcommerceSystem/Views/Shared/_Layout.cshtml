@@ -11,6 +11,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <title>@ViewData["Title"]</title>
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
@@ -51,7 +55,21 @@
                         @* <li><a><i class="fas fa-user-shield"></i>Admin</a></li> *@
                         <li><a asp-controller="User" asp-action="Customers"><i class="fas fa-users"></i>Customers</a></li>
                         <li><a asp-controller="User" asp-action="Users"><i class="fas fa-user-shield"></i>Admin</a></li>
-                        <li><a asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt" onclick="return confirm('Are you sure you want to log out?');"></i>Logout</a></li>
+                        @if (Context.Session.GetString("UserId") != null)
+                        {
+                            <li>
+                                <a asp-controller="Account" asp-action="Logout" class="logout" onclick="return confirmLogout();" ;>
+                                    @* <i class='bx bxs-log-out-circle'></i> *@
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span class="text">Logout</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li><a asp-controller="Login" asp-action="LoginPage">Login</a></li>
+                        }
+                        @* <li><a asp-controller="Account" asp-action="Logout" id="logout-btn" onclick="return confirm('Are you sure you want to log out?');"><i class="fas fa-sign-out-alt" ></i>Logout</a></li> <!-- onclick="return confirm('Are you sure you want to log out?');"--> *@
                         @* <li><a asp-controller="Account" asp-action="Authentication"><i class="fas fa-user"></i>Sign In/Sign Up</a></li> *@
                     </ul>
                 </nav>
@@ -79,6 +97,32 @@
             @* </p> *@
         </div>
     </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/script.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        // Logout Button
+        // document.getElementById("logout-btn").addEventListener("click", function () {
+        //     if (confirm("Are you sure you want to logout?")) {
+        //         window.location.href = this.href;
+        //     }
+        // });
+                    // Function to confirm logout
+        function confirmLogout() {
+            return confirm('Are you sure you want to log out?'); // Native confirm dialog
+        }
+
+    </script>
+    <script>
+        if (performance.navigation.type === 2) { // Detect back button navigation
+            location.reload(true); // Force reload to clear cache
+        }
+    </script>
 
 </body>
 </html>

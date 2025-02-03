@@ -15,7 +15,8 @@ namespace EcommerceSystem.Models
         
         // New field for user roles (e.g., "Admin", "Customer")
         public string UserRole { get; set; } = "Customer"; // Default role
-        //public string? Status { get; set; } // Use this field for Active/Inactive
-
+                                                           //public string? Status { get; set; } // Use this field for Active/Inactive
+        public DateTime? LastLogin { get; set; }
+        public DateTime? LastPasswordChange { get; set; }
     }
 }

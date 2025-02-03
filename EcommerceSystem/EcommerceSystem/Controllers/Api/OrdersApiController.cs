@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using EcommerceSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EcommerceSystem.Controllers.Api 
+namespace EcommerceSystem.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController] // Specifies that this is an API controller
@@ -82,7 +82,7 @@ namespace EcommerceSystem.Controllers.Api
             // Update the order status
             order.OrderStatus = "Cancelled";
             order.IsDeleted = true;
-            
+
             // Save changes in the Ecommerce database
             await _context.SaveChangesAsync();
 
