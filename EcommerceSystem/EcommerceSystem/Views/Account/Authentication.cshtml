@@ -14,23 +14,152 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="~/css/authentication.css">
     <title>Gizmode: Sign-In</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        label {
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* .container { */
+        /*     background-color: #fff; */
+        /*     padding: 40px; */
+        /*     border-radius: 5px; */
+        /*     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+        /*     text-align: center; */
+        /*     width: 100%; */
+        /*     max-width: 500px; */
+        /*     min-height: auto; */
+        /*     overflow: hidden; */
+        /* } */
+
+        h1, h2 {
+            color: #222;
+            margin: 10px 0;
+            font-family: 'Poppins';
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            /* z-index: 1; */
+            z-index: 9999; /* High value to keep it in front */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            z-index: 10000; /* Ensure it's above other elements */
+            position: relative; /* Ensure it's positioned correctly */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .container.active .sign-up {
+            display: block;
+        }
+
+        .container.active .sign-in {
+            display: none;
+        }
+
+
+    </style>
 </head>
 <body>
+    @{
+        var showRegister = TempData["ShowRegister"] != null ? "active" : "";
+    }
+    @if (TempData["ShowPopup"] != null && (bool)TempData["ShowPopup"])
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                Swal.fire({
+                    title: 'Invalid input!',
+                    text: '@TempData["PopupMessage"]',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
+    }
 
-    <div class="container" id="container">
+    <!--REGISTER-->
+    <div class="container @showRegister" id="container">
+
         <div class="form-container sign-up">
             <form asp-controller="Account" asp-action="Register" method="post">
                 <h1>Create an Account</h1>
-                @*<div class="social-icons">
-                    <a href="https://accounts.google.com/" target="_blank" class="icon"><i class="fa-brands fa-google"></i></a>
-                    <a href="https://www.facebook.com/" target="_blank" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://x.com/i/flow/login?lang=en" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://login.yahoo.com/" class="icon"><i class="fa-brands fa-yahoo"></i></a>
-                </div>*@
+            
                 <span>Use your email for registration</span>
+                <br />
+                <input type="hidden" id="activePanel" name="activePanel" value="@(TempData["ShowRegister"] != null ? "register" : "login")">
+
                 <input type="text" asp-for="UserName" placeholder="Full Name">
-                <input type="email" asp-for="Email" placeholder="Email" required>
-                <input type="password" asp-for="Password" placeholder="Password" required>
+                <input type="email" asp-for="Email" placeholder="Email">
+                <div class="password-container" style="position: relative; width: 304px;">
+                    <input type="password" id="password" name="password" asp-for="Password" placeholder="Password">
+                    <span class="toggle-password" onclick="togglePasswordVisibility('password', this)"
+                          style="position: absolute; top: 20px; right: 15px; cursor: pointer;">
+                        <i class="bx bx-hide" style="font-size: 16px;"></i>
+                    </span>
+                </div>
+                <p>
+                    By signing up, you agree to our
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a>
+                    and
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>.
+                </p>
+
+
                 <!--Below are the hidden inputs-->
                 <input type="hidden" asp-for="Id">
                 <input type="hidden" asp-for="PhoneNumber">
@@ -38,40 +167,200 @@
                 <button>Sign Up</button>
             </form>
         </div>
+
+        <!--LOGIN-->
         <div class="form-container sign-in">
             <form asp-controller="Account" asp-action="Login" method="post">
                 <h1>Sign In</h1>
-               <br>
-               @* <div class="social-icons">
-                    <a href="https://accounts.google.com/" class="icon"><i class="fa-brands fa-google"></i></a>
-                    <a href="https://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://x.com/i/flow/login?lang=en" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://login.yahoo.com/" class="icon"><i class="fa-brands fa-yahoo"></i></a>
-                </div>*@
-                <span>Enter your credentials below.</span>
+                <span>Enter your login credentials</span>
+
+                <br>
+                <input type="hidden" id="activePanel" value="@(TempData["ShowRegister"] != null ? "register" : "login")">
+
                 <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button>Sign In</button>
+                <div class="password-container" style="position: relative; width: 304px;">
+                    <input type="password" id="passwordz" name="password" placeholder="Password">
+                    <span class="toggle-password" onclick="togglePasswordVisibility('passwordz', this)"
+                          style="position: absolute; top: 20px; right: 15px; cursor: pointer;">
+                        <i class="bx bx-hide" style="font-size: 16px;"></i>
+                    </span>
+                </div>
+                @* <a href="#">Forget Your Password?</a> *@
+               <button>Sign In</button>
             </form>
         </div>
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
                     <h1>Hi again, Friend!</h1>
-                    <p>Enter your personal details to use all of Gizmode's features</p>
+                    <p>Enter your credentials to use all of Gizmode's features</p>
                     <button class="hidden" id="login">Sign In</button>
                 </div>
                 <div class="toggle-panel toggle-right">
-                    <h1>Welcome to Gizmode!</h1>
-                    <p>Register with your personal details to use all of Gizmode's features</p>
+                    <h1 style="font-size: 32px; color: #111">Welcome to Gizmode!</h1>
+                    <p>Register with your credentials to use all of Gizmode's features</p>
                     <button class="hidden" id="register">Sign Up</button>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="text-align:center">Terms and Conditions</h2>
+            <p>Welcome to our E-commerce and POS Integration system. By accessing or using our services, you agree to comply with and be bound by the following Terms and Conditions.</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By using our system, you agree to these Terms. If you do not agree, please do not use our services.</p>
+
+            <h2>2. User Accounts</h2>
+            <p>You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+
+            <h2>3. Use of Services</h2>
+            <p>You agree to use our services lawfully and ethically, without engaging in fraudulent activities or unauthorized access.</p>
+
+            <h2>4. Privacy Policy</h2>
+            <p>Your use of our services is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal data.</p>
+
+            <h2>5. Limitation of Liability</h2>
+            <p>We are not responsible for any losses or damages resulting from the use of our system, including technical failures or unauthorized access.</p>
+
+            <h2>6. Changes to Terms</h2>
+            <p>We may update these Terms from time to time. Continued use of the system signifies your acceptance of any changes.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions, please contact us at gizmode@gmail.com or 091234567890.</p>
+        </div>
+    </div>
+
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="text-align:center">Privacy Policy</h2>
+            <p>Effective Date: January 1, 2025</p>
+            <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our system.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>We may collect personal information such as name, contact details, shipping addresses, and payment information, as well as transaction and system usage data.</p>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>We use your information to process transactions, provide customer support, improve system functionality, ensure security, and generate business insights.</p>
+
+            <h2>3. Data Sharing and Disclosure</h2>
+            <p>We do not sell your personal information. We may share it with payment processors, delivery partners, and legal authorities if required.</p>
+
+            <h2>4. Data Security</h2>
+            <p>We implement encryption and security measures to protect your data. However, no system is completely secure, so please safeguard your account information.</p>
+
+            <h2>5. Cookies and Tracking Technologies</h2>
+            <p>We may use cookies to enhance your experience. You can manage cookie preferences through your browser settings.</p>
+
+            <h2>6. User Rights</h2>
+            <p>You have the right to access, update, or request the deletion of your personal information, subject to legal requirements.</p>
+
+            <h2>7. Data Retention</h2>
+            <p>We retain your data only as long as necessary for business and legal purposes.</p>
+
+            <h2>8. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time and will notify users of significant changes.</p>
+
+            <h2>9. Contact Us</h2>
+            <p>If you have questions, please contact us at gizmode@gmail.com or 091234567890.</p>
+        </div>
+    </div>
+
+
+
     <script src="~/js/authentication.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @* <script> *@
+    @*     document.addEventListener("DOMContentLoaded", function () { *@
+    @*         var activePanel = document.getElementById("activePanel").value; *@
+
+    @*         if (activePanel === "register") { *@
+    @*             document.getElementById("container").classList.add("right-panel-active"); *@
+    @*         } *@
+    @*     }); *@
+    @* </script> *@
+
+    <!-- JavaScript for Keeping Register Panel Active -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var container = document.getElementById('container');
+            var registerBtn = document.getElementById('register');
+            var loginBtn = document.getElementById('login');
+
+            registerBtn.addEventListener('click', function () {
+                container.classList.add("active");
+            });
+
+            loginBtn.addEventListener('click', function () {
+                container.classList.remove("active");
+            });
+        });
+    </script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var termsModal = document.getElementById("termsModal");
+            var privacyModal = document.getElementById("privacyModal");
+
+            var termsLink = document.querySelector("[data-bs-target='#termsModal']");
+            var privacyLink = document.querySelector("[data-bs-target='#privacyModal']");
+
+            var closeButtons = document.querySelectorAll(".close");
+
+            if (termsLink) {
+                termsLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    termsModal.style.display = "block";
+                });
+            }
+
+            if (privacyLink) {
+                privacyLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    privacyModal.style.display = "block";
+                });
+            }
+
+            closeButtons.forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    termsModal.style.display = "none";
+                    privacyModal.style.display = "none";
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target === termsModal) {
+                    termsModal.style.display = "none";
+                }
+                if (event.target === privacyModal) {
+                    privacyModal.style.display = "none";
+                }
+            });
+        });
+
+    </script>
+        <script>
+                function togglePasswordVisibility(passwordId, icon) {
+                const passwordField = document.getElementById(passwordId);
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    icon.innerHTML = '<i class="bx bx-show"></i>';
+                } else {
+                    passwordField.type = 'password';
+                    icon.innerHTML = '<i class="bx bx-hide"></i>';
+                }
+            }
+
+        </script>
+
 </body>
 
 </html>

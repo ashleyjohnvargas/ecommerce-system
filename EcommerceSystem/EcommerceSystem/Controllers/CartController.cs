@@ -19,12 +19,20 @@ public class CartController : Controller
     // This returns the customer cart page
     public IActionResult CustomerCart(int Id, int Quantity)
     {
-        // Step 1: Retrieve the user ID from the session
-        int? userId = HttpContext.Session.GetInt32("UserId");
+     
+        var userId = HttpContext.Session.GetInt32("UserId"); // Retrieve the user ID from the session
+
         if (userId == null)
         {
-            return RedirectToAction("Login", "Account"); // Redirect to login if user is not logged in
+            TempData["ErrorMessage"] = "You need to be logged in to access this page.";
+            return RedirectToAction("Authentication", "Account");  // Adjust according to your login page
         }
+        // Step 1: Retrieve the user ID from the session
+        //int? userId = HttpContext.Session.GetInt32("UserId");
+        //if (userId == null)
+        //{
+        //    return RedirectToAction("Login", "Account"); // Redirect to login if user is not logged in
+        //}
 
         // Step 2: Check for an active cart for the user
         var activeCart = _context.Carts.FirstOrDefault(c => c.CustomerId == userId && c.Status == "Active");
@@ -136,12 +144,19 @@ public class CartController : Controller
     // Returns the CustomerCartIcon view when the cart icon is clicked
     public IActionResult CustomerCartIcon()
     {
-        // Step 1: Retrieve the user ID from the session
-        int? userId = HttpContext.Session.GetInt32("UserId");
+        var userId = HttpContext.Session.GetInt32("UserId"); // Retrieve the user ID from the session
+
         if (userId == null)
         {
-            return RedirectToAction("Login", "Account"); // Redirect to login if user is not logged in
+            TempData["ErrorMessage"] = "You need to be logged in to access this page.";
+            return RedirectToAction("Authentication", "Account");  // Adjust according to your login page
         }
+        // Step 1: Retrieve the user ID from the session
+        //int? userId = HttpContext.Session.GetInt32("UserId");
+        //if (userId == null)
+        //{
+        //    return RedirectToAction("Login", "Account"); // Redirect to login if user is not logged in
+        //}
 
         // Step 2: Check for an active cart for the user
         var activeCart = _context.Carts.FirstOrDefault(c => c.CustomerId == userId && c.Status == "Active");

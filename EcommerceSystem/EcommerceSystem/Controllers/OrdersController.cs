@@ -16,14 +16,21 @@ namespace EcommerceSystem.Controllers
 
         public IActionResult OrderHistory()
         {
-            // Retrieve the user ID from the session
-            var userId = HttpContext.Session.GetInt32("UserId");
+            // Get the current user's ID from session
+            int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
 
-            // If the user is not logged in (no UserId in session), redirect to the login page
-            if (userId == null)
+            if (userId == 0)
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Authentication", "Account"); // If not logged in, redirect to login page
             }
+            // Retrieve the user ID from the session
+            //var userId = HttpContext.Session.GetInt32("UserId");
+
+            //// If the user is not logged in (no UserId in session), redirect to the login page
+            //if (userId == null)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
             // Fetch the user from the database based on the user ID stored in the session
             var user = _context.Users.FirstOrDefault(u => u.Id == userId);

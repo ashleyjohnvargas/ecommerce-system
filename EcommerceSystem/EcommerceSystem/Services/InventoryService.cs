@@ -73,9 +73,9 @@ namespace EcommerceSystem.Services
                 string inventoryApiUrl = $"api/ProductsApi/SetProductAsNotBeingSold/{productId}";
 
                 // Create an empty content for the PUT request
-            // The empty content in the StringContent object is used to fulfill the requirement of the PutAsync method,
-            //  which expects an HttpContent parameter. In this case, the PUT request does not need to send any data in 
-            //  the body, so an empty StringContent is provided.
+                // The empty content in the StringContent object is used to fulfill the requirement of the PutAsync method,
+                //  which expects an HttpContent parameter. In this case, the PUT request does not need to send any data in 
+                //  the body, so an empty StringContent is provided.
                 var content = new StringContent(string.Empty);
 
                 // Send a PUT request to the InventorySystem API
@@ -93,7 +93,6 @@ namespace EcommerceSystem.Services
         }
     }
 }
-
 
 
 

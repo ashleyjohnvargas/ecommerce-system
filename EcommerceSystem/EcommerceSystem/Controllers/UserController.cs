@@ -20,6 +20,19 @@ namespace EcommerceSystem.Controllers
 
         public async Task<IActionResult> Customers()
         {
+            var userId = HttpContext.Session.GetInt32("UserId"); // Retrieve the user ID from the session
+
+            if (userId == null)
+            {
+                TempData["ErrorMessage"] = "You need to be logged in to access this page.";
+                return RedirectToAction("Authentication", "Account");  // Adjust according to your login page
+            }
+            //// Step 1: Retrieve the user ID from the session
+            //int? userId = HttpContext.Session.GetInt32("UserId");
+            //if (userId == null)
+            //{
+            //    return RedirectToAction("Authentication", "Account"); // Redirect to login if user is not logged in
+            //}
             try
             {
                 // Fetch data from the users table
@@ -78,12 +91,25 @@ namespace EcommerceSystem.Controllers
         [HttpGet]
         public IActionResult AddUser()
         {
+            // Step 1: Retrieve the user ID from the session
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Authentication", "Account"); // Redirect to login if user is not logged in
+            }
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> AddUser(UserViewModel model)
         {
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                return RedirectToAction("Authentication", "Account"); // or any page you prefer
+            }
+
             if (string.IsNullOrEmpty(model.UserName) || string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password))
             {
                 TempData["ErrorMessage"] = "All fields are required.";
@@ -133,6 +159,13 @@ namespace EcommerceSystem.Controllers
         // Display the Edit User page
         public IActionResult EditUser(int id)
         {
+            // Step 1: Retrieve the user ID from the session
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Authentication", "Account"); // Redirect to login if user is not logged in
+            }
+
             var user = _context.Users.FirstOrDefault(u => u.Id == id);
             if (user == null)
             {
@@ -152,7 +185,7 @@ namespace EcommerceSystem.Controllers
             return View(model);
         }
 
-
+       
         // Handle form submission to update user
         [HttpPost]
         public IActionResult EditUser(UserViewModel model)
@@ -175,15 +208,15 @@ namespace EcommerceSystem.Controllers
             try
             {
                 // Update the email in UserProfiles first
-                var userProfile = _context.UserProfiles.FirstOrDefault(up => up.Email == user.Email);
-                if (userProfile != null)
-                {
-                    // Update the email in UserProfiles
-                    userProfile.Email = model.Email;
-                }
+                //var userProfile = _context.UserProfiles.FirstOrDefault(up => up.Email == user.Email);
+                //if (userProfile != null)
+                //{
+                //    // Update the email in UserProfiles
+                //    userProfile.Email = model.Email;
+                //}
 
                 // Update user details
-                user.UserName = model.UserName;
+                //user.UserName = model.UserName;
                 user.Email = model.Email; // Update email in Users table after UserProfiles
                 user.IsActive = model.Status == "Active"; // Map dropdown value to boolean
 
@@ -210,10 +243,81 @@ namespace EcommerceSystem.Controllers
             return RedirectToAction("Users");
         }
 
+       
+        //[HttpPost]
+        //public IActionResult EditUser(Profile model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model);
+        //    }
+
+        //    // Retrieve the user ID from session
+        //    var userId = HttpContext.Session.GetInt32("UserId");
+
+        //    // Retrieve the user from the database using the ID from session
+        //    var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+
+        //    if (user == null)
+        //    {
+        //        TempData["ErrorMessage"] = "User not found.";
+        //        return RedirectToAction("Authentication", "Account"); // If user is not found, redirect to login page
+        //    }
+
+        //    // Ensure the profile and user exist before updating
+        //    if (user != null)
+        //    {
+        //        // Only update the fields if the user has provided new values
+        //        if (!string.IsNullOrEmpty(model.UserName))
+        //        {
+        //            user.UserName = model.UserName;
+        //        }
+
+        //        if (!string.IsNullOrEmpty(model.Email))
+        //        {
+        //            user.Email = model.Email;
+        //        }
+        //        if (!string.IsNullOrEmpty(model.PhoneNumber))
+        //        {
+        //            user.PhoneNumber = model.PhoneNumber;
+        //        }
+        //        if (!string.IsNullOrEmpty(model.Address))
+        //        {
+        //            user.Address = model.Address;
+        //        }
+        //        if (!string.IsNullOrEmpty(model.Password))
+        //        {
+        //            user.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);  // Hash the new password before saving
+        //        }
+
+        //        // Save changes to the database
+        //        _context.SaveChanges();
+
+        //        // Set success message
+        //        TempData["SuccessMessage"] = "Profile updated successfully!";
+        //    }
+        //    else
+        //    {
+        //        // Handle case where profile or user doesn't exist
+        //        TempData["ErrorMessage"] = "Profile not found.";
+        //        return RedirectToAction("CustomerIndex", "Home");
+        //    }
+
+        //    // Redirect to the profile page after update
+        //    return RedirectToAction("CustomerIndex", "Home");
+        //}
+
         // Handle form submission to update user
         [HttpPost]
         public IActionResult EditCustomer(UserViewModel model)
         {
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                return RedirectToAction("Authentication", "Account"); // or any page you prefer
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -222,8 +326,8 @@ namespace EcommerceSystem.Controllers
             var user = _context.Users.FirstOrDefault(u => u.Id == model.Id);
             if (user == null)
             {
-                TempData["ErrorMessage"] = "User not found.";
-                return RedirectToAction("Users");
+                TempData["ErrorMessage"] = "Customer not found.";
+                return RedirectToAction("Customers");
             }
 
             // Disable the foreign key constraint temporarily
@@ -287,6 +391,27 @@ namespace EcommerceSystem.Controllers
             return RedirectToAction("Users");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> DeleteCustomer(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            // Set IsActive to false (mark as inactive)
+            user.IsActive = false;
+            _context.Update(user);
+            await _context.SaveChangesAsync();
+
+            // Optionally, show a success message
+            TempData["SuccessMessage"] = "User marked as inactive successfully.";
+
+            return RedirectToAction("Customers");
+        }
+
+
         //public async Task<IActionResult> Customers()
         //{
         //    return View();
@@ -294,6 +419,21 @@ namespace EcommerceSystem.Controllers
 
         public async Task<IActionResult> Users()
         {
+            var userId = HttpContext.Session.GetInt32("UserId"); // Retrieve the user ID from the session
+
+            if (userId == null)
+            {
+                TempData["ErrorMessage"] = "You need to be logged in to access this page.";
+                return RedirectToAction("Authentication", "Account");  // Adjust according to your login page
+            }
+
+            //var userId = HttpContext.Session.GetInt32("UserId");
+
+            //if (userId == null)
+            //{
+            //    return RedirectToAction("Authentication", "Account"); // or any page you prefer
+            //}
+
             try
             {
                 // Fetch data from the users table

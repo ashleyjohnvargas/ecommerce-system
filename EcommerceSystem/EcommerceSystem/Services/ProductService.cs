@@ -50,9 +50,9 @@ namespace EcommerceSystem.Services
             return products ?? new List<Product>(); // Return an empty list if no products are found
         }
 
-       private async Task PersistProductsAsync(List<Product> products)
+        private async Task PersistProductsAsync(List<Product> products)
         {
-            
+
 
 
             // Delete all existing products in the database before adding new ones

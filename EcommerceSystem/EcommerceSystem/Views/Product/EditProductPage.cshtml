@@ -10,7 +10,7 @@
 <div class="fade-in">
     <!-- Page Header with Go Back Icon -->
     <div class="d-flex align-items-center mb-4" style="width: 1000px; margin: 30px 0 0 90px; gap:5px;">
-        <a asp-action="ProductsPage" class="text-decoration-none me-3 text-dark" title="Go Back" style="color: #343a40; font-size: 1.75rem;">
+        <a asp-action="Product" class="text-decoration-none me-3 text-dark" title="Go Back" style="color: #343a40; font-size: 1.75rem;">
             <i class="fa-solid fa-arrow-left fs-3"></i>
         </a>
         <h2 class="mb-0 fw-bold" style="font-size: 1.8rem; color: #343a40;">Edit Product</h2>
@@ -47,7 +47,7 @@
                     <!-- Product Description -->
                     <div class="form-group mb-4">
                         <label for="Description" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Product Description</label>
-                        <textarea class="form-control form-control-lg" id="Description" name="Description" asp-for="Description" rows="3" placeholder="Enter a brief description..." style="width: 93%;" ></textarea>
+                        <textarea class="form-control form-control-lg" id="Description" name="Description" asp-for="Description" rows="3" placeholder="Enter a brief description..." style="width: 93%;"></textarea>
                     </div>
 
                     <!-- Base Price -->
@@ -85,7 +85,7 @@
                     <input type="hidden" name="IsDeleted" asp-for="IsDeleted" />
 
                     <!-- Hidden Date Added -->
-                    <input style="display: none;" type="hidden" name="DateAdded" asp-for="DateAdded" required/>
+                    <input style="display: none;" type="hidden" name="DateAdded" asp-for="DateAdded" required />
 
                     <!-- Hidden Images -->
                     <input type="hidden" name="Images" asp-for="Images" />
@@ -202,10 +202,10 @@
         font-size: 1rem;
     }
 
-    .form-control:focus {
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        border-color: #80bdff;
-    }
+        .form-control:focus {
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            border-color: #80bdff;
+        }
 
     .btn-success {
         background-color: #28a745;
@@ -213,10 +213,10 @@
         transition: all 0.3s ease;
     }
 
-    .btn-success:hover {
-        background-color: #218838;
-        transform: translateY(-2px);
-    }
+        .btn-success:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
 
     .fade-in {
         opacity: 0;
@@ -274,10 +274,10 @@
         font-size: 1rem;
     }
 
-    .form-control:focus {
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        border-color: #80bdff;
-    }
+        .form-control:focus {
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            border-color: #80bdff;
+        }
 
     .btn-success {
         background-color: #28a745;
@@ -285,10 +285,10 @@
         transition: all 0.3s ease;
     }
 
-    .btn-success:hover {
-        background-color: #218838;
-        transform: translateY(-2px);
-    }
+        .btn-success:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
 
     .fade-in {
         opacity: 0;

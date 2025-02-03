@@ -20,6 +20,14 @@ public class HomeController : Controller
     // This returns the HTML file of the HomePage or Index Page
     public IActionResult Index()
     {
+        var userId = HttpContext.Session.GetInt32("UserId");
+
+        if (userId == null)
+        {
+            return RedirectToAction("Authentication", "Account"); // or any page you prefer
+        }
+
+
         return View();
     }
 
@@ -87,6 +95,14 @@ public class HomeController : Controller
     // This returns the HTML file of the About page
     public IActionResult About()
     {
+        // Get the current user's ID from session
+        int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
+
+        if (userId == 0)
+        {
+            return RedirectToAction("Authentication", "Account"); // If not logged in, redirect to login page
+        }
+
         return View();
     }
 

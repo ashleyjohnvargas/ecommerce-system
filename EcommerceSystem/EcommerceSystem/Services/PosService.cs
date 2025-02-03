@@ -6,7 +6,7 @@ using EcommerceSystem.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
-namespace EcommerceSystem.Services 
+namespace EcommerceSystem.Services
 {
     public class PosService
     {
