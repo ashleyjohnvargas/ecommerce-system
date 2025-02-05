@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 // The URL of the Inventory System is provided below to specify if in what system the Product Service client is making an HTTP request for
 builder.Services.AddHttpClient<ProductService>(client =>
 {
-    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net"); // Replace with Inventory System URL
+    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net/"); // Replace with Inventory System URL
     //client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_ACCESS_TOKEN");
 
 });
@@ -21,10 +21,10 @@ builder.Services.AddHttpClient<ProductService>(client =>
 // Inventory service
 builder.Services.AddHttpClient<InventoryService>(client =>
 {
-    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net"); // Replace with Inventory System URL
+    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net/"); // Replace with Inventory System URL
 });
 
-// POS Service
+////// POS Service
 builder.Services.AddHttpClient<PosService>(client =>
 {
     client.BaseAddress = new Uri("https://gizmodepossystem.azurewebsites.net"); // Replace with POS URL
@@ -37,24 +37,25 @@ builder.Services.AddHttpClient<PosService>(client =>
 //    client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_ACCESS_TOKEN");
 //});
 
+//Local host
+
 //builder.Services.AddHttpClient<ProductService>(client =>
 //{
-//    client.BaseAddress = new Uri("https://localhost:44341"); // Replace with Inventory System URL
+//    client.BaseAddress = new Uri("https://localhost:44341/"); // Replace with Inventory System URL
 //});
 
-//// Inventory service
+////Inventory service
 //builder.Services.AddHttpClient<InventoryService>(client =>
 //{
-//    client.BaseAddress = new Uri("https://localhost:44341"); // Replace with Inventory System URL
+//    client.BaseAddress = new Uri("https://localhost:44341/"); // Replace with Inventory System URL
 //});
 
-//// POS Service
+////POS Service
 //builder.Services.AddHttpClient<PosService>(client =>
 //{
-//    client.BaseAddress = new Uri("https://localhost:44359"); // Replace with POS URL
+//    client.BaseAddress = new Uri("https://localhost:44359/"); // Replace with POS URL
 //    // client.DefaultRequestHeaders.Add("Accept", "application/json");
 //});
-
 
 
 //builder.Services.AddHttpClient<ProductService>(client =>
@@ -62,7 +63,7 @@ builder.Services.AddHttpClient<PosService>(client =>
 //    client.BaseAddress = new Uri("https://gizmodeinventorysystem2.azurewebsites.net"); // Replace with Inventory System URL
 //});
 
-//// Inventory service
+////// Inventory service
 //builder.Services.AddHttpClient<InventoryService>(client =>
 //{
 //    client.BaseAddress = new Uri("https://gizmodeinventorysystem.azurewebsites.net"); // Replace with Inventory System URL
@@ -70,6 +71,8 @@ builder.Services.AddHttpClient<PosService>(client =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
+
 //builder.Services.AddRazorPages();
 // Configure DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -84,13 +87,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         );
 
     // Add session services to the container
-    builder.Services.AddDistributedMemoryCache(); // Adds in-memory caching for session
-    builder.Services.AddSession(options =>
-    {
-        options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout as per your requirement
-        options.Cookie.HttpOnly = true; // Only accessible by the server
-        options.Cookie.IsEssential = true; // Necessary for session management
-    });
+    //builder.Services.AddDistributedMemoryCache(); // Adds in-memory caching for session
+    //builder.Services.AddSession(options =>
+    //{
+    //    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout as per your requirement
+    //    options.Cookie.HttpOnly = true; // Only accessible by the server
+    //    options.Cookie.IsEssential = true; // Necessary for session management
+    //});
 // Add background service for checking inactive users
 builder.Services.AddHostedService<InactiveUserChecker>();
 
@@ -139,14 +142,22 @@ app.UseHttpsRedirection();
     app.UseAuthentication();  // If using authentication
     app.UseAuthorization();
 
+// View for prospective users
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=CustomerIndex}");
 
+// View for prospective users
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Initial}");
+
+// View for admin
 //app.MapControllerRoute(
 //    name: "default",
 //    pattern: "{controller=Home}/{action=Index}");
 
+// View for admin
 //app.MapControllerRoute(
 //      name: "default",
 //      pattern: "{controller=Product}/{action=Product}");

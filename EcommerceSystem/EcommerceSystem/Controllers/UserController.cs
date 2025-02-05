@@ -24,7 +24,7 @@ namespace EcommerceSystem.Controllers
 
             if (userId == null)
             {
-                TempData["ErrorMessage"] = "You need to be logged in to access this page.";
+                //TempData["ErrorMessage"] = "You need to be logged in to access this page.";
                 return RedirectToAction("Authentication", "Account");  // Adjust according to your login page
             }
             //// Step 1: Retrieve the user ID from the session
@@ -423,7 +423,7 @@ namespace EcommerceSystem.Controllers
 
             if (userId == null)
             {
-                TempData["ErrorMessage"] = "You need to be logged in to access this page.";
+                //TempData["ErrorMessage"] = "You need to be logged in to access this page.";
                 return RedirectToAction("Authentication", "Account");  // Adjust according to your login page
             }
 

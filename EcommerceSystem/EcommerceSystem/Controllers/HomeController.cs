@@ -20,12 +20,12 @@ public class HomeController : Controller
     // This returns the HTML file of the HomePage or Index Page
     public IActionResult Index()
     {
-        var userId = HttpContext.Session.GetInt32("UserId");
+        //var userId = HttpContext.Session.GetInt32("UserId");
 
-        if (userId == null)
-        {
-            return RedirectToAction("Authentication", "Account"); // or any page you prefer
-        }
+        //if (userId == null)
+        //{
+        //    return RedirectToAction("Authentication", "Account"); // or any page you prefer
+        //}
 
 
         return View();
@@ -37,10 +37,10 @@ public class HomeController : Controller
         // Get the logged-in user/customer's id from session
         var userId = HttpContext.Session.GetInt32("UserId");
 
-        if (userId == null)
-        {
-            return RedirectToAction("Authentication", "Account"); // or any page you prefer
-        }
+        //if (userId == null)
+        //{
+        //    return RedirectToAction("Authentication", "Account"); // or any page you prefer
+        //}
 
         // 1. Get all unique categories ordered by the customer
         var orderedProducts = _context.OrderItems
@@ -102,6 +102,20 @@ public class HomeController : Controller
         {
             return RedirectToAction("Authentication", "Account"); // If not logged in, redirect to login page
         }
+
+        return View();
+    }
+
+    public IActionResult Initial()
+    {
+       
+
+        return View();
+    }
+
+    public IActionResult ProductCopy()
+    {
+
 
         return View();
     }

@@ -13,6 +13,7 @@ using EcommerceSystem.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
@@ -27,15 +28,17 @@ namespace EcommerceSystem.Services
         {
             _httpClient = httpClient;
             _context = context;
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "your-token");
+
         }
 
         public virtual async Task<List<Product>> GetAllProductsAsync()
         {
             // response is an HTTP content that contains JSON content
             // Basically, the response from the request is in JSON content format
-            var response = await _httpClient.GetAsync("api/ProductsApi/GetAllProducts"); // Correct endpoint
-            response.EnsureSuccessStatusCode();
-            var products = await response.Content.ReadFromJsonAsync<List<Product>>();
+            //var response = await _httpClient.GetAsync("api/ProductsApi/GetAllProducts"); // Correct endpoint
+            // response.EnsureSuccessStatusCode();
+            // var products = await response.Content.ReadFromJsonAsync<List<Product>>();
             // ReadFromJsonAsync purpose:  It is used to deserialize the JSON content of an HTTP response into a strongly-typed .NET object or collection.
             // Thus, the products above is in List<Product> object format, and not JSON format
             // Please go to the bottom part of the page to see how JSON and List looks like in the backend.
@@ -45,6 +48,25 @@ namespace EcommerceSystem.Services
             // {
             //     await PersistProductsAsync(products);
             // }
+            var response = await _httpClient.GetAsync("api/ProductsApi/GetAllProducts");
+           // var response = await _httpClient.GetAsync("https://gizmodeinventorysystem2.azurewebsites.net/api/ProductsApi/GetAllProducts"); // Correct endpoint
+                                                                                                                                           // Log the response status
+            Console.WriteLine($"API Status Code: {response.StatusCode}");
+            // Log the response body
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"API Response: {responseBody}");
+
+            response.EnsureSuccessStatusCode(); // Throws an error if not successful
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Error: {response.StatusCode} - {await response.Content.ReadAsStringAsync()}");
+                return new List<Product>(); // Return empty list if the API call fails
+            }
+
+            var products = await response.Content.ReadFromJsonAsync<List<Product>>();
+            // Log the parsed product count
+            Console.WriteLine($"Number of Products Retrieved: {products?.Count}");
             await PersistProductsAsync(products);
 
             return products ?? new List<Product>(); // Return an empty list if no products are found
@@ -72,7 +94,7 @@ namespace EcommerceSystem.Services
             try
             {
                 Console.WriteLine("Resetting identity for Products table...");
-                await _context.Database.ExecuteSqlRawAsync("DBCC CHECKIDENT ('Products', RESEED, 1)"); // Resets identity to 1
+                await _context.Database.ExecuteSqlRawAsync("DBCC CHECKIDENT ('Products', RESEED, 0)"); // Resets identity to 1
                 Console.WriteLine("Identity reset successful.");
             }
             catch (Exception ex)
@@ -87,7 +109,7 @@ namespace EcommerceSystem.Services
                 // No need to check if the product exists because the table has been cleared
                 _context.Products.Add(new Product
                 {
-                    Id = product.Id,
+                    //Id = product.Id,
                     Name = product.Name,
                     Description = product.Description,
                     Price = product.Price,
@@ -109,6 +131,8 @@ namespace EcommerceSystem.Services
             {
                 Console.WriteLine("Saving new products...");
                 await _context.SaveChangesAsync();
+                Console.WriteLine("Products saved successfully!");
+
             }
             catch (Exception ex)
             {

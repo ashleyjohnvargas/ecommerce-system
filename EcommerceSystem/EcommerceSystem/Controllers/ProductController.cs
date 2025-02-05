@@ -334,6 +334,24 @@ namespace EcommerceSystem.Controllers
                 Console.WriteLine("Error Editing Product!");
                 return View("EditProductPage", product);
             }
+            // ✅ Fetch the existing product from the database to ensure it's tracked
+            var existingProduct = await _context.Products.FindAsync(product.Id);
+            if (existingProduct == null)
+            {
+                return NotFound(); // Ensure the product exists
+            }
+
+            // ✅ Update only the fields that need modification
+            //existingProduct.Name = product.Name;
+            existingProduct.Description = product.Description;
+            existingProduct.Price = product.Price;
+            existingProduct.Color = product.Color;
+            existingProduct.Category = product.Category;
+            //existingProduct.OriginalStock = product.OriginalStock;
+            //existingProduct.CurrentStock = product.CurrentStock;
+            //existingProduct.StockStatus = product.StockStatus;
+            //existingProduct.IsBeingSold = product.IsBeingSold;
+            //existingProduct.IsDeleted = product.IsDeleted;
 
             // Handle the image upload if a new image is provided
             if (Image != null && Image.Length > 0)
@@ -347,16 +365,33 @@ namespace EcommerceSystem.Controllers
                     await Image.CopyToAsync(stream);
                 }
 
-                // Create a new ProductImage record
-                var productImage = new ProductImage
-                {
-                    ProductId = product.Id,
-                    FilePath = $"/images/products/{Image.FileName}"
-                };
+                //// Create a new ProductImage record
+                //var productImage = new ProductImage
+                //{
+                //    ProductId = product.Id,
+                //    FilePath = $"/images/products/{Image.FileName}"
+                //};
 
-                // Add the new ProductImage to the context
-                _context.ProductImages.Add(productImage);               
-            }
+                //// Add the new ProductImage to the context
+                //_context.ProductImages.Add(productImage);      // ✅ Check if an image already exists for this product
+                var existingImage = await _context.ProductImages.FirstOrDefaultAsync(img => img.ProductId == product.Id);
+                if (existingImage != null)
+                {
+                    // Update existing image
+                    existingImage.FilePath = $"/images/products/{Image.FileName}";
+                }
+                else
+                {
+                    // Add a new image entry if none exists
+                    var productImage = new ProductImage
+                    {
+                        ProductId = product.Id,
+                        FilePath = $"/images/products/{Image.FileName}"
+                    };
+                    _context.ProductImages.Add(productImage);
+                }
+            
+        }
 
             // Update the product details in the Inventory System
             await _inventoryService.UpdateProductInInventorySystem(product);

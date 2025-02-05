@@ -41,7 +41,7 @@
                     <!-- Product Name -->
                     <div class="form-group mb-4">
                         <label for="Name" class="fw-semibold" style="font-size: 1.1rem; color: #555;">Product Name</label>
-                        <input type="text" class="form-control form-control-lg" id="Name" name="Name" asp-for="Name" style="width: 93%;" required />
+                        <input type="text" class="form-control form-control-lg" id="Name" name="Name" asp-for="Name" style="width: 93%;" readonly />
                     </div>
 
                     <!-- Product Description -->
@@ -70,22 +70,22 @@
                     </div>
 
                     <!-- Hidden Original Stock -->
-                    <input type="hidden" name="OriginalStock" asp-for="OriginalStock" />
+                    <input type="hidden" name="OriginalStock" asp-for="OriginalStock" readonly />
 
                     <!-- Hidden Current Stock-->
-                    <input type="hidden" name="CurrentStock" asp-for="CurrentStock" />
+                    <input type="hidden" name="CurrentStock" asp-for="CurrentStock" readonly />
 
                     <!-- Hidden Stock Status-->
-                    <input type="hidden" name="StockStatus" asp-for="StockStatus" />
+                    <input type="hidden" name="StockStatus" asp-for="StockStatus" readonly />
 
                     <!-- Hidden Is Being Sold -->
-                    <input type="hidden" name="IsBeingSold" asp-for="IsBeingSold" />
+                    <input type="hidden" name="IsBeingSold" asp-for="IsBeingSold" readonly />
 
                     <!-- Hidden Is Deleted -->
-                    <input type="hidden" name="IsDeleted" asp-for="IsDeleted" />
+                    <input type="hidden" name="IsDeleted" asp-for="IsDeleted" readonly />
 
                     <!-- Hidden Date Added -->
-                    <input style="display: none;" type="hidden" name="DateAdded" asp-for="DateAdded" required />
+                    <input style="display: none;" type="hidden" name="DateAdded" asp-for="DateAdded" readonly />
 
                     <!-- Hidden Images -->
                     <input type="hidden" name="Images" asp-for="Images" />
